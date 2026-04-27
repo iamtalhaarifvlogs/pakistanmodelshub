@@ -18,81 +18,84 @@ export default function Home() {
   return (
     <main className="bg-white text-black font-sans overflow-hidden">
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-black/10">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-2xl">
-              P
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight">Pakistan Models Hub</h1>
-              <p className="text-[10px] text-black/60 -mt-1">Elite Modeling Agency</p>
-            </div>
-          </div>
+      
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10 text-sm font-medium">
-            <Link href="/" className="hover:text-yellow-500 transition-colors">Home</Link>
-            <Link href="/models" className="hover:text-yellow-500 transition-colors">Models</Link>
-            <Link href="/about" className="hover:text-yellow-500 transition-colors">About</Link>
-            <Link href="/contact" className="hover:text-yellow-500 transition-colors">Contact</Link>
-          </div>
+{/* Navbar - Updated with Solid White Background */}
+<nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/10 shadow-sm">
+  <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+    <div className="flex items-center gap-3">
+      <div className="w-9 h-9 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-2xl">
+        P
+      </div>
+      <div>
+        <h1 className="text-2xl font-bold tracking-tight">Pakistan Models Hub</h1>
+        <p className="text-[10px] text-black/60 -mt-1">Elite Modeling Agency</p>
+      </div>
+    </div>
 
-          {/* Book Now Button - Desktop */}
-          <Link 
-            href="/contact" 
-            className="hidden md:block bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition-all duration-300 text-sm tracking-wider"
-          >
-            BOOK NOW
-          </Link>
+    {/* Desktop Navigation */}
+    <div className="hidden md:flex items-center gap-10 text-sm font-medium">
+      <Link href="/" className="hover:text-yellow-500 transition-colors">Home</Link>
+      <Link href="/models" className="hover:text-yellow-500 transition-colors">Models</Link>
+      <Link href="/about" className="hover:text-yellow-500 transition-colors">About</Link>
+      <Link href="/contact" className="hover:text-yellow-500 transition-colors">Contact</Link>
+    </div>
 
-          {/* Hamburger Button */}
-          <button 
-            onClick={toggleMenu}
-            className="md:hidden z-50 flex flex-col gap-1.5"
-            aria-label="Toggle menu"
-          >
-            <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? 'opacity-0' : ''}`} />
-            <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-          </button>
-        </div>
+    {/* Book Now Button - Desktop */}
+    <Link 
+      href="/contact" 
+      className="hidden md:block bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition-all duration-300 text-sm tracking-wider"
+    >
+      BOOK NOW
+    </Link>
 
-        {/* Mobile Slide-in Menu */}
-        <div 
-          className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-[60] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+    {/* Hamburger Button */}
+    <button 
+      onClick={toggleMenu}
+      className="md:hidden z-50 flex flex-col gap-1.5"
+      aria-label="Toggle menu"
+    >
+      <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+      <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? 'opacity-0' : ''}`} />
+      <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+    </button>
+  </div>
+
+  {/* Mobile Slide-in Menu - No Change Needed */}
+  <div 
+    className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-[60] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+  >
+    <div className="p-8 flex flex-col h-full">
+      <div className="flex justify-end mb-12">
+        <button 
+          onClick={toggleMenu}
+          className="text-4xl text-black/70 hover:text-black"
         >
-          <div className="p-8 flex flex-col h-full">
-            <div className="flex justify-end mb-12">
-              <button 
-                onClick={toggleMenu}
-                className="text-4xl text-black/70 hover:text-black"
-              >
-                ✕
-              </button>
-            </div>
+          ✕
+        </button>
+      </div>
 
-            <div className="flex flex-col gap-8 text-2xl font-medium">
-              <Link href="/" onClick={closeMenu} className="hover:text-yellow-500 transition-colors">Home</Link>
-              <Link href="/models" onClick={closeMenu} className="hover:text-yellow-500 transition-colors">Models</Link>
-              <Link href="/about" onClick={closeMenu} className="hover:text-yellow-500 transition-colors">About</Link>
-              <Link href="/contact" onClick={closeMenu} className="hover:text-yellow-500 transition-colors">Contact</Link>
-            </div>
+      <div className="flex flex-col gap-8 text-2xl font-medium">
+        <Link href="/" onClick={closeMenu} className="hover:text-yellow-500 transition-colors">Home</Link>
+        <Link href="/models" onClick={closeMenu} className="hover:text-yellow-500 transition-colors">Models</Link>
+        <Link href="/about" onClick={closeMenu} className="hover:text-yellow-500 transition-colors">About</Link>
+        <Link href="/contact" onClick={closeMenu} className="hover:text-yellow-500 transition-colors">Contact</Link>
+      </div>
 
-            <div className="mt-auto pt-12">
-              <Link 
-                href="/contact" 
-                onClick={closeMenu}
-                className="block w-full bg-black text-white text-center py-4 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition-all text-lg"
-              >
-                BOOK A MODEL NOW
-              </Link>
-              <p className="text-center text-xs text-black/50 mt-6">Karachi • Lahore • Islamabad</p>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+      <div className="mt-auto pt-12">
+        <Link 
+          href="/contact" 
+          onClick={closeMenu}
+          className="block w-full bg-black text-white text-center py-4 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition-all text-lg"
+        >
+          BOOK A MODEL NOW
+        </Link>
+        <p className="text-center text-xs text-black/50 mt-6">Karachi • Lahore • Islamabad</p>
+      </div>
+    </div>
+  </div>
+</nav>
+      
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
