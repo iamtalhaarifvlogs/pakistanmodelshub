@@ -1,4 +1,5 @@
-// app/page.tsx
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -37,7 +38,7 @@ export default function Home() {
             <Link href="/contact" className="hover:text-yellow-500 transition-colors">Contact</Link>
           </div>
 
-          {/* Book Now Button */}
+          {/* Book Now Button - Desktop */}
           <Link 
             href="/contact" 
             className="hidden md:block bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition-all duration-300 text-sm tracking-wider"
@@ -59,7 +60,7 @@ export default function Home() {
 
         {/* Mobile Slide-in Menu */}
         <div 
-          className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-50 flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-[60] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
           <div className="p-8 flex flex-col h-full">
             <div className="flex justify-end mb-12">
@@ -82,7 +83,7 @@ export default function Home() {
               <Link 
                 href="/contact" 
                 onClick={closeMenu}
-                className="block w-full bg-black text-white text-center py-4 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition-all"
+                className="block w-full bg-black text-white text-center py-4 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition-all text-lg"
               >
                 BOOK A MODEL NOW
               </Link>
@@ -97,7 +98,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image 
             src="/m1.jpg" 
-            alt="Elite Karachi Models - Professional Fashion Model in Karachi"
+            alt="Elite Karachi Models - Professional Fashion Model"
             fill 
             className="object-cover brightness-75"
             priority
@@ -211,14 +212,14 @@ export default function Home() {
             {Array.from({ length: 8 }).map((_, i) => (
               <div key={i} className="group relative overflow-hidden rounded-3xl aspect-[4/5]">
                 <Image 
-                  src={`/m${i+5}.jpg`} 
-                  alt={`Professional model ${i+5} from Pakistan Models Hub Karachi`}
+                  src={`/m${i + 5}.jpg`} 
+                  alt={`Professional model ${i + 5} from Pakistan Models Hub Karachi`}
                   fill 
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent h-1/2" />
                 <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-sm text-white/70">Model {i+5}</p>
+                  <p className="text-sm text-white/70">Model {i + 5}</p>
                   <p className="font-semibold text-lg">Karachi, Pakistan</p>
                 </div>
               </div>
@@ -279,7 +280,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials / Trust Section */}
+      {/* Testimonials */}
       <section className="py-24 bg-zinc-100">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-5xl font-bold tracking-tight mb-16">Trusted by Leading Brands in Pakistan</h2>
@@ -305,7 +306,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA Section */}
+      {/* Final CTA */}
       <section className="py-32 bg-black text-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center px-6 relative z-10">
           <div className="inline-flex items-center gap-3 bg-yellow-400 text-black px-8 py-3 rounded-full font-bold mb-8">
