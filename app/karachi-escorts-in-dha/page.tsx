@@ -1,22 +1,20 @@
-
 'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function ContactPage() {
+export default function KarachiEscortsDhaPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  // Fake form submission handler (you can connect to backend later)
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 3000);
+    setTimeout(() => setFormSubmitted(false), 4000);
   };
 
   return (
@@ -25,292 +23,199 @@ export default function ContactPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/10 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-2xl">
-              P
-            </div>
+            <div className="w-9 h-9 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-2xl">P</div>
             <div>
               <h1 className="text-2xl font-bold tracking-tight">Pakistan Models Hub</h1>
-              <p className="text-[10px] text-black/60 -mt-1">Elite Modeling Agency</p>
+              <p className="text-[10px] text-black/60 -mt-1">Premium Escorts • DHA Karachi</p>
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-10 text-sm font-medium">
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             <Link href="/" className="hover:text-yellow-500 transition-colors">Home</Link>
-            <Link href="/models" className="hover:text-yellow-500 transition-colors">Models</Link>
             <Link href="/about" className="hover:text-yellow-500 transition-colors">About</Link>
             <Link href="/contact" className="hover:text-yellow-500 transition-colors">Contact</Link>
           </div>
 
-          <Link 
-            href="/contact" 
-            className="hidden md:block bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition-all duration-300 text-sm tracking-wider"
-          >
-            BOOK NOW
-          </Link>
+          <a href="tel:03051271111" className="hidden md:block bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-black transition-all text-sm tracking-wider">
+            CALL 0305-127-1111
+          </a>
 
-          <button 
-            onClick={toggleMenu}
-            className="md:hidden z-50 flex flex-col gap-1.5"
-            aria-label="Toggle menu"
-          >
+          <button onClick={toggleMenu} className="md:hidden z-50 flex flex-col gap-1.5">
             <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
             <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? 'opacity-0' : ''}`} />
             <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        <div 
-          className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-[60] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-        >
-          <div className="p-8 flex flex-col h-full">
-            <div className="flex justify-end mb-12">
-              <button onClick={toggleMenu} className="text-4xl text-black/70 hover:text-black">✕</button>
-            </div>
-            <div className="flex flex-col gap-8 text-2xl font-medium">
-              <Link href="/" onClick={closeMenu}>Home</Link>
-              <Link href="/models" onClick={closeMenu}>Models</Link>
-              <Link href="/about" onClick={closeMenu}>About</Link>
-              <Link href="/contact" onClick={closeMenu}>Contact</Link>
-            </div>
-          </div>
-        </div>
       </nav>
 
-      {/* Bold Hero Section */}
-      <section className="relative h-screen flex items-center justify-center pt-20">
+      {/* Hero Section with H1 */}
+      <section className="relative min-h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m16.jpg" 
-            alt="Contact Pakistan Models Hub - Book Professional Models in Karachi"
+            src="/m8.jpg" 
+            alt="Karachi Escorts in DHA - High Class Call Girls DHA Karachi"
             fill 
-            className="object-cover brightness-70"
+            className="object-cover brightness-75"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-black/90" />
         </div>
 
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <div className="inline-block bg-red-600 text-white px-6 py-1.5 text-sm font-bold tracking-[3px] mb-6 rounded-full">
-            LET&apos;S WORK TOGETHER
-          </div>
-          
-          <h1 className="text-6xl md:text-7xl font-bold text-white leading-none tracking-tighter mb-6">
-            BOOK KARACHI&apos;S TOP<br />PROFESSIONAL MODELS
+        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-none tracking-tighter mb-6">
+            KARACHI ESCORTS IN DHA
           </h1>
-          
-          <p className="text-2xl text-white/90 max-w-2xl mx-auto mb-10">
-            Get in touch today for fast response and premium modeling talent for your fashion shoots, commercials, campaigns &amp; events in Karachi.
+          <p className="text-2xl md:text-3xl text-white/90 mb-8">
+            Premium High-Class Call Girls • VIP Escorts DHA Karachi
+          </p>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto mb-10">
+            Experience the most beautiful, sophisticated and discreet Karachi escorts in DHA. Available 24/7 for incall & outcall services.
           </p>
 
-          <a 
-            href="#contact-form"
-            className="inline-block bg-yellow-400 hover:bg-white hover:text-black text-black font-bold text-lg px-14 py-5 rounded-full transition-all duration-300 tracking-wider shadow-2xl"
-          >
-            CONTACT US NOW
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="tel:03051271111"
+              className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold text-xl px-12 py-6 rounded-full transition-all"
+            >
+              CALL NOW: 0305-127-1111
+            </a>
+            <a 
+              href="#contact-form"
+              className="inline-block bg-yellow-400 hover:bg-white hover:text-black text-black font-bold text-xl px-12 py-6 rounded-full transition-all"
+            >
+              BOOK YOUR ESCORT
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section id="contact-form" className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Left Side - Contact Info */}
+      {/* Trust & Keywords Section */}
+      <section className="py-16 bg-black text-white text-center">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-yellow-400 font-semibold mb-3">DHA KARACHI ESCORTS SERVICE</p>
+          <h2 className="text-4xl font-bold mb-6">High Class Escorts in DHA Karachi • 0305-127-1111</h2>
+          <p className="text-lg text-white/70">
+            Independent Call Girls • VIP Models • College Girls • Housewives • Russian Escorts in DHA
+          </p>
+        </div>
+      </section>
+
+      {/* Images Gallery + Content */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-5xl font-bold tracking-tight mb-8">
-                Ready to Hire Elite Models in Karachi?
+                Premium Karachi Escorts in DHA Phase 5, 6, 7 & 8
               </h2>
-              <p className="text-xl text-black/70 mb-12">
-                Whether you need models for a fashion campaign, TV commercial, runway show, or brand photoshoot — we respond within 2 hours.
-              </p>
-
-              <div className="space-y-10">
-                <div>
-                  <p className="uppercase text-sm tracking-widest text-black/60 mb-2">Phone / WhatsApp</p>
-                  <a href="tel:+923001234567" className="text-3xl font-semibold hover:text-yellow-500 transition-colors">
-                    +92 300 1234567
-                  </a>
-                </div>
-
-                <div>
-                  <p className="uppercase text-sm tracking-widest text-black/60 mb-2">Email</p>
-                  <a href="mailto:info@pakistanmodelshub.com" className="text-3xl font-semibold hover:text-yellow-500 transition-colors">
-                    info@pakistanmodelshub.com
-                  </a>
-                </div>
-
-                <div>
-                  <p className="uppercase text-sm tracking-widest text-black/60 mb-2">Location</p>
-                  <p className="text-2xl font-medium">Karachi, Pakistan</p>
-                  <p className="text-black/70">Available for bookings across Pakistan</p>
-                </div>
-              </div>
-
-              <div className="mt-16">
-                <Image 
-                  src="/m17.jpg" 
-                  alt="Professional model posing for commercial shoot Karachi"
-                  width={500}
-                  height={600}
-                  className="rounded-3xl shadow-xl"
-                />
+              <div className="prose prose-lg text-black/80 space-y-6">
+                <p>
+                  Looking for <strong>Karachi escorts in DHA</strong>? Pakistan Models Hub offers the most attractive, well-educated, and professional call girls in DHA Karachi. 
+                  Whether you want a companion for dinner, a private massage, or a full night of pleasure — we have the perfect match for you.
+                </p>
+                <p>
+                  Our exclusive collection includes <strong>high class DHA escorts</strong>, independent call girls DHA, college girls, air hostesses, and VIP models ready to serve you in Phase 2, Phase 5, Phase 6, and Phase 8.
+                </p>
               </div>
             </div>
-
-            {/* Right Side - Contact Form */}
-            <div className="bg-zinc-50 p-10 rounded-3xl">
-              {formSubmitted ? (
-                <div className="h-full flex flex-col items-center justify-center text-center py-20">
-                  <div className="text-6xl mb-6">✅</div>
-                  <h3 className="text-3xl font-bold mb-4">Thank You!</h3>
-                  <p className="text-lg text-black/70">We have received your inquiry. Our team will contact you within 2 hours.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Your Name / Brand Name</label>
-                    <input 
-                      type="text" 
-                      required
-                      className="w-full px-5 py-4 rounded-2xl border border-black/20 focus:border-yellow-500 outline-none text-lg"
-                      placeholder="e.g. Ahmed Khan or Khaadi"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Phone / WhatsApp</label>
-                    <input 
-                      type="tel" 
-                      required
-                      className="w-full px-5 py-4 rounded-2xl border border-black/20 focus:border-yellow-500 outline-none text-lg"
-                      placeholder="+92 300 9876543"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Email Address</label>
-                    <input 
-                      type="email" 
-                      required
-                      className="w-full px-5 py-4 rounded-2xl border border-black/20 focus:border-yellow-500 outline-none text-lg"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">What type of project do you need models for?</label>
-                    <select 
-                      required
-                      className="w-full px-5 py-4 rounded-2xl border border-black/20 focus:border-yellow-500 outline-none text-lg bg-white"
-                    >
-                      <option value="">Select Project Type</option>
-                      <option value="fashion">Fashion Campaign / Lookbook</option>
-                      <option value="commercial">TV Commercial / Digital Ad</option>
-                      <option value="runway">Runway Show / Event</option>
-                      <option value="photoshoot">Studio Photoshoot</option>
-                      <option value="brand">Brand Collaboration / Influencer</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Project Details / Requirements</label>
-                    <textarea 
-                      rows={6}
-                      required
-                      className="w-full px-5 py-4 rounded-3xl border border-black/20 focus:border-yellow-500 outline-none resize-y text-lg"
-                      placeholder="Tell us about your shoot date, number of models needed, location, and any specific requirements..."
-                    ></textarea>
-                  </div>
-
-                  <button 
-                    type="submit"
-                    className="w-full bg-black hover:bg-yellow-500 hover:text-black text-white font-bold text-xl py-6 rounded-2xl transition-all duration-300 tracking-wider"
-                  >
-                    SEND INQUIRY - GET RESPONSE IN 2 HOURS
-                  </button>
-
-                  <p className="text-center text-xs text-black/50">
-                    We respect your time. Expect a reply within 2 business hours.
-                  </p>
-                </form>
-              )}
+            <div className="relative h-[520px] rounded-3xl overflow-hidden shadow-2xl">
+              <Image src="/m9.jpg" alt="Beautiful Karachi escort in DHA luxury apartment" fill className="object-cover" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Bar */}
-      <section className="py-16 bg-black text-white">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-yellow-400 font-medium mb-4">TRUSTED BY LEADING BRANDS</p>
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 text-xl opacity-75">
-            <p>Sana Safinaz</p>
-            <p>Khaadi</p>
-            <p>Nishat Linen</p>
-            <p>Generation</p>
-            <p>Alkaram</p>
+      {/* More Images & Benefits */}
+      <section className="py-20 bg-zinc-100">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[10,11,12].map((n) => (
+            <div key={n} className="relative h-96 rounded-3xl overflow-hidden group">
+              <Image 
+                src={`/m${n}.jpg`} 
+                alt={`Luxury escort service DHA Karachi - ${n}`} 
+                fill 
+                className="object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 p-6">
+                <p className="text-white font-medium">Discreet • Professional • 100% Satisfaction</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact Form + Strong CTA */}
+      <section id="contact-form" className="py-24 bg-black text-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold mb-4">Book Karachi Escorts in DHA Now</h2>
+            <p className="text-xl text-white/70">Call or WhatsApp 0305-127-1111 • Fast Response • 24/7 Availability</p>
+          </div>
+
+          <div className="bg-zinc-900 p-10 rounded-3xl">
+            {formSubmitted ? (
+              <div className="text-center py-20">
+                <div className="text-7xl mb-6">❤️</div>
+                <h3 className="text-3xl font-bold mb-4">Thank You!</h3>
+                <p className="text-lg">Our team will contact you shortly on WhatsApp or Call.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <input type="text" required placeholder="Your Name" className="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-5 text-white placeholder:text-white/50" />
+                <input type="tel" required placeholder="Phone / WhatsApp" className="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-5 text-white placeholder:text-white/50" />
+                <textarea rows={5} required placeholder="Tell us your requirements (time, location in DHA, duration...)" className="w-full bg-zinc-800 border border-zinc-700 rounded-3xl px-6 py-5 text-white placeholder:text-white/50"></textarea>
+
+                <button type="submit" className="w-full bg-red-600 hover:bg-yellow-400 hover:text-black py-7 text-xl font-bold rounded-2xl transition-all">
+                  SEND REQUEST - CALL 0305-127-1111
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Final Bold CTA */}
-      <section className="py-32 bg-gradient-to-br from-black to-zinc-900 text-white text-center">
+      {/* FAQ Section with Schema */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-5xl font-bold text-center mb-16">Frequently Asked Questions</h2>
+          
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl font-semibold mb-3">Are Karachi escorts in DHA available 24/7?</h3>
+              <p className="text-black/70">Yes, our high-class call girls and VIP escorts in DHA Karachi are available round the clock for incall and outcall services.</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-3">Is the service discreet and safe in DHA?</h3>
+              <p className="text-black/70">Absolutely. We maintain full confidentiality and provide 100% safe and hygienic service in all DHA phases.</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-3">Do you provide college girls and housewives in DHA Karachi?</h3>
+              <p className="text-black/70">Yes, we have a wide selection including young college girls, hot housewives, and mature independent escorts in DHA.</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-3">What is the booking process for Karachi escorts in DHA?</h3>
+              <p className="text-black/70">Simply call or WhatsApp us at 0305-127-1111. We will confirm your requirements and arrange the best escort quickly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-28 bg-gradient-to-br from-red-700 to-black text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-6xl font-bold tracking-tighter mb-6">
-            Don&apos;t Wait.<br />Book Elite Talent Today.
-          </h2>
-          <p className="text-2xl text-white/70 mb-12">
-            Limited slots available for upcoming shoots and campaigns.
-          </p>
-          <a 
-            href="#contact-form"
-            className="inline-block bg-red-600 hover:bg-yellow-400 hover:text-black text-white font-bold text-2xl px-16 py-7 rounded-full transition-all duration-300"
-          >
-            START YOUR BOOKING NOW
+          <h2 className="text-6xl font-bold tracking-tight mb-6">Want to Meet Beautiful Karachi Escorts in DHA Tonight?</h2>
+          <p className="text-3xl mb-10">Call or WhatsApp Now</p>
+          <a href="tel:03051271111" className="inline-block bg-white text-black font-bold text-4xl px-16 py-8 rounded-full hover:bg-yellow-400 transition-all">
+            0305-127-1111
           </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-zinc-950 text-white/80 py-20">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-12 text-sm">
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">P</div>
-              <span className="font-bold text-xl">Pakistan Models Hub</span>
-            </div>
-            <p>Elite Professional Modeling Agency in Karachi</p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white mb-6">Quick Links</h4>
-            <div className="space-y-3">
-              <Link href="/" className="block hover:text-white">Home</Link>
-              <Link href="/models" className="block hover:text-white">Our Models</Link>
-              <Link href="/about" className="block hover:text-white">About Us</Link>
-            </div>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white mb-6">Services</h4>
-            <div className="space-y-3">
-              <p>Fashion Modeling</p>
-              <p>Commercial Shoots</p>
-              <p>Runway Shows</p>
-            </div>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white mb-6">Contact</h4>
-            <div className="space-y-3">
-              <p>Karachi, Pakistan</p>
-              <p>+92 300 1234567</p>
-              <p>info@pakistanmodelshub.com</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center text-xs text-white/40 mt-20 pt-8 border-t border-white/10">
-          © 2026 Pakistan Models Hub • Professional Modeling Agency Karachi, Pakistan
+      <footer className="bg-zinc-950 text-white/70 py-16">
+        <div className="text-center text-sm">
+          © 2026 Pakistan Models Hub • Karachi Escorts in DHA • All Rights Reserved<br />
+          Call: <a href="tel:03051271111" className="text-yellow-400">0305-127-1111</a>
         </div>
       </footer>
     </main>
