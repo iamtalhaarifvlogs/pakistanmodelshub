@@ -62,46 +62,36 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section - Sexier & More Visible */}
+      {/* Hero Section - Clean & Elegant */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/m21.jpg" 
-            alt="Karachi Escorts in DHA Clifton PECHS - High Class Call Girls Karachi"
+            alt="Karachi Escorts in DHA Clifton - High Class Call Girls Karachi"
             fill 
-            className="object-cover brightness-75 contrast-105"
+            className="object-cover brightness-65"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/65 to-black/90" />
         </div>
 
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <div className="inline-block bg-red-600 text-white px-8 py-2 text-sm font-bold tracking-[3px] mb-6 rounded-full">
-            24/7 • KARACHI
-          </div>
-          
-          <h1 className="text-5xl md:text-6xl font-bold text-white leading-none tracking-tighter mb-6">
-            KARACHI ESCORTS<br />IN DHA &amp; CLIFTON
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-[58px] font-bold text-white leading-none tracking-tighter mb-10">
+            KARACHI ESCORTS<br />
+            <span className="text-yellow-400">0305-127-1111</span>
           </h1>
-          
-          <p className="text-2xl text-white/90 max-w-3xl mx-auto mb-10">
-            Premium High-Class Escorts • DHA • Clifton • PECHS • Nazimabad • Tariq Road • Galaxy Hotel • Pearl Continental
-          </p>
 
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <a 
-              href="tel:03051271111"
-              className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-bold text-2xl px-12 py-6 rounded-full transition-all shadow-2xl"
-            >
-              📞 0305-127-1111
-            </a>
-            <Link 
-              href="/contact"
-              className="inline-block bg-yellow-400 hover:bg-white hover:text-black text-black font-bold text-xl px-14 py-6 rounded-full transition-all"
-            >
-              BOOK YOUR ESCORT
-            </Link>
-          </div>
+          <a 
+            href="tel:03051271111"
+            className="inline-block bg-yellow-400 hover:bg-white hover:text-black text-black font-bold text-lg px-14 py-5 rounded-full transition-all duration-300 shadow-xl"
+          >
+            CALL NOW
+          </a>
+        </div>
+
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/70 text-sm flex flex-col items-center">
+          <span>SCROLL TO EXPLORE</span>
+          <div className="w-px h-12 bg-white/30 mt-3" />
         </div>
       </section>
 
@@ -138,14 +128,14 @@ export default function Home() {
                 <div className="relative h-80 mb-8 overflow-hidden rounded-3xl">
                   <Image 
                     src={`/m${num}.jpg`} 
-                    alt={`High class Karachi escort service in DHA Clifton`}
+                    alt="High class Karachi escort service"
                     fill 
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <h3 className="text-2xl font-semibold mb-3">Discreet &amp; Professional</h3>
                 <p className="text-black/70 leading-relaxed">
-                  100% verified escorts offering VIP service in DHA, Clifton, PECHS, Nazimabad, Tariq Road and luxury hotels including Galaxy Hotel and Pearl Continental.
+                  100% verified escorts offering VIP service in DHA, Clifton, PECHS, Nazimabad, Tariq Road and luxury hotels.
                 </p>
                 <a href="tel:03051271111" className="mt-6 inline-block text-red-600 font-semibold hover:text-black transition-colors">Call 0305-127-1111 →</a>
               </div>
@@ -167,7 +157,7 @@ export default function Home() {
               <div key={i} className="group relative overflow-hidden rounded-3xl aspect-[4/5]">
                 <Image 
                   src={`/m${num}.jpg`} 
-                  alt={`Premium escort Karachi in DHA Clifton PECHS`}
+                  alt="Premium escort Karachi"
                   fill 
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -202,7 +192,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-semibold mb-3">Which areas do you cover in Karachi?</h3>
-              <p className="text-black/70">We provide escorts in DHA, Clifton, PECHS, Nazimabad, Tariq Road, and major 5-star hotels including Galaxy Hotel and Pearl Continental.</p>
+              <p className="text-black/70">We provide escorts in DHA, Clifton, PECHS, Nazimabad, Tariq Road, and major 5-star hotels.</p>
             </div>
           </div>
         </div>
@@ -214,8 +204,6 @@ export default function Home() {
           <h2 className="text-6xl font-bold tracking-tighter mb-8">
             Ready to Meet Beautiful Karachi Escorts?
           </h2>
-          <p className="text-2xl mb-12 text-white/80">DHA • Clifton • PECHS • Nazimabad • Tariq Road</p>
-          
           <a 
             href="tel:03051271111"
             className="inline-block bg-white text-black font-bold text-4xl px-20 py-8 rounded-full hover:bg-yellow-400 transition-all"
