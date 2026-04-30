@@ -155,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us - Expanded */}
+      {/* Why Choose Us - Richer */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -206,12 +206,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hotels Section - Expanded */}
+      {/* Hotels Section */}
       <section className="py-24 bg-zinc-50" id="hotels">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold tracking-tight mb-4">Escort Services in Karachi Hotels</h2>
-            <p className="text-xl text-black/70">Discreet, Professional & 24/7 Hotel Escort Service</p>
+            <p className="text-xl text-black/70">Discreet & Professional Hotel Escort Service – 24/7 Availability</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -258,7 +258,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section - Expanded */}
+      {/* FAQ Section */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-5xl font-bold text-center mb-16">Frequently Asked Questions</h2>
@@ -266,7 +266,7 @@ export default function Home() {
           <div className="space-y-10 text-lg">
             <div>
               <h3 className="font-semibold mb-3">Do you provide escorts in all major hotels in Karachi?</h3>
-              <p className="text-black/70">Yes, we provide discreet and professional hotel escort service at Seashell Inn, Seashell Legacy, PC Hotel, Avari Hotel, Ramada Creek, Ocean Pearl, and many more properties across Karachi.</p>
+              <p className="text-black/70">Yes, we provide discreet hotel escort service at all Seashell properties, PC Hotel, Avari Hotel, Ramada Creek, Ocean Pearl and many more.</p>
             </div>
             <div>
               <h3 className="font-semibold mb-3">How fast can you arrange a meeting?</h3>
@@ -274,29 +274,29 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-semibold mb-3">Is 0310-444-1188 available 24/7?</h3>
-              <p className="text-black/70">Yes, our service is available round the clock for both incall and outcall bookings in Karachi.</p>
+              <p className="text-black/70">Yes, our service is available round the clock for incall and outcall bookings.</p>
             </div>
             <div>
               <h3 className="font-semibold mb-3">Are your services completely discreet?</h3>
               <p className="text-black/70">Absolutely. Privacy and confidentiality are our top priorities. All interactions are handled with the utmost discretion.</p>
             </div>
-            <div>
-              <h3 className="font-semibold mb-3">Do you serve Bahria Town and other distant areas?</h3>
-              <p className="text-black/70">Yes, we provide service in Bahria Town, DHA, Clifton, PECHS, Nazimabad, Tariq Road, and almost all major areas of Karachi.</p>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-28 bg-gradient-to-br from-red-700 to-black text-white text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-6xl font-bold tracking-tighter mb-8">
+      {/* Final CTA - Smaller & Elegant */}
+      <section className="py-20 bg-gradient-to-br from-red-700 to-black text-white text-center">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">
             Ready to Meet Beautiful Karachi Escorts?
           </h2>
+          <p className="text-xl text-white/80 mb-10">
+            Fast response • Complete discretion • 24/7 availability
+          </p>
+          
           <a 
             href="tel:03104441188"
-            className="inline-block bg-white text-black font-bold text-4xl px-20 py-8 rounded-full hover:bg-yellow-400 transition-all"
+            className="inline-block bg-white text-black font-semibold text-2xl px-16 py-6 rounded-full hover:bg-yellow-400 transition-all shadow-lg"
           >
             0310 - 444 - 1188
           </a>
