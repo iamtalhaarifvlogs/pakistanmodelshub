@@ -4,23 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-export const metadata = {
-  title: "Contact Us | Escorts in Karachi - Book Now 0310-444-1188",
-  description: "Contact premium escorts in Karachi. Fast response for bookings in DHA, Clifton, PECHS, Bahria Town, and all major hotels. Call or WhatsApp 0310-444-1188.",
-  keywords: [
-    "contact escorts Karachi",
-    "book escorts in Karachi",
-    "Karachi escorts contact",
-    "escorts in DHA Karachi contact",
-    "Clifton escorts booking",
-    "PECHS escorts contact number",
-    "Bahria Town escorts Karachi",
-    "hotel escorts Karachi booking",
-    "0310-444-1188",
-    "VIP escorts Karachi contact"
-  ],
-};
-
 export default function ContactPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -34,17 +17,23 @@ export default function ContactPage() {
     setTimeout(() => setFormSubmitted(false), 4000);
   };
 
-  // Smooth scroll for hotel links (same as homepage)
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 90;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition - bodyRect - offset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
+  // Smooth scroll to hotel sections (works from any page)
+  const scrollToHotel = (hotelId: string) => {
     closeMenu();
+    
+    setTimeout(() => {
+      const element = document.getElementById(hotelId);
+      if (element) {
+        const offset = 90;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - bodyRect - offset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      } else {
+        // Redirect to homepage and scroll
+        window.location.href = `/#${hotelId}`;
+      }
+    }, 300);
   };
 
   const hotels = [
@@ -61,7 +50,7 @@ export default function ContactPage() {
 
   return (
     <main className="bg-white text-black font-sans overflow-hidden">
-      {/* Navbar - Consistent with Homepage */}
+      {/* Navbar - Fully Consistent */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/10 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -76,10 +65,10 @@ export default function ContactPage() {
           <div className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="/" className="hover:text-yellow-500 transition-colors">Home</Link>
             
-            <button onClick={() => scrollToSection("seashell-inn")} className="hover:text-yellow-500 transition-colors">Seashell Inn</button>
-            <button onClick={() => scrollToSection("seashell-legacy")} className="hover:text-yellow-500 transition-colors">Seashell Legacy</button>
-            <button onClick={() => scrollToSection("pc-hotel")} className="hover:text-yellow-500 transition-colors">PC Hotel</button>
-            <button onClick={() => scrollToSection("avari-hotel")} className="hover:text-yellow-500 transition-colors">Avari Hotel</button>
+            <button onClick={() => scrollToHotel("seashell-inn")} className="hover:text-yellow-500 transition-colors">Seashell Inn</button>
+            <button onClick={() => scrollToHotel("seashell-legacy")} className="hover:text-yellow-500 transition-colors">Seashell Legacy</button>
+            <button onClick={() => scrollToHotel("pc-hotel")} className="hover:text-yellow-500 transition-colors">PC Hotel</button>
+            <button onClick={() => scrollToHotel("avari-hotel")} className="hover:text-yellow-500 transition-colors">Avari Hotel</button>
 
             <Link href="/about" className="hover:text-yellow-500 transition-colors">About</Link>
             <Link href="/contact" className="hover:text-yellow-500 transition-colors">Contact</Link>
@@ -104,7 +93,9 @@ export default function ContactPage() {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-[60] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div 
+          className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-[60] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        >
           <div className="p-8 flex flex-col h-full overflow-y-auto">
             <div className="flex justify-end mb-12">
               <button onClick={toggleMenu} className="text-4xl text-black/70 hover:text-black">✕</button>
@@ -118,7 +109,7 @@ export default function ContactPage() {
                 {hotels.map((hotel) => (
                   <button 
                     key={hotel.id}
-                    onClick={() => scrollToSection(hotel.id)}
+                    onClick={() => scrollToHotel(hotel.id)}
                     className="block w-full text-left py-3 hover:text-yellow-500 transition-colors"
                   >
                     {hotel.name}
