@@ -10,7 +10,6 @@ export default function Home() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  // Smooth scroll function
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -18,25 +17,21 @@ export default function Home() {
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition - bodyRect - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
     closeMenu();
   };
 
   const hotels = [
-    { id: "seashell-inn", name: "Seashell Inn" },
-    { id: "seashell-legacy", name: "Seashell Legacy" },
-    { id: "seashell-grand", name: "Seashell Grand" },
-    { id: "seashell-forte", name: "Seashell Forte" },
-    { id: "pc-hotel", name: "PC Hotel" },
-    { id: "ocean-pearl", name: "Ocean Pearl" },
-    { id: "avari-hotel", name: "Avari Hotel" },
-    { id: "ramada-creek", name: "Ramada Creek" },
-    { id: "ramada-airport", name: "Ramada Airport" },
+    { id: "seashell-inn", name: "Seashell Inn", img: "/m14.jpg" },
+    { id: "seashell-legacy", name: "Seashell Legacy", img: "/m15.jpg" },
+    { id: "seashell-grand", name: "Seashell Grand", img: "/m16.jpg" },
+    { id: "seashell-forte", name: "Seashell Forte", img: "/m17.jpg" },
+    { id: "pc-hotel", name: "PC Hotel Karachi", img: "/m18.jpg" },
+    { id: "ocean-pearl", name: "Ocean Pearl", img: "/m19.jpg" },
+    { id: "avari-hotel", name: "Avari Hotel", img: "/m20.jpg" },
+    { id: "ramada-creek", name: "Ramada Creek", img: "/m21.jpg" },
+    { id: "ramada-airport", name: "Ramada Airport", img: "/m22.jpg" },
   ];
 
   return (
@@ -52,16 +47,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="/" className="hover:text-yellow-500 transition-colors">Home</Link>
-            
-            {/* Individual Hotel Links */}
-            <button onClick={() => scrollToSection("seashell-inn")} className="hover:text-yellow-500 transition-colors whitespace-nowrap">Seashell Inn</button>
-            <button onClick={() => scrollToSection("seashell-legacy")} className="hover:text-yellow-500 transition-colors whitespace-nowrap">Seashell Legacy</button>
-            <button onClick={() => scrollToSection("pc-hotel")} className="hover:text-yellow-500 transition-colors whitespace-nowrap">PC Hotel</button>
-            <button onClick={() => scrollToSection("avari-hotel")} className="hover:text-yellow-500 transition-colors whitespace-nowrap">Avari Hotel</button>
-            
+            <button onClick={() => scrollToSection("seashell-inn")} className="hover:text-yellow-500 transition-colors">Seashell Inn</button>
+            <button onClick={() => scrollToSection("seashell-legacy")} className="hover:text-yellow-500 transition-colors">Seashell Legacy</button>
+            <button onClick={() => scrollToSection("pc-hotel")} className="hover:text-yellow-500 transition-colors">PC Hotel</button>
+            <button onClick={() => scrollToSection("avari-hotel")} className="hover:text-yellow-500 transition-colors">Avari Hotel</button>
             <Link href="/about" className="hover:text-yellow-500 transition-colors">About</Link>
             <Link href="/contact" className="hover:text-yellow-500 transition-colors">Contact</Link>
           </div>
@@ -84,20 +75,18 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Mobile Menu - Fixed & Scrollable */}
-        <div 
-          className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-[60] flex flex-col overflow-hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-        >
+        {/* Mobile Menu */}
+        <div className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-[60] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="p-8 flex flex-col h-full overflow-y-auto">
             <div className="flex justify-end mb-12">
               <button onClick={toggleMenu} className="text-4xl text-black/70 hover:text-black">✕</button>
             </div>
 
             <div className="flex flex-col gap-6 text-2xl font-medium">
-              <Link href="/" onClick={closeMenu} className="py-2">Home</Link>
+              <Link href="/" onClick={closeMenu}>Home</Link>
               
               <div className="pt-6 border-t border-gray-200">
-                <p className="text-sm text-gray-500 mb-4 font-medium tracking-widest">HOTELS</p>
+                <p className="text-sm text-gray-500 mb-4 font-medium">HOTELS</p>
                 {hotels.map((hotel) => (
                   <button 
                     key={hotel.id}
@@ -110,17 +99,16 @@ export default function Home() {
               </div>
 
               <Link href="/about" onClick={closeMenu} className="pt-8 py-2">About</Link>
-              <Link href="/contact" onClick={closeMenu} className="py-2">Contact</Link>
+              <Link href="/contact" onClick={closeMenu}>Contact</Link>
             </div>
 
             <div className="mt-auto pt-12 pb-8">
               <a 
                 href="tel:03104441188"
-                className="block w-full bg-red-600 text-white text-center py-4 rounded-full font-semibold hover:bg-black transition-all text-lg"
+                className="block w-full bg-red-600 text-white text-center py-4 rounded-full font-semibold hover:bg-black transition-all"
               >
                 CALL 0310-444-1188
               </a>
-              <p className="text-center text-xs text-black/50 mt-6">Karachi • Available 24/7</p>
             </div>
           </div>
         </div>
@@ -131,7 +119,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image 
             src="/m21.jpg" 
-            alt="Karachi Escorts Service - Premium Companions"
+            alt="Escorts in Karachi - Premium Call Girls DHA Clifton PECHS"
             fill 
             className="object-cover brightness-65"
             priority
@@ -162,7 +150,15 @@ export default function Home() {
       {/* Services Coverage */}
       <section className="py-16 bg-black text-white text-center">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-yellow-400 font-medium mb-3">SERVING ALL MAJOR AREAS & HOTELS OF KARACHI</p>
+          <p className="text-yellow-400 font-medium mb-3">PREMIUM ESCORT SERVICE ACROSS KARACHI</p>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-lg opacity-90">
+            <p>DHA Escorts</p>
+            <p>Clifton Escorts</p>
+            <p>PECHS Escorts</p>
+            <p>Bahria Town Escorts</p>
+            <p>Nazimabad Escorts</p>
+            <p>Tariq Road Escorts</p>
+          </div>
         </div>
       </section>
 
@@ -170,9 +166,9 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold tracking-tight mb-4">Premium Karachi Escorts Service</h2>
+            <h2 className="text-5xl font-bold tracking-tight mb-4">Why Choose Pakistan Models Hub</h2>
             <p className="text-xl text-black/70 max-w-2xl mx-auto">
-              Professional and discreet escorts available across DHA, Clifton, PECHS, Nazimabad, Tariq Road, Bahria Town and all major hotels.
+              We provide the most beautiful, discreet, and professional escorts in Karachi with complete privacy and fast service.
             </p>
           </div>
 
@@ -182,14 +178,14 @@ export default function Home() {
                 <div className="relative h-80 mb-8 overflow-hidden rounded-3xl">
                   <Image 
                     src={`/m${num}.jpg`} 
-                    alt="High class Karachi escort service"
+                    alt="Premium Karachi Escorts Service"
                     fill 
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <h3 className="text-2xl font-semibold mb-3">Discreet & Professional</h3>
                 <p className="text-black/70 leading-relaxed">
-                  100% verified escorts offering VIP service in all major areas and hotels across Karachi.
+                  100% verified escorts offering VIP service across DHA, Clifton, PECHS, Bahria Town, and all major hotels in Karachi.
                 </p>
                 <a href="tel:03104441188" className="mt-6 inline-block text-red-600 font-semibold hover:text-black transition-colors">Call 0310-444-1188 →</a>
               </div>
@@ -199,11 +195,11 @@ export default function Home() {
       </section>
 
       {/* Hotels Section */}
-      <section className="py-24 bg-zinc-50">
+      <section className="py-24 bg-zinc-50" id="hotels">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold tracking-tight mb-4">Escort Services in Karachi Hotels</h2>
-            <p className="text-xl text-black/70">Discreet & Professional Hotel Escort Service</p>
+            <p className="text-xl text-black/70">Discreet Hotel Escort Service – 24/7 Availability</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -235,7 +231,7 @@ export default function Home() {
 
                 <div className="p-8">
                   <p className="text-black/70 mb-6 leading-relaxed">
-                    Premium and discreet escort service available at {hotel.name}. Verified VIP companions with complete privacy.
+                    Premium and discreet escort service available at {hotel.name}. Verified VIP companions with complete privacy and fast response.
                   </p>
                   <a 
                     href="tel:03104441188"
@@ -258,15 +254,15 @@ export default function Home() {
           <div className="space-y-10 text-lg">
             <div>
               <h3 className="font-semibold mb-3">Do you provide escorts in all major hotels in Karachi?</h3>
-              <p className="text-black/70">Yes, we provide discreet hotel escort service at all Seashell properties, PC Hotel, Avari Hotel, Ramada Creek, Ocean Pearl and many more.</p>
+              <p className="text-black/70">Yes, we provide discreet hotel escort service at Seashell Inn, Seashell Legacy, PC Hotel, Avari Hotel, Ramada Creek, Ocean Pearl and many more.</p>
             </div>
             <div>
               <h3 className="font-semibold mb-3">Is 0310-444-1188 available 24/7?</h3>
-              <p className="text-black/70">Yes, our service is available round the clock for incall and outcall bookings.</p>
+              <p className="text-black/70">Yes, our Karachi escorts service is available round the clock for incall and outcall bookings.</p>
             </div>
             <div>
               <h3 className="font-semibold mb-3">Are your services discreet?</h3>
-              <p className="text-black/70">Complete privacy and discretion is guaranteed for all our clients.</p>
+              <p className="text-black/70">Complete privacy and discretion is guaranteed for all our clients across Karachi.</p>
             </div>
           </div>
         </div>
