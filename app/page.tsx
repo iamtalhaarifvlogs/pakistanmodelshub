@@ -53,14 +53,15 @@ export default function Home() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-7 text-sm font-medium">
+          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="/" className="hover:text-yellow-500 transition-colors">Home</Link>
             
             {/* Individual Hotel Links */}
-            <button onClick={() => scrollToSection("seashell-inn")} className="hover:text-yellow-500 transition-colors">Seashell Inn</button>
-            <button onClick={() => scrollToSection("seashell-legacy")} className="hover:text-yellow-500 transition-colors">Seashell Legacy</button>
-            <button onClick={() => scrollToSection("pc-hotel")} className="hover:text-yellow-500 transition-colors">PC Hotel</button>
-            <button onClick={() => scrollToSection("avari-hotel")} className="hover:text-yellow-500 transition-colors">Avari Hotel</button>
+            <button onClick={() => scrollToSection("seashell-inn")} className="hover:text-yellow-500 transition-colors whitespace-nowrap">Seashell Inn</button>
+            <button onClick={() => scrollToSection("seashell-legacy")} className="hover:text-yellow-500 transition-colors whitespace-nowrap">Seashell Legacy</button>
+            <button onClick={() => scrollToSection("pc-hotel")} className="hover:text-yellow-500 transition-colors whitespace-nowrap">PC Hotel</button>
+            <button onClick={() => scrollToSection("avari-hotel")} className="hover:text-yellow-500 transition-colors whitespace-nowrap">Avari Hotel</button>
+            
             <Link href="/about" className="hover:text-yellow-500 transition-colors">About</Link>
             <Link href="/contact" className="hover:text-yellow-500 transition-colors">Contact</Link>
           </div>
@@ -83,18 +84,20 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Mobile Menu - With Individual Hotel Links */}
-        <div className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-[60] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="p-8 flex flex-col h-full">
+        {/* Mobile Menu - Fixed & Scrollable */}
+        <div 
+          className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-[60] flex flex-col overflow-hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        >
+          <div className="p-8 flex flex-col h-full overflow-y-auto">
             <div className="flex justify-end mb-12">
               <button onClick={toggleMenu} className="text-4xl text-black/70 hover:text-black">✕</button>
             </div>
 
             <div className="flex flex-col gap-6 text-2xl font-medium">
-              <Link href="/" onClick={closeMenu}>Home</Link>
+              <Link href="/" onClick={closeMenu} className="py-2">Home</Link>
               
-              <div className="pt-4 border-t border-gray-200">
-                <p className="text-sm text-gray-500 mb-4 font-medium">HOTELS</p>
+              <div className="pt-6 border-t border-gray-200">
+                <p className="text-sm text-gray-500 mb-4 font-medium tracking-widest">HOTELS</p>
                 {hotels.map((hotel) => (
                   <button 
                     key={hotel.id}
@@ -106,17 +109,18 @@ export default function Home() {
                 ))}
               </div>
 
-              <Link href="/about" onClick={closeMenu} className="pt-6">About</Link>
-              <Link href="/contact" onClick={closeMenu}>Contact</Link>
+              <Link href="/about" onClick={closeMenu} className="pt-8 py-2">About</Link>
+              <Link href="/contact" onClick={closeMenu} className="py-2">Contact</Link>
             </div>
 
-            <div className="mt-auto pt-12">
+            <div className="mt-auto pt-12 pb-8">
               <a 
                 href="tel:03104441188"
-                className="block w-full bg-red-600 text-white text-center py-4 rounded-full font-semibold hover:bg-black transition-all"
+                className="block w-full bg-red-600 text-white text-center py-4 rounded-full font-semibold hover:bg-black transition-all text-lg"
               >
                 CALL 0310-444-1188
               </a>
+              <p className="text-center text-xs text-black/50 mt-6">Karachi • Available 24/7</p>
             </div>
           </div>
         </div>
@@ -195,7 +199,7 @@ export default function Home() {
       </section>
 
       {/* Hotels Section */}
-      <section className="py-24 bg-zinc-50" id="hotels">
+      <section className="py-24 bg-zinc-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold tracking-tight mb-4">Escort Services in Karachi Hotels</h2>
@@ -254,7 +258,7 @@ export default function Home() {
           <div className="space-y-10 text-lg">
             <div>
               <h3 className="font-semibold mb-3">Do you provide escorts in all major hotels in Karachi?</h3>
-              <p className="text-black/70">Yes, we provide discreet hotel escort service at Seashell Inn, Seashell Legacy, PC Hotel, Avari Hotel, Ramada Creek, Ocean Pearl and many more.</p>
+              <p className="text-black/70">Yes, we provide discreet hotel escort service at all Seashell properties, PC Hotel, Avari Hotel, Ramada Creek, Ocean Pearl and many more.</p>
             </div>
             <div>
               <h3 className="font-semibold mb-3">Is 0310-444-1188 available 24/7?</h3>
@@ -262,7 +266,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-semibold mb-3">Are your services discreet?</h3>
-              <p className="text-black/70">Complete privacy and discretion is guaranteed for all clients.</p>
+              <p className="text-black/70">Complete privacy and discretion is guaranteed for all our clients.</p>
             </div>
           </div>
         </div>
