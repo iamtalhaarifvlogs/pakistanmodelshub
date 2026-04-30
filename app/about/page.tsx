@@ -10,21 +10,29 @@ export default function AboutPage() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  // Smooth scroll function
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 90;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition - bodyRect - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+  // Smooth scroll to hotel sections on homepage
+  const scrollToHotel = (hotelId: string) => {
+    // Close menu first
     closeMenu();
+    
+    // Small delay to allow menu to close before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(hotelId);
+      if (element) {
+        const offset = 90;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - bodyRect - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        // If not found on current page, go to homepage first then scroll
+        window.location.href = `/#${hotelId}`;
+      }
+    }, 300);
   };
 
   const hotels = [
@@ -41,7 +49,7 @@ export default function AboutPage() {
 
   return (
     <main className="bg-white text-black font-sans overflow-hidden">
-      {/* Navbar - Matching Homepage with Scroll Links */}
+      {/* Navbar - Fully Consistent with Homepage */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/10 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -56,10 +64,11 @@ export default function AboutPage() {
           <div className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="/" className="hover:text-yellow-500 transition-colors">Home</Link>
             
-            <button onClick={() => scrollToSection("seashell-inn")} className="hover:text-yellow-500 transition-colors">Seashell Inn</button>
-            <button onClick={() => scrollToSection("seashell-legacy")} className="hover:text-yellow-500 transition-colors">Seashell Legacy</button>
-            <button onClick={() => scrollToSection("pc-hotel")} className="hover:text-yellow-500 transition-colors">PC Hotel</button>
-            <button onClick={() => scrollToSection("avari-hotel")} className="hover:text-yellow-500 transition-colors">Avari Hotel</button>
+            {/* Individual Hotel Scroll Links */}
+            <button onClick={() => scrollToHotel("seashell-inn")} className="hover:text-yellow-500 transition-colors">Seashell Inn</button>
+            <button onClick={() => scrollToHotel("seashell-legacy")} className="hover:text-yellow-500 transition-colors">Seashell Legacy</button>
+            <button onClick={() => scrollToHotel("pc-hotel")} className="hover:text-yellow-500 transition-colors">PC Hotel</button>
+            <button onClick={() => scrollToHotel("avari-hotel")} className="hover:text-yellow-500 transition-colors">Avari Hotel</button>
 
             <Link href="/about" className="hover:text-yellow-500 transition-colors">About</Link>
             <Link href="/contact" className="hover:text-yellow-500 transition-colors">Contact</Link>
@@ -100,7 +109,7 @@ export default function AboutPage() {
                 {hotels.map((hotel) => (
                   <button 
                     key={hotel.id}
-                    onClick={() => scrollToSection(hotel.id)}
+                    onClick={() => scrollToHotel(hotel.id)}
                     className="block w-full text-left py-3 hover:text-yellow-500 transition-colors"
                   >
                     {hotel.name}
@@ -124,7 +133,7 @@ export default function AboutPage() {
         </div>
       </nav>
 
-      {/* Hero Section - Updated with Strong Keyword */}
+      {/* Hero Section - Strong Keyword */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
@@ -167,20 +176,20 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6 text-lg text-black/80 leading-relaxed">
                 <p>
-                  Pakistan Models Hub was established to bring professionalism, luxury, and discretion to the escort industry in Karachi.
+                  Pakistan Models Hub was founded to bring professionalism, luxury, and complete discretion to the escort industry in Karachi.
                 </p>
                 <p>
-                  We connect elite clients with the most beautiful, sophisticated, and verified <strong>escorts in Karachi</strong> across DHA, Clifton, PECHS, Bahria Town, and major hotels.
+                  We connect elite clients with the most beautiful, sophisticated, and verified escorts across DHA, Clifton, PECHS, Bahria Town, and all major hotels in Karachi.
                 </p>
                 <p>
-                  Our carefully selected companions are known for their elegance, charm, and ability to provide unforgettable experiences with complete privacy.
+                  Our carefully selected companions are known for their elegance, charm, and ability to provide unforgettable experiences with full privacy.
                 </p>
               </div>
             </div>
             <div className="relative h-[520px] rounded-3xl overflow-hidden">
               <Image 
                 src="/m11.jpg" 
-                alt="Luxury Escorts in Karachi - Professional Companions"
+                alt="Luxury Escorts Experience in Karachi"
                 fill 
                 className="object-cover"
               />
@@ -195,7 +204,7 @@ export default function AboutPage() {
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold tracking-tight mb-4">Our Mission</h2>
             <p className="text-xl text-white/70 max-w-2xl mx-auto">
-              To provide the highest quality, discreet, and luxurious escort experience in Karachi while maintaining professionalism and safety.
+              To deliver the highest quality, discreet, and luxurious escort experience in Karachi with professionalism and safety.
             </p>
           </div>
 
@@ -254,7 +263,7 @@ export default function AboutPage() {
                 <div className="text-5xl font-bold text-yellow-400">02</div>
                 <div>
                   <h3 className="text-3xl font-semibold mb-3">Fast & Discreet Booking</h3>
-                  <p className="text-black/70">Quick response time with full confidentiality for all bookings in Karachi.</p>
+                  <p className="text-black/70">Quick response with full confidentiality for all bookings in Karachi.</p>
                 </div>
               </div>
             </div>
