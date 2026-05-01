@@ -23,15 +23,20 @@ export default function Home() {
   };
 
   const hotels = [
-    { id: "seashell-inn", name: "Seashell Inn", img: "/m14.jpg" },
-    { id: "seashell-legacy", name: "Seashell Legacy", img: "/m15.jpg" },
-    { id: "seashell-grand", name: "Seashell Grand", img: "/m16.jpg" },
-    { id: "seashell-forte", name: "Seashell Forte", img: "/m17.jpg" },
-    { id: "pc-hotel", name: "PC Hotel Karachi", img: "/m18.jpg" },
-    { id: "ocean-pearl", name: "Ocean Pearl", img: "/m19.jpg" },
-    { id: "avari-hotel", name: "Avari Hotel", img: "/m20.jpg" },
-    { id: "ramada-creek", name: "Ramada Creek", img: "/m21.jpg" },
-    { id: "ramada-airport", name: "Ramada Airport", img: "/m22.jpg" },
+    { id: "seashell-inn", name: "Seashell Inn", img: "/m12.jpg" },
+    { id: "seashell-legacy", name: "Seashell Legacy", img: "/m13.jpg" },
+    { id: "seashell-grand", name: "Seashell Grand", img: "/m14.jpg" },
+    { id: "seashell-forte", name: "Seashell Forte", img: "/m15.jpg" },
+    { id: "pc-hotel", name: "PC Hotel Karachi", img: "/m16.jpg" },
+    { id: "marriott-hotel", name: "Marriott Hotel", img: "/m17.jpg" },
+    { id: "movenpick", name: "Mövenpick Hotel", img: "/m18.jpg" },
+    { id: "avari-towers", name: "Avari Towers", img: "/m19.jpg" },
+    { id: "beach-luxury", name: "Beach Luxury Hotel", img: "/m20.jpg" },
+    { id: "galaxy-hotel", name: "Galaxy Hotel", img: "/m21.jpg" },
+    { id: "ocean-pearl", name: "Ocean Pearl", img: "/m22.jpg" },
+    { id: "ramada-creek", name: "Ramada Creek", img: "/m23.jpg" },
+    { id: "ramada-airport", name: "Ramada Airport", img: "/m24.jpg" },
+    { id: "guest-houses", name: "Guest Houses Karachi", img: "/m25.jpg" },
   ];
 
   return (
@@ -50,9 +55,9 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="/" className="hover:text-yellow-500 transition-colors">Home</Link>
             <button onClick={() => scrollToSection("seashell-inn")} className="hover:text-yellow-500 transition-colors">Seashell Inn</button>
-            <button onClick={() => scrollToSection("seashell-legacy")} className="hover:text-yellow-500 transition-colors">Seashell Legacy</button>
             <button onClick={() => scrollToSection("pc-hotel")} className="hover:text-yellow-500 transition-colors">PC Hotel</button>
-            <button onClick={() => scrollToSection("avari-hotel")} className="hover:text-yellow-500 transition-colors">Avari Hotel</button>
+            <button onClick={() => scrollToSection("marriott-hotel")} className="hover:text-yellow-500 transition-colors">Marriott</button>
+            <button onClick={() => scrollToSection("avari-towers")} className="hover:text-yellow-500 transition-colors">Avari Towers</button>
             <Link href="/about" className="hover:text-yellow-500 transition-colors">About</Link>
             <Link href="/contact" className="hover:text-yellow-500 transition-colors">Contact</Link>
           </div>
@@ -206,7 +211,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hotels Section */}
+      {/* Hotels Section - Expanded */}
       <section className="py-24 bg-zinc-50" id="hotels">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -216,15 +221,20 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
-              { id: "seashell-inn", name: "Seashell Inn", img: "/m14.jpg", desc: "Popular choice for guests seeking luxury and privacy in a serene environment." },
-              { id: "seashell-legacy", name: "Seashell Legacy", img: "/m15.jpg", desc: "Modern luxury hotel with excellent service. Our companions are well-familiar with the location." },
-              { id: "seashell-grand", name: "Seashell Grand", img: "/m16.jpg", desc: "High-end property perfect for VIP clients looking for exclusive experiences." },
-              { id: "seashell-forte", name: "Seashell Forte", img: "/m17.jpg", desc: "Contemporary hotel with great amenities. Fast and discreet service guaranteed." },
-              { id: "pc-hotel", name: "PC Hotel Karachi", img: "/m18.jpg", desc: "One of Karachi's most prestigious 5-star hotels. Professional hotel escort service available." },
-              { id: "ocean-pearl", name: "Ocean Pearl", img: "/m19.jpg", desc: "Beachfront luxury with stunning views. Ideal for romantic and private encounters." },
-              { id: "avari-hotel", name: "Avari Hotel", img: "/m20.jpg", desc: "Iconic 5-star hotel in the heart of Karachi. Trusted by many regular clients." },
-              { id: "ramada-creek", name: "Ramada Creek", img: "/m21.jpg", desc: "Convenient location with excellent facilities. Quick response guaranteed." },
-              { id: "ramada-airport", name: "Ramada Airport", img: "/m22.jpg", desc: "Perfect for travelers and businessmen. Fast airport-area service." },
+              { id: "seashell-inn", name: "Seashell Inn", img: "/m12.jpg", desc: "Popular choice for guests seeking luxury and privacy in a serene environment." },
+              { id: "seashell-legacy", name: "Seashell Legacy", img: "/m13.jpg", desc: "Modern luxury hotel with excellent service. Our companions are well-familiar with the location." },
+              { id: "seashell-grand", name: "Seashell Grand", img: "/m14.jpg", desc: "High-end property perfect for VIP clients looking for exclusive experiences." },
+              { id: "seashell-forte", name: "Seashell Forte", img: "/m15.jpg", desc: "Contemporary hotel with great amenities. Fast and discreet service guaranteed." },
+              { id: "pc-hotel", name: "PC Hotel Karachi", img: "/m16.jpg", desc: "One of Karachi's most prestigious 5-star hotels. Professional hotel escort service available." },
+              { id: "marriott-hotel", name: "Marriott Hotel", img: "/m17.jpg", desc: "Iconic 5-star hotel perfect for business travelers and VIP clients." },
+              { id: "movenpick", name: "Mövenpick Hotel", img: "/m18.jpg", desc: "Luxury beachfront hotel with excellent facilities and discreet service." },
+              { id: "avari-towers", name: "Avari Towers", img: "/m19.jpg", desc: "Historic 5-star hotel in the heart of Karachi known for its elegance." },
+              { id: "beach-luxury", name: "Beach Luxury Hotel", img: "/m20.jpg", desc: "Classic luxury hotel with beautiful sea views and private atmosphere." },
+              { id: "galaxy-hotel", name: "Galaxy Hotel", img: "/m21.jpg", desc: "Popular choice for guests looking for comfort and privacy." },
+              { id: "ocean-pearl", name: "Ocean Pearl", img: "/m22.jpg", desc: "Modern hotel with excellent location and fast escort service." },
+              { id: "ramada-creek", name: "Ramada Creek", img: "/m23.jpg", desc: "Convenient location with excellent facilities." },
+              { id: "ramada-airport", name: "Ramada Airport", img: "/m24.jpg", desc: "Perfect for travelers and businessmen near the airport." },
+              { id: "guest-houses", name: "Guest Houses Karachi", img: "/m25.jpg", desc: "Private and discreet guest houses across Karachi for maximum privacy." },
             ].map((hotel) => (
               <div key={hotel.id} id={hotel.id} className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
                 <div className="relative h-80">
@@ -243,7 +253,7 @@ export default function Home() {
 
                 <div className="p-8">
                   <p className="text-black/70 mb-6 leading-relaxed">
-                    {hotel.desc} Our verified VIP companions provide premium and discreet service at {hotel.name}.
+                    {hotel.desc} Our verified VIP companions provide premium and discreet escort service at {hotel.name}.
                   </p>
                   <a 
                     href="tel:03104441188"
@@ -258,6 +268,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Rate List Section - High SEO */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold tracking-tight mb-4">Karachi Escorts Price List</h2>
+            <p className="text-xl text-black/70">Transparent Pricing – No Hidden Charges</p>
+          </div>
+
+          <div className="max-w-4xl mx-auto overflow-x-auto">
+            <table className="w-full border border-gray-200 text-left">
+              <thead className="bg-zinc-100">
+                <tr>
+                  <th className="p-5 border-b font-semibold">Service Type</th>
+                  <th className="p-5 border-b font-semibold">Duration</th>
+                  <th className="p-5 border-b font-semibold text-center">Price Range (PKR)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="p-5">Short Time Session</td>
+                  <td className="p-5">1 Hour</td>
+                  <td className="p-5 text-center font-medium">35,000 – 65,000</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-5">Extended Session</td>
+                  <td className="p-5">2–3 Hours</td>
+                  <td className="p-5 text-center font-medium">60,000 – 90,000</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-5">Full Night Experience</td>
+                  <td className="p-5">8–10 Hours</td>
+                  <td className="p-5 text-center font-medium">80,000 – 120,000</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-5">VIP / Celebrity Level</td>
+                  <td className="p-5">Custom</td>
+                  <td className="p-5 text-center font-medium">120,000 – 150,000+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="text-center text-sm text-black/60 mt-8">
+            Prices may vary based on companion, duration, and location. Contact us for exact rates.
+          </p>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6">
@@ -266,7 +324,7 @@ export default function Home() {
           <div className="space-y-10 text-lg">
             <div>
               <h3 className="font-semibold mb-3">Do you provide escorts in all major hotels in Karachi?</h3>
-              <p className="text-black/70">Yes, we provide discreet hotel escort service at all Seashell properties, PC Hotel, Avari Hotel, Ramada Creek, Ocean Pearl and many more.</p>
+              <p className="text-black/70">Yes, we provide discreet hotel escort service at Seashell Inn, Seashell Legacy, PC Hotel, Marriott, Avari Towers, Beach Luxury, Galaxy Hotel, Ramada, Ocean Pearl and many more.</p>
             </div>
             <div>
               <h3 className="font-semibold mb-3">How fast can you arrange a meeting?</h3>
@@ -278,13 +336,13 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-semibold mb-3">Are your services completely discreet?</h3>
-              <p className="text-black/70">Absolutely. Privacy and confidentiality are our top priorities. All interactions are handled with the utmost discretion.</p>
+              <p className="text-black/70">Absolutely. Privacy and confidentiality are our top priorities.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA - Smaller & Elegant */}
+      {/* Final CTA - Elegant & Smaller */}
       <section className="py-20 bg-gradient-to-br from-red-700 to-black text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">
