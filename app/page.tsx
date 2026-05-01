@@ -354,7 +354,7 @@ export default function Home() {
           
           <a 
             href="tel:03104441188"
-            className="inline-block bg-white text-black font-semibold text-2xl px-16 py-6 rounded-full hover:bg-yellow-400 transition-all shadow-lg"
+            className="inline-block bg-black text-white font-semibold text-2xl px-16 py-6 rounded-full hover:bg-yellow-400 transition-all shadow-lg"
           >
             Book Now
           </a>
