@@ -155,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us - Richer */}
+      {/* Why Choose Us */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -298,7 +298,7 @@ export default function Home() {
             href="tel:03104441188"
             className="inline-block bg-white text-black font-semibold text-2xl px-16 py-6 rounded-full hover:bg-yellow-400 transition-all shadow-lg"
           >
-            0310 - 444 - 1188
+            Book Now
           </a>
         </div>
       </section>
