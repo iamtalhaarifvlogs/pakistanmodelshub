@@ -171,7 +171,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
-            {[22,23,24,25,26,27].map((num, index) => {
+            {[22,23,25,24,26,27].map((num, index) => {
               const titles = [
                 "Verified & Beautiful Escorts",
                 "Complete Privacy Guaranteed",
