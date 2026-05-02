@@ -28,7 +28,7 @@ export default function Home() {
     { id: "seashell-grand", name: "Seashell Grand", img: "/m14.jpg" },
     { id: "seashell-forte", name: "Seashell Forte", img: "/m15.jpg" },
     { id: "pc-hotel", name: "PC Hotel Karachi", img: "/m16.jpg" },
-    { id: "marriott-hotel", name: "Marriott Hotel", img: "/m17.jpg" },
+    { id: "marriott-hotel", name: "Marriott Hotel", img: "/mar1.jpg" },
     { id: "movenpick", name: "Mövenpick Hotel", img: "/m18.jpg" },
     { id: "avari-towers", name: "Avari Towers", img: "/m19.jpg" },
     { id: "beach-luxury", name: "Beach Luxury Hotel", img: "/m20.jpg" },
