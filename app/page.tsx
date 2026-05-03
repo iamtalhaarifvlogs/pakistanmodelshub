@@ -28,7 +28,7 @@ export default function Home() {
     { id: "seashell-grand", name: "Seashell Grand", img: "/m14.jpg" },
     { id: "seashell-forte", name: "Seashell Forte", img: "/m15.jpg" },
     { id: "pc-hotel", name: "PC Hotel Karachi", img: "/m16.jpg" },
-    { id: "marriott-hotel", name: "Marriott Hotel", img: "/mar1.jpg" },
+    { id: "marriott-hotel", name: "Marriott Hotel", img: "/m17.jpg" },
     { id: "movenpick", name: "Mövenpick Hotel", img: "/m18.jpg" },
     { id: "avari-towers", name: "Avari Towers", img: "/m19.jpg" },
     { id: "beach-luxury", name: "Beach Luxury Hotel", img: "/m20.jpg" },
@@ -41,84 +41,6 @@ export default function Home() {
 
   return (
     <main className="bg-white text-black font-sans overflow-hidden">
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/10 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-2xl">P</div>
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight">Pakistan Models Hub</h1>
-              <p className="text-[10px] text-black/60 -mt-1">Premium Escorts Karachi</p>
-            </div>
-          </div>
-
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <Link href="/" className="hover:text-yellow-500 transition-colors">Home</Link>
-            <button onClick={() => scrollToSection("seashell-inn")} className="hover:text-yellow-500 transition-colors">Seashell Inn</button>
-            <button onClick={() => scrollToSection("pc-hotel")} className="hover:text-yellow-500 transition-colors">PC Hotel</button>
-            <button onClick={() => scrollToSection("marriott-hotel")} className="hover:text-yellow-500 transition-colors">Marriott</button>
-            <button onClick={() => scrollToSection("avari-towers")} className="hover:text-yellow-500 transition-colors">Avari Towers</button>
-            <Link href="/about" className="hover:text-yellow-500 transition-colors">About</Link>
-            <Link href="/contact" className="hover:text-yellow-500 transition-colors">Contact</Link>
-          </div>
-
-          <a 
-            href="tel:03104441188"
-            className="hidden md:block bg-red-600 hover:bg-black text-white px-8 py-3 rounded-full font-semibold transition-all text-sm tracking-wider"
-          >
-            CALL 0310-444-1188
-          </a>
-
-          <button 
-            onClick={toggleMenu}
-            className="md:hidden z-50 flex flex-col gap-1.5"
-            aria-label="Toggle menu"
-          >
-            <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? 'opacity-0' : ''}`} />
-            <span className={`block w-7 h-0.5 bg-black transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        <div className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-[60] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="p-8 flex flex-col h-full overflow-y-auto">
-            <div className="flex justify-end mb-12">
-              <button onClick={toggleMenu} className="text-4xl text-black/70 hover:text-black">✕</button>
-            </div>
-
-            <div className="flex flex-col gap-6 text-2xl font-medium">
-              <Link href="/" onClick={closeMenu}>Home</Link>
-              
-              <div className="pt-6 border-t border-gray-200">
-                <p className="text-sm text-gray-500 mb-4 font-medium">HOTELS</p>
-                {hotels.map((hotel) => (
-                  <button 
-                    key={hotel.id}
-                    onClick={() => scrollToSection(hotel.id)}
-                    className="block w-full text-left py-3 hover:text-yellow-500 transition-colors"
-                  >
-                    {hotel.name}
-                  </button>
-                ))}
-              </div>
-
-              <Link href="/about" onClick={closeMenu} className="pt-8 py-2">About</Link>
-              <Link href="/contact" onClick={closeMenu}>Contact</Link>
-            </div>
-
-            <div className="mt-auto pt-12 pb-8">
-              <a 
-                href="tel:03104441188"
-                className="block w-full bg-red-600 text-white text-center py-4 rounded-full font-semibold hover:bg-black transition-all text-lg"
-              >
-                CALL 0310-444-1188
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
@@ -171,7 +93,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
-            {[22,23,25,24,26,27].map((num, index) => {
+            {[22,23,24,25,26,27].map((num, index) => {
               const titles = [
                 "Verified & Beautiful Escorts",
                 "Complete Privacy Guaranteed",
@@ -211,7 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hotels Section - Expanded */}
+      {/* Hotels Section */}
       <section className="py-24 bg-zinc-50" id="hotels">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -222,19 +144,19 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
               { id: "seashell-inn", name: "Seashell Inn", img: "/m12.jpg", desc: "Popular choice for guests seeking luxury and privacy in a serene environment." },
-              { id: "seashell-legacy", name: "Seashell Legacy", img: "/m13.jpg", desc: "Modern luxury hotel with excellent service. Our companions are well-familiar with the location." },
-              { id: "seashell-grand", name: "Seashell Grand", img: "/m14.jpg", desc: "High-end property perfect for VIP clients looking for exclusive experiences." },
-              { id: "seashell-forte", name: "Seashell Forte", img: "/m15.jpg", desc: "Contemporary hotel with great amenities. Fast and discreet service guaranteed." },
-              { id: "pc-hotel", name: "PC Hotel Karachi", img: "/m16.jpg", desc: "One of Karachi's most prestigious 5-star hotels. Professional hotel escort service available." },
-              { id: "marriott-hotel", name: "Marriott Hotel", img: "/m17.jpg", desc: "Iconic 5-star hotel perfect for business travelers and VIP clients." },
-              { id: "movenpick", name: "Mövenpick Hotel", img: "/m18.jpg", desc: "Luxury beachfront hotel with excellent facilities and discreet service." },
-              { id: "avari-towers", name: "Avari Towers", img: "/m19.jpg", desc: "Historic 5-star hotel in the heart of Karachi known for its elegance." },
-              { id: "beach-luxury", name: "Beach Luxury Hotel", img: "/m20.jpg", desc: "Classic luxury hotel with beautiful sea views and private atmosphere." },
-              { id: "galaxy-hotel", name: "Galaxy Hotel", img: "/m21.jpg", desc: "Popular choice for guests looking for comfort and privacy." },
-              { id: "ocean-pearl", name: "Ocean Pearl", img: "/m22.jpg", desc: "Modern hotel with excellent location and fast escort service." },
+              { id: "seashell-legacy", name: "Seashell Legacy", img: "/m13.jpg", desc: "Modern luxury hotel with excellent service." },
+              { id: "seashell-grand", name: "Seashell Grand", img: "/m14.jpg", desc: "High-end property perfect for VIP clients." },
+              { id: "seashell-forte", name: "Seashell Forte", img: "/m15.jpg", desc: "Contemporary hotel with great amenities." },
+              { id: "pc-hotel", name: "PC Hotel Karachi", img: "/m16.jpg", desc: "One of Karachi's most prestigious 5-star hotels." },
+              { id: "marriott-hotel", name: "Marriott Hotel", img: "/m17.jpg", desc: "Iconic 5-star hotel perfect for business travelers." },
+              { id: "movenpick", name: "Mövenpick Hotel", img: "/m18.jpg", desc: "Luxury beachfront hotel with excellent facilities." },
+              { id: "avari-towers", name: "Avari Towers", img: "/m19.jpg", desc: "Historic 5-star hotel known for its elegance." },
+              { id: "beach-luxury", name: "Beach Luxury Hotel", img: "/m20.jpg", desc: "Classic luxury hotel with beautiful sea views." },
+              { id: "galaxy-hotel", name: "Galaxy Hotel", img: "/m21.jpg", desc: "Popular choice for comfort and privacy." },
+              { id: "ocean-pearl", name: "Ocean Pearl", img: "/m22.jpg", desc: "Modern hotel with excellent location." },
               { id: "ramada-creek", name: "Ramada Creek", img: "/m23.jpg", desc: "Convenient location with excellent facilities." },
-              { id: "ramada-airport", name: "Ramada Airport", img: "/m24.jpg", desc: "Perfect for travelers and businessmen near the airport." },
-              { id: "guest-houses", name: "Guest Houses Karachi", img: "/m25.jpg", desc: "Private and discreet guest houses across Karachi for maximum privacy." },
+              { id: "ramada-airport", name: "Ramada Airport", img: "/m24.jpg", desc: "Perfect for travelers near the airport." },
+              { id: "guest-houses", name: "Guest Houses Karachi", img: "/m25.jpg", desc: "Private and discreet guest houses for maximum privacy." },
             ].map((hotel) => (
               <div key={hotel.id} id={hotel.id} className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
                 <div className="relative h-80">
@@ -253,7 +175,7 @@ export default function Home() {
 
                 <div className="p-8">
                   <p className="text-black/70 mb-6 leading-relaxed">
-                    {hotel.desc} Our verified VIP companions provide premium and discreet escort service at {hotel.name}.
+                    {hotel.desc} Our verified VIP companions provide premium and discreet service at {hotel.name}.
                   </p>
                   <a 
                     href="tel:03104441188"
@@ -268,7 +190,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Rate List Section - High SEO */}
+      {/* Rate List Section */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -342,7 +264,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA - Elegant & Smaller */}
+      {/* Final CTA */}
       <section className="py-20 bg-gradient-to-br from-red-700 to-black text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">
@@ -360,12 +282,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-zinc-950 text-white/70 py-16 text-center">
-        <p>© 2026 Pakistan Models Hub • Karachi Escorts Service</p>
-        <p className="mt-2">DHA • Clifton • PECHS • Nazimabad • Tariq Road • Bahria Town • All Major Hotels</p>
-      </footer>
     </main>
   );
 }
