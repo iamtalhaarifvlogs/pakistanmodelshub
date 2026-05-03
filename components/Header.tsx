@@ -48,13 +48,13 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-2xl">P</div>
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">Pakistan Models Hub</h1>
-            <p className="text-[10px] text-black/60 -mt-1">Premium Escorts Karachi</p>
+            <h1 className="text-2xl font-bold tracking-tight text-black">Pakistan Models Hub</h1>
+            <p className="text-[10px] text-black/70 -mt-1">Premium Escorts Karachi</p>
           </div>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <div className="hidden md:flex items-center gap-7 text-sm font-medium text-black">
           <Link href="/" className="hover:text-yellow-500 transition-colors">Home</Link>
           <button onClick={() => scrollToHotel("seashell-inn")} className="hover:text-yellow-500 transition-colors">Seashell Inn</button>
           <button onClick={() => scrollToHotel("pc-hotel")} className="hover:text-yellow-500 transition-colors">PC Hotel</button>
@@ -89,7 +89,7 @@ export default function Header() {
             <button onClick={toggleMenu} className="text-4xl text-black/70 hover:text-black">✕</button>
           </div>
 
-          <div className="flex flex-col gap-6 text-2xl font-medium">
+          <div className="flex flex-col gap-6 text-2xl font-medium text-black">
             <Link href="/" onClick={closeMenu}>Home</Link>
             
             <div className="pt-6 border-t border-gray-200">
