@@ -52,31 +52,35 @@ export default function Header() {
             </button>
 
             {/* Dropdown Menu */}
-            <div className="absolute hidden group-hover:block pt-4 w-64">
-              <div className="bg-white shadow-xl border border-gray-100 rounded-2xl py-6 px-6 text-sm max-h-[70vh] overflow-y-auto">
+            <div className="absolute hidden group-hover:block pt-4 w-72 z-50">
+              <div className="bg-white shadow-2xl border border-gray-100 rounded-2xl py-6 px-6 text-sm max-h-[75vh] overflow-y-auto">
+                
+                <div className="font-semibold text-yellow-600 mb-3">Celebrity & Premium</div>
+                <Link href="/celebrity-escorts-karachi" className="block hover:text-yellow-500 mb-5">Celebrity Escorts Karachi</Link>
+
                 <div className="font-semibold text-yellow-600 mb-3">Popular Areas</div>
-                <div className="grid grid-cols-1 gap-y-2.5 mb-6">
+                <div className="grid grid-cols-1 gap-y-2.5 mb-6 text-[15px]">
                   <Link href="/karachi-escorts-in-dha" className="hover:text-yellow-500">DHA Karachi</Link>
                   <Link href="/karachi-escorts-in-clifton" className="hover:text-yellow-500">Clifton Karachi</Link>
                   <Link href="/escorts-in-saddar-karachi" className="hover:text-yellow-500">Saddar Karachi</Link>
                   <Link href="/escorts-in-pechs-karachi" className="hover:text-yellow-500">PECHS Karachi</Link>
+                  <Link href="/escorts-in-bahria-town-karachi" className="hover:text-yellow-500">Bahria Town</Link>
+                  <Link href="/escorts-in-gulshan-e-iqbal-karachi" className="hover:text-yellow-500">Gulshan-e-Iqbal</Link>
                   <Link href="/escorts-in-sea-view-karachi" className="hover:text-yellow-500">Sea View Karachi</Link>
                   <Link href="/escorts-in-shahrah-e-faisal-karachi" className="hover:text-yellow-500">Shahrah-e-Faisal</Link>
-                  <Link href="/escorts-in-nazimabad-karachi" className="hover:text-yellow-500">Nazimabad</Link>
+                  <Link href="/escorts-in-nazimabad-karachi" className="hover:text-yellow-500">Nazimabad Karachi</Link>
+                  <Link href="/escorts-in-north-nazimabad-karachi" className="hover:text-yellow-500">North Nazimabad</Link>
                 </div>
 
-                <div className="font-semibold text-yellow-600 mb-3">Celebrity &amp; Premium</div>
-                <Link href="/celebrity-escorts-karachi" className="block hover:text-yellow-500 mb-4">Celebrity Escorts Karachi</Link>
-
                 <div className="font-semibold text-yellow-600 mb-3">Hotels</div>
-                <div className="grid grid-cols-1 gap-y-2.5 text-sm">
-                  <Link href="/escorts-in-pc-hotel-karachi" className="hover:text-yellow-500">PC Hotel</Link>
+                <div className="grid grid-cols-1 gap-y-2.5 text-[15px]">
+                  <Link href="/escorts-in-pc-hotel-karachi" className="hover:text-yellow-500">PC Hotel Karachi</Link>
                   <Link href="/escorts-in-marriott-hotel-karachi" className="hover:text-yellow-500">Marriott Hotel</Link>
                   <Link href="/escorts-in-movenpick-hotel-karachi" className="hover:text-yellow-500">Mövenpick Hotel</Link>
-                  <Link href="/escorts-in-ramada-plaza-hotel-karachi" className="hover:text-yellow-500">Ramada Plaza</Link>
-                  <Link href="/escorts-in-regent-plaza-hotel-karachi" className="hover:text-yellow-500">Regent Plaza</Link>
-                  <Link href="/escorts-in-sea-shell-inn-hotel-karachi" className="hover:text-yellow-500">Sea Shell Inn</Link>
-                  <Link href="/escorts-in-avari-towers-hotel" className="hover:text-yellow-500">Avari Towers</Link>
+                  <Link href="/escorts-in-ramada-plaza-hotel-karachi" className="hover:text-yellow-500">Ramada Plaza Hotel</Link>
+                  <Link href="/escorts-in-regent-plaza-hotel-karachi" className="hover:text-yellow-500">Regent Plaza Hotel</Link>
+                  <Link href="/escorts-in-sea-shell-inn-hotel-karachi" className="hover:text-yellow-500">Sea Shell Inn Hotel</Link>
+                  <Link href="/escorts-in-avari-towers-hotel" className="hover:text-yellow-500">Avari Towers Hotel</Link>
                   <Link href="/escorts-in-beach-luxury-hotel" className="hover:text-yellow-500">Beach Luxury Hotel</Link>
                 </div>
               </div>
@@ -116,26 +120,41 @@ export default function Header() {
           <div className="flex flex-col gap-6 text-2xl font-medium text-black">
             <Link href="/" onClick={closeMenu}>Home</Link>
 
-            {/* Services Section */}
+            {/* Services Section - Mobile */}
             <div>
               <button 
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex items-center justify-between w-full text-left py-2"
+                className="flex items-center justify-between w-full text-left py-2 border-b pb-3"
               >
                 Services
                 <span>{servicesOpen ? '▲' : '▼'}</span>
               </button>
 
               {servicesOpen && (
-                <div className="pl-6 pt-4 flex flex-col gap-4 text-lg border-l border-gray-200">
-                  <Link href="/celebrity-escorts-karachi" onClick={closeMenu} className="hover:text-yellow-500">Celebrity Escorts</Link>
+                <div className="pl-6 pt-6 flex flex-col gap-5 text-lg border-l border-gray-200">
+                  <Link href="/celebrity-escorts-karachi" onClick={closeMenu} className="hover:text-yellow-500 font-medium">Celebrity Escorts</Link>
+                  
+                  <div className="text-sm text-gray-500 mt-4">AREAS</div>
                   <Link href="/karachi-escorts-in-dha" onClick={closeMenu} className="hover:text-yellow-500">DHA Karachi</Link>
                   <Link href="/karachi-escorts-in-clifton" onClick={closeMenu} className="hover:text-yellow-500">Clifton Karachi</Link>
                   <Link href="/escorts-in-saddar-karachi" onClick={closeMenu} className="hover:text-yellow-500">Saddar Karachi</Link>
                   <Link href="/escorts-in-pechs-karachi" onClick={closeMenu} className="hover:text-yellow-500">PECHS Karachi</Link>
+                  <Link href="/escorts-in-bahria-town-karachi" onClick={closeMenu} className="hover:text-yellow-500">Bahria Town</Link>
+                  <Link href="/escorts-in-gulshan-e-iqbal-karachi" onClick={closeMenu} className="hover:text-yellow-500">Gulshan-e-Iqbal</Link>
                   <Link href="/escorts-in-sea-view-karachi" onClick={closeMenu} className="hover:text-yellow-500">Sea View Karachi</Link>
                   <Link href="/escorts-in-shahrah-e-faisal-karachi" onClick={closeMenu} className="hover:text-yellow-500">Shahrah-e-Faisal</Link>
-                  <Link href="/escorts-in-nazimabad-karachi" onClick={closeMenu} className="hover:text-yellow-500">Nazimabad Karachi</Link>
+                  <Link href="/escorts-in-nazimabad-karachi" onClick={closeMenu} className="hover:text-yellow-500">Nazimabad</Link>
+                  <Link href="/escorts-in-north-nazimabad-karachi" onClick={closeMenu} className="hover:text-yellow-500">North Nazimabad</Link>
+
+                  <div className="text-sm text-gray-500 mt-6">HOTELS</div>
+                  <Link href="/escorts-in-pc-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-500">PC Hotel</Link>
+                  <Link href="/escorts-in-marriott-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-500">Marriott Hotel</Link>
+                  <Link href="/escorts-in-movenpick-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-500">Mövenpick Hotel</Link>
+                  <Link href="/escorts-in-ramada-plaza-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-500">Ramada Plaza</Link>
+                  <Link href="/escorts-in-regent-plaza-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-500">Regent Plaza</Link>
+                  <Link href="/escorts-in-sea-shell-inn-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-500">Sea Shell Inn</Link>
+                  <Link href="/escorts-in-avari-towers-hotel" onClick={closeMenu} className="hover:text-yellow-500">Avari Towers</Link>
+                  <Link href="/escorts-in-beach-luxury-hotel" onClick={closeMenu} className="hover:text-yellow-500">Beach Luxury Hotel</Link>
                 </div>
               )}
             </div>
