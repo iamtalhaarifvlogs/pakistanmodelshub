@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://pakistanmodelshub.com';
 
   return [
+    // Core Pages
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -29,14 +30,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.95,
     },
+
+    // Special Page
     {
       url: `${baseUrl}/celebrity-escorts-karachi`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
-      priority: 0.9,
+      priority: 0.92,
     },
 
-    // === Location & Area Pages ===
+    // Location / Area Pages
     { url: `${baseUrl}/karachi-escorts-in-dha`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.85 },
     { url: `${baseUrl}/karachi-escorts-in-clifton`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.85 },
     { url: `${baseUrl}/escorts-in-saddar-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.82 },
@@ -48,11 +51,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/escorts-in-sea-view-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.82 },
     { url: `${baseUrl}/escorts-in-shahrah-e-faisal-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.82 },
 
-    // === Hotel Pages ===
-    { url: `${baseUrl}/escorts-in-pc-hotel-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: `${baseUrl}/escorts-in-ramada-plaza-hotel-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: `${baseUrl}/escorts-in-regent-plaza-hotel-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: `${baseUrl}/escorts-in-sea-shell-inn-hotel-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
+    // Hotel Pages
+    { url: `${baseUrl}/escorts-in-pc-hotel-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.80 },
+    { url: `${baseUrl}/escorts-in-ramada-plaza-hotel-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.80 },
+    { url: `${baseUrl}/escorts-in-regent-plaza-hotel-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.80 },
+    { url: `${baseUrl}/escorts-in-sea-shell-inn-hotel-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.80 },
     { url: `${baseUrl}/escorts-in-avari-towers-hotel`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.78 },
     { url: `${baseUrl}/escorts-in-marriott-hotel-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.78 },
     { url: `${baseUrl}/escorts-in-movenpick-hotel-karachi`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.78 },
