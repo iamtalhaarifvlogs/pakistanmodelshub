@@ -81,7 +81,7 @@ export default function Header() {
                   <Link href="/escorts-in-regent-plaza-hotel-karachi" className="hover:text-yellow-500">Regent Plaza Hotel</Link>
                   <Link href="/escorts-in-sea-shell-inn-hotel-karachi" className="hover:text-yellow-500">Sea Shell Inn Hotel</Link>
                   <Link href="/escorts-in-avari-towers-hotel" className="hover:text-yellow-500">Avari Towers Hotel</Link>
-                  <Link href="/escorts-in-beach-luxury-hotel" className="hover:text-yellow-500">Beach Luxury Hotel</Link>
+                  <Link href="/escorts-in-beach-luxury-hotel-karachi" className="hover:text-yellow-500">Beach Luxury Hotel</Link>
                 </div>
               </div>
             </div>
