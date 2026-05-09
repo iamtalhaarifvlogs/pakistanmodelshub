@@ -16,8 +16,8 @@ interface Message {
   timestamp: Date;
 }
 
-// Strong type assertion
-const knowledge: KnowledgeEntry[] = knowledgeData as unknown as KnowledgeEntry[];
+// Force TypeScript to accept the JSON
+const knowledge = knowledgeData as KnowledgeEntry[];
 
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,6 @@ const Chatbot: React.FC = () => {
 
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  // Auto scroll to latest message
   const scrollToBottom = () => {
     chatContainerRef.current?.scrollTo({
       top: chatContainerRef.current.scrollHeight,
@@ -39,7 +38,6 @@ const Chatbot: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Typing animation
   const typeMessage = async (text: string, messageId: number) => {
     setIsTyping(true);
     let displayedText = '';
@@ -62,7 +60,7 @@ const Chatbot: React.FC = () => {
     let bestMatch: KnowledgeEntry | null = null;
     let highestScore = 0;
 
-    knowledge.forEach((entry) => {
+    (knowledge as KnowledgeEntry[]).forEach((entry) => {
       let score = 0;
       entry.keywords.forEach((keyword) => {
         if (lowerMsg.includes(keyword.toLowerCase())) {
@@ -76,8 +74,12 @@ const Chatbot: React.FC = () => {
       }
     });
 
-    return bestMatch?.reply || 
-      "I'm not sure about that. Could you rephrase or ask something about our models, services, or bookings?";
+    // Explicit check to avoid TypeScript "never" error
+    if (bestMatch && typeof bestMatch.reply === 'string') {
+      return bestMatch.reply;
+    }
+
+    return "I'm not sure about that. Could you rephrase or ask something about our models, services, or bookings?";
   };
 
   const sendMessage = () => {
@@ -94,7 +96,6 @@ const Chatbot: React.FC = () => {
     setMessages((prev) => [...prev, userMsg]);
     setInput('');
 
-    // Bot response
     setTimeout(() => {
       const botText = getBotResponse(userText);
       const botMsgId = Date.now() + 1;
@@ -122,12 +123,7 @@ const Chatbot: React.FC = () => {
       setTimeout(() => {
         const greetingId = Date.now();
         setMessages([
-          {
-            id: greetingId,
-            text: '',
-            isUser: false,
-            timestamp: new Date(),
-          },
+          { id: greetingId, text: '', isUser: false, timestamp: new Date() },
         ]);
         typeMessage(
           "Hello! 👋 Welcome to Pakistan Models Hub. How can I help you today?",
@@ -137,9 +133,7 @@ const Chatbot: React.FC = () => {
     }
   };
 
-  const closeChat = () => {
-    setIsOpen(false);
-  };
+  const closeChat = () => setIsOpen(false);
 
   return (
     <>
@@ -152,7 +146,7 @@ const Chatbot: React.FC = () => {
         💬
       </button>
 
-      {/* Fullscreen Chat Modal */}
+      {/* Chat Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-[100] bg-black/90 flex flex-col">
           {/* Header */}
@@ -163,18 +157,18 @@ const Chatbot: React.FC = () => {
               </div>
               <div>
                 <h2 className="text-black font-semibold">Pakistan Models Hub</h2>
-                <p className="text-green-600 text-sm">● Always Online</p>
+                <p className="text-green-600 text-sm">● Online</p>
               </div>
             </div>
             <button
               onClick={closeChat}
-              className="text-3xl text-black hover:bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+              className="text-3xl text-black hover:bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center"
             >
               ✕
             </button>
           </div>
 
-          {/* Messages */}
+          {/* Messages Area */}
           <div
             ref={chatContainerRef}
             className="flex-1 overflow-y-auto bg-white p-4 space-y-4"
@@ -198,14 +192,14 @@ const Chatbot: React.FC = () => {
 
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-yellow-100 text-black px-4 py-3 rounded-2xl rounded-bl-none">
+                <div className="bg-yellow-100 px-4 py-3 rounded-2xl rounded-bl-none">
                   typing...
                 </div>
               </div>
             )}
           </div>
 
-          {/* Input Bar */}
+          {/* Input Area */}
           <div className="bg-white p-4 border-t">
             <div className="flex gap-2 max-w-3xl mx-auto">
               <input
@@ -220,7 +214,7 @@ const Chatbot: React.FC = () => {
               <button
                 onClick={sendMessage}
                 disabled={!input.trim() || isTyping}
-                className="bg-yellow-400 hover:bg-yellow-300 disabled:bg-gray-300 px-8 rounded-full font-medium text-black transition-colors"
+                className="bg-yellow-400 hover:bg-yellow-300 disabled:bg-gray-300 px-8 rounded-full font-medium text-black"
               >
                 Send
               </button>
