@@ -4,11 +4,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import knowledgeData from './knowledge.json';
 
-interface KnowledgeEntry {
-  keywords: string[];
-  reply: string;
-}
-
 interface Message {
   id: number;
   text: string;
@@ -16,8 +11,8 @@ interface Message {
   timestamp: Date;
 }
 
-// Force TypeScript to accept the JSON
-const knowledge = knowledgeData as KnowledgeEntry[];
+// Use any to bypass strict JSON typing issues
+const knowledge = knowledgeData as any[];
 
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,12 +52,14 @@ const Chatbot: React.FC = () => {
   const getBotResponse = (userMessage: string): string => {
     const lowerMsg = userMessage.toLowerCase().trim();
 
-    let bestMatch: KnowledgeEntry | null = null;
+    let bestReply = "";
     let highestScore = 0;
 
-    (knowledge as KnowledgeEntry[]).forEach((entry) => {
+    knowledge.forEach((entry: any) => {
+      if (!entry?.keywords || !entry?.reply) return;
+
       let score = 0;
-      entry.keywords.forEach((keyword) => {
+      entry.keywords.forEach((keyword: string) => {
         if (lowerMsg.includes(keyword.toLowerCase())) {
           score += 1;
         }
@@ -70,16 +67,12 @@ const Chatbot: React.FC = () => {
 
       if (score > highestScore) {
         highestScore = score;
-        bestMatch = entry;
+        bestReply = entry.reply;
       }
     });
 
-    // Explicit check to avoid TypeScript "never" error
-    if (bestMatch && typeof bestMatch.reply === 'string') {
-      return bestMatch.reply;
-    }
-
-    return "I'm not sure about that. Could you rephrase or ask something about our models, services, or bookings?";
+    return bestReply || 
+      "I'm not sure about that. Could you rephrase or ask something about our models, services, or bookings?";
   };
 
   const sendMessage = () => {
@@ -137,7 +130,6 @@ const Chatbot: React.FC = () => {
 
   return (
     <>
-      {/* Floating Button */}
       <button
         onClick={openChat}
         className="fixed bottom-6 left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-yellow-400 text-black shadow-2xl hover:bg-yellow-300 hover:scale-110 active:scale-95 transition-all"
@@ -146,10 +138,8 @@ const Chatbot: React.FC = () => {
         💬
       </button>
 
-      {/* Chat Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-[100] bg-black/90 flex flex-col">
-          {/* Header */}
           <div className="bg-white px-6 py-4 flex items-center justify-between border-b border-yellow-400">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-2xl">
@@ -168,7 +158,6 @@ const Chatbot: React.FC = () => {
             </button>
           </div>
 
-          {/* Messages Area */}
           <div
             ref={chatContainerRef}
             className="flex-1 overflow-y-auto bg-white p-4 space-y-4"
@@ -199,7 +188,6 @@ const Chatbot: React.FC = () => {
             )}
           </div>
 
-          {/* Input Area */}
           <div className="bg-white p-4 border-t">
             <div className="flex gap-2 max-w-3xl mx-auto">
               <input
