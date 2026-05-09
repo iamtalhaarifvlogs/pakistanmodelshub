@@ -162,7 +162,7 @@ const Chatbot: React.FC = () => {
           {/* Messages Area */}
           <div
             ref={chatContainerRef}
-            className="flex-1 overflow-y-auto bg-white p-6 space-y-4"
+            className="flex-1 overflow-y-auto bg-white p-6 space-y-4 pb-24"
           >
             {messages.map((msg) => (
               <div
@@ -172,8 +172,8 @@ const Chatbot: React.FC = () => {
                 <div
                   className={`max-w-[78%] px-5 py-3.5 rounded-3xl text-[16px] leading-relaxed font-semibold ${
                     msg.isUser
-                      ? 'bg-black text-white rounded-br-none'     // User: Black bg, White text
-                      : 'bg-yellow-400 text-black rounded-bl-none' // Bot: Yellow bg, Black text
+                      ? 'bg-black text-white rounded-br-none'
+                      : 'bg-yellow-400 text-black rounded-bl-none'
                   }`}
                 >
                   {msg.text}
@@ -190,9 +190,9 @@ const Chatbot: React.FC = () => {
             )}
           </div>
 
-          {/* Input Area - Fixed Layout */}
-          <div className="bg-white border-t border-gray-200 p-4 safe-area-bottom">
-            <div className="flex gap-3 max-w-4xl mx-auto">
+          {/* Input Area - FIXED */}
+          <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-10">
+            <div className="max-w-4xl mx-auto flex gap-3">
               <input
                 type="text"
                 value={input}
@@ -205,7 +205,7 @@ const Chatbot: React.FC = () => {
               <button
                 onClick={sendMessage}
                 disabled={!input.trim() || isTyping}
-                className="bg-yellow-400 hover:bg-yellow-300 disabled:bg-gray-300 disabled:text-gray-600 px-9 py-4 rounded-full font-bold text-black text-[16px] transition-all active:scale-95 whitespace-nowrap"
+                className="bg-yellow-400 hover:bg-yellow-300 disabled:bg-gray-300 disabled:text-gray-600 px-8 py-4 rounded-full font-bold text-black text-[16px] transition-all active:scale-95 whitespace-nowrap flex-shrink-0"
               >
                 Send
               </button>
