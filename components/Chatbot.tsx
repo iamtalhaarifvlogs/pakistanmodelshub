@@ -2,7 +2,12 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import knowledge from '@/components/knowledge.json';
+import knowledgeData from './knowledge.json';
+
+interface KnowledgeEntry {
+  keywords: string[];
+  reply: string;
+}
 
 interface Message {
   id: number;
@@ -11,17 +16,15 @@ interface Message {
   timestamp: Date;
 }
 
-interface KnowledgeEntry {
-  keywords: string[];
-  reply: string;
-}
+// Type assertion for JSON import
+const knowledge: KnowledgeEntry[] = knowledgeData as KnowledgeEntry[];
 
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  
+
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -39,40 +42,37 @@ const Chatbot: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Typing effect for bot messages
+  // Typing effect
   const typeMessage = async (text: string, messageId: number) => {
     setIsTyping(true);
     let displayedText = '';
-    
+
     for (let i = 0; i <= text.length; i++) {
       displayedText = text.slice(0, i);
-      setMessages(prev => 
-        prev.map(msg => 
-          msg.id === messageId 
-            ? { ...msg, text: displayedText } 
-            : msg
+      setMessages((prev) =>
+        prev.map((msg) =>
+          msg.id === messageId ? { ...msg, text: displayedText } : msg
         )
       );
-      await new Promise(resolve => setTimeout(resolve, 25)); // typing speed
+      await new Promise((resolve) => setTimeout(resolve, 25));
     }
     setIsTyping(false);
   };
 
   const getBotResponse = (userMessage: string): string => {
     const lowerMsg = userMessage.toLowerCase().trim();
-    
-    // Find best match
+
     let bestMatch: KnowledgeEntry | null = null;
     let highestScore = 0;
 
-    (knowledge as KnowledgeEntry[]).forEach(entry => {
+    knowledge.forEach((entry) => {
       let score = 0;
-      entry.keywords.forEach(keyword => {
+      entry.keywords.forEach((keyword) => {
         if (lowerMsg.includes(keyword.toLowerCase())) {
           score += 1;
         }
       });
-      
+
       if (score > highestScore) {
         highestScore = score;
         bestMatch = entry;
@@ -97,14 +97,14 @@ const Chatbot: React.FC = () => {
       timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setInput('');
 
-    // Simulate thinking delay
+    // Bot reply delay
     setTimeout(() => {
       const botReplyText = getBotResponse(userText);
       const botMessageId = Date.now() + 1;
-      
+
       const botMessage: Message = {
         id: botMessageId,
         text: '',
@@ -112,9 +112,7 @@ const Chatbot: React.FC = () => {
         timestamp: new Date(),
       };
 
-      setMessages(prev => [...prev, botMessage]);
-      
-      // Start typing effect
+      setMessages((prev) => [...prev, botMessage]);
       typeMessage(botReplyText, botMessageId);
     }, 600);
   };
@@ -125,10 +123,9 @@ const Chatbot: React.FC = () => {
     }
   };
 
-  // Open modal and show greeting
   const openChat = () => {
     setIsOpen(true);
-    
+
     if (messages.length === 0) {
       setTimeout(() => {
         const greetingId = Date.now();
@@ -138,7 +135,7 @@ const Chatbot: React.FC = () => {
           isUser: false,
           timestamp: new Date(),
         };
-        
+
         setMessages([greetingMessage]);
         typeMessage(
           "Hello! 👋 Welcome to Pakistan Models Hub. How can I help you today? Ask me anything about our models, bookings, or services.",
@@ -177,17 +174,17 @@ const Chatbot: React.FC = () => {
                 <p className="text-xs text-green-600">● Online</p>
               </div>
             </div>
-            
+
             <button
               onClick={closeChat}
-              className="text-black hover:bg-gray-100 p-3 rounded-full transition-colors"
+              className="text-black hover:bg-gray-100 p-3 rounded-full transition-colors text-xl"
               aria-label="Close Chat"
             >
               ✕
             </button>
           </div>
 
-          {/* Chat Messages */}
+          {/* Chat Messages Area */}
           <div
             ref={chatContainerRef}
             className="flex-1 overflow-y-auto bg-white p-4 space-y-4"
@@ -208,11 +205,11 @@ const Chatbot: React.FC = () => {
                 </div>
               </div>
             ))}
-            
+
             {isTyping && (
               <div className="flex justify-start">
                 <div className="bg-yellow-100 text-black rounded-2xl rounded-bl-none px-4 py-3">
-                  <span className="animate-pulse">typing...</span>
+                  typing...
                 </div>
               </div>
             )}
