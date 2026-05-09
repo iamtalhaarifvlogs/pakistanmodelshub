@@ -11,7 +11,6 @@ interface Message {
   timestamp: Date;
 }
 
-// Use any to bypass strict JSON typing issues
 const knowledge = knowledgeData as any[];
 
 const Chatbot: React.FC = () => {
@@ -51,7 +50,6 @@ const Chatbot: React.FC = () => {
 
   const getBotResponse = (userMessage: string): string => {
     const lowerMsg = userMessage.toLowerCase().trim();
-
     let bestReply = "";
     let highestScore = 0;
 
@@ -130,6 +128,7 @@ const Chatbot: React.FC = () => {
 
   return (
     <>
+      {/* Floating Button */}
       <button
         onClick={openChat}
         className="fixed bottom-6 left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-yellow-400 text-black shadow-2xl hover:bg-yellow-300 hover:scale-110 active:scale-95 transition-all"
@@ -138,29 +137,32 @@ const Chatbot: React.FC = () => {
         💬
       </button>
 
+      {/* Fullscreen Chat Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-[100] bg-black/90 flex flex-col">
+          {/* Header */}
           <div className="bg-white px-6 py-4 flex items-center justify-between border-b border-yellow-400">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-2xl">
                 🇵🇰
               </div>
               <div>
-                <h2 className="text-black font-semibold">Pakistan Models Hub</h2>
+                <h2 className="text-black font-bold text-lg">Pakistan Models Hub</h2>
                 <p className="text-green-600 text-sm">● Online</p>
               </div>
             </div>
             <button
               onClick={closeChat}
-              className="text-3xl text-black hover:bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center"
+              className="text-3xl text-black hover:bg-gray-100 w-11 h-11 rounded-full flex items-center justify-center transition-colors"
             >
               ✕
             </button>
           </div>
 
+          {/* Messages Area */}
           <div
             ref={chatContainerRef}
-            className="flex-1 overflow-y-auto bg-white p-4 space-y-4"
+            className="flex-1 overflow-y-auto bg-white p-6 space-y-4"
           >
             {messages.map((msg) => (
               <div
@@ -168,10 +170,10 @@ const Chatbot: React.FC = () => {
                 className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[75%] px-4 py-3 rounded-2xl text-[15px] leading-relaxed ${
+                  className={`max-w-[78%] px-5 py-3.5 rounded-3xl text-[16px] leading-relaxed font-semibold ${
                     msg.isUser
-                      ? 'bg-white border border-gray-200 rounded-br-none'
-                      : 'bg-yellow-100 rounded-bl-none'
+                      ? 'bg-black text-white rounded-br-none'     // User: Black bg, White text
+                      : 'bg-yellow-400 text-black rounded-bl-none' // Bot: Yellow bg, Black text
                   }`}
                 >
                   {msg.text}
@@ -181,28 +183,29 @@ const Chatbot: React.FC = () => {
 
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-yellow-100 px-4 py-3 rounded-2xl rounded-bl-none">
+                <div className="bg-yellow-400 text-black px-5 py-3.5 rounded-3xl rounded-bl-none font-semibold">
                   typing...
                 </div>
               </div>
             )}
           </div>
 
-          <div className="bg-white p-4 border-t">
-            <div className="flex gap-2 max-w-3xl mx-auto">
+          {/* Input Area - Fixed Layout */}
+          <div className="bg-white border-t border-gray-200 p-4 safe-area-bottom">
+            <div className="flex gap-3 max-w-4xl mx-auto">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Type your message..."
-                className="flex-1 bg-gray-100 rounded-full px-6 py-3 text-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                className="flex-1 bg-gray-100 text-black placeholder:text-gray-500 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-[16px] font-medium"
                 disabled={isTyping}
               />
               <button
                 onClick={sendMessage}
                 disabled={!input.trim() || isTyping}
-                className="bg-yellow-400 hover:bg-yellow-300 disabled:bg-gray-300 px-8 rounded-full font-medium text-black"
+                className="bg-yellow-400 hover:bg-yellow-300 disabled:bg-gray-300 disabled:text-gray-600 px-9 py-4 rounded-full font-bold text-black text-[16px] transition-all active:scale-95 whitespace-nowrap"
               >
                 Send
               </button>
