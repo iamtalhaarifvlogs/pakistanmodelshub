@@ -139,9 +139,9 @@ const Chatbot: React.FC = () => {
 
       {/* Fullscreen Chat Modal */}
       {isOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/90 flex flex-col">
+        <div className="fixed inset-0 z-[100] bg-black/90 flex flex-col overflow-hidden">
           {/* Header */}
-          <div className="bg-white px-6 py-4 flex items-center justify-between border-b border-yellow-400">
+          <div className="bg-white px-6 py-4 flex items-center justify-between border-b border-yellow-400 flex-shrink-0">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-2xl">
                 🇵🇰
@@ -162,7 +162,7 @@ const Chatbot: React.FC = () => {
           {/* Messages Area */}
           <div
             ref={chatContainerRef}
-            className="flex-1 overflow-y-auto bg-white p-6 space-y-4 pb-24"
+            className="flex-1 overflow-y-auto bg-white p-6 space-y-4 pb-28"
           >
             {messages.map((msg) => (
               <div
@@ -190,25 +190,27 @@ const Chatbot: React.FC = () => {
             )}
           </div>
 
-          {/* Input Area - FIXED */}
-          <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-10">
-            <div className="max-w-4xl mx-auto flex gap-3">
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={handleKeyDown}
-                placeholder="Type your message..."
-                className="flex-1 bg-gray-100 text-black placeholder:text-gray-500 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-[16px] font-medium"
-                disabled={isTyping}
-              />
-              <button
-                onClick={sendMessage}
-                disabled={!input.trim() || isTyping}
-                className="bg-yellow-400 hover:bg-yellow-300 disabled:bg-gray-300 disabled:text-gray-600 px-8 py-4 rounded-full font-bold text-black text-[16px] transition-all active:scale-95 whitespace-nowrap flex-shrink-0"
-              >
-                Send
-              </button>
+          {/* Input Area - Final Fix */}
+          <div className="bg-white border-t border-gray-200 p-4 flex-shrink-0">
+            <div className="max-w-4xl mx-auto w-full">
+              <div className="flex gap-3 w-full">
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  placeholder="Type your message..."
+                  className="flex-1 bg-gray-100 text-black placeholder:text-gray-500 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-[16px] font-medium min-w-0"
+                  disabled={isTyping}
+                />
+                <button
+                  onClick={sendMessage}
+                  disabled={!input.trim() || isTyping}
+                  className="bg-yellow-400 hover:bg-yellow-300 disabled:bg-gray-300 disabled:text-gray-600 px-10 py-4 rounded-full font-bold text-black text-[16px] transition-all active:scale-95 whitespace-nowrap flex-shrink-0"
+                >
+                  Send
+                </button>
+              </div>
             </div>
           </div>
         </div>
