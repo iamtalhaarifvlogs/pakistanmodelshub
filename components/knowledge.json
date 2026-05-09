@@ -1,0 +1,43 @@
+// knowledge.json
+[
+  {
+    "keywords": ["hello", "hi", "hey", "assalamualaikum", "salam"],
+    "reply": "Hello! 👋 Welcome to Pakistan Models Hub. How can I help you find the perfect model today?"
+  },
+  {
+    "keywords": ["model", "models", "talent"],
+    "reply": "We have a wide range of professional male and female models from all over Pakistan. Would you like to see portfolios or book someone for a shoot?"
+  },
+  {
+    "keywords": ["book", "booking", "hire", "contact"],
+    "reply": "To book a model, please tell me the date, city, and type of project (fashion, commercial, editorial, etc.). I can guide you through the process."
+  },
+  {
+    "keywords": ["price", "cost", "rate", "fees"],
+    "reply": "Our models' rates vary based on experience, project type, and duration. Starting from PKR 15,000 for half-day shoots. Would you like a custom quote?"
+  },
+  {
+    "keywords": ["lahore", "karachi", "islamabad", "rawalpindi"],
+    "reply": "We have excellent local models available in Lahore, Karachi, Islamabad, and other major cities. Which city are you planning your shoot in?"
+  },
+  {
+    "keywords": ["fashion", "shoot", "photoshoot", "campaign"],
+    "reply": "Perfect! We specialize in fashion, editorial, and commercial campaigns. Our models are experienced with top photographers and brands across Pakistan."
+  },
+  {
+    "keywords": ["portfolio", "profile", "gallery"],
+    "reply": "You can browse our full model portfolio on the website. Would you like recommendations based on age range, look, or height?"
+  },
+  {
+    "keywords": ["female", "girl", "woman"],
+    "reply": "We have many talented female models. What age group and style are you looking for?"
+  },
+  {
+    "keywords": ["male", "boy", "man"],
+    "reply": "We have professional male models available. Please share more details about your project."
+  },
+  {
+    "keywords": ["thank", "thanks", "shukriya"],
+    "reply": "You're most welcome! Feel free to reach out anytime. We're here to help make your project successful."
+  }
+]
