@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import knowledge from '../knowledge.json';
+import knowledge from '@/components/knowledge.json';
 
 interface Message {
   id: number;
