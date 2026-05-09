@@ -16,8 +16,8 @@ interface Message {
   timestamp: Date;
 }
 
-// Type assertion for JSON import
-const knowledge: KnowledgeEntry[] = knowledgeData as KnowledgeEntry[];
+// Strong type assertion
+const knowledge: KnowledgeEntry[] = knowledgeData as unknown as KnowledgeEntry[];
 
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,23 +26,20 @@ const Chatbot: React.FC = () => {
   const [isTyping, setIsTyping] = useState(false);
 
   const chatContainerRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-scroll to bottom
+  // Auto scroll to latest message
   const scrollToBottom = () => {
-    if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTo({
-        top: chatContainerRef.current.scrollHeight,
-        behavior: 'smooth',
-      });
-    }
+    chatContainerRef.current?.scrollTo({
+      top: chatContainerRef.current.scrollHeight,
+      behavior: 'smooth',
+    });
   };
 
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
 
-  // Typing effect
+  // Typing animation
   const typeMessage = async (text: string, messageId: number) => {
     setIsTyping(true);
     let displayedText = '';
@@ -54,7 +51,7 @@ const Chatbot: React.FC = () => {
           msg.id === messageId ? { ...msg, text: displayedText } : msg
         )
       );
-      await new Promise((resolve) => setTimeout(resolve, 25));
+      await new Promise((resolve) => setTimeout(resolve, 30));
     }
     setIsTyping(false);
   };
@@ -79,48 +76,43 @@ const Chatbot: React.FC = () => {
       }
     });
 
-    if (bestMatch && highestScore > 0) {
-      return bestMatch.reply;
-    }
-
-    return "I'm not sure about that. Could you rephrase or ask something about our models, services, or Pakistan's fashion industry?";
+    return bestMatch?.reply || 
+      "I'm not sure about that. Could you rephrase or ask something about our models, services, or bookings?";
   };
 
-  const sendMessage = async () => {
+  const sendMessage = () => {
     if (!input.trim() || isTyping) return;
 
     const userText = input.trim();
-    const userMessage: Message = {
+    const userMsg: Message = {
       id: Date.now(),
       text: userText,
       isUser: true,
       timestamp: new Date(),
     };
 
-    setMessages((prev) => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMsg]);
     setInput('');
 
-    // Bot reply delay
+    // Bot response
     setTimeout(() => {
-      const botReplyText = getBotResponse(userText);
-      const botMessageId = Date.now() + 1;
+      const botText = getBotResponse(userText);
+      const botMsgId = Date.now() + 1;
 
-      const botMessage: Message = {
-        id: botMessageId,
+      const botMsg: Message = {
+        id: botMsgId,
         text: '',
         isUser: false,
         timestamp: new Date(),
       };
 
-      setMessages((prev) => [...prev, botMessage]);
-      typeMessage(botReplyText, botMessageId);
-    }, 600);
+      setMessages((prev) => [...prev, botMsg]);
+      typeMessage(botText, botMsgId);
+    }, 700);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      sendMessage();
-    }
+    if (e.key === 'Enter') sendMessage();
   };
 
   const openChat = () => {
@@ -129,16 +121,16 @@ const Chatbot: React.FC = () => {
     if (messages.length === 0) {
       setTimeout(() => {
         const greetingId = Date.now();
-        const greetingMessage: Message = {
-          id: greetingId,
-          text: '',
-          isUser: false,
-          timestamp: new Date(),
-        };
-
-        setMessages([greetingMessage]);
+        setMessages([
+          {
+            id: greetingId,
+            text: '',
+            isUser: false,
+            timestamp: new Date(),
+          },
+        ]);
         typeMessage(
-          "Hello! 👋 Welcome to Pakistan Models Hub. How can I help you today? Ask me anything about our models, bookings, or services.",
+          "Hello! 👋 Welcome to Pakistan Models Hub. How can I help you today?",
           greetingId
         );
       }, 400);
@@ -154,37 +146,35 @@ const Chatbot: React.FC = () => {
       {/* Floating Button */}
       <button
         onClick={openChat}
-        className="fixed bottom-6 left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-yellow-400 text-black shadow-xl hover:bg-yellow-300 transition-all duration-200 hover:scale-110 active:scale-95"
-        aria-label="Open Chat"
+        className="fixed bottom-6 left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-yellow-400 text-black shadow-2xl hover:bg-yellow-300 hover:scale-110 active:scale-95 transition-all"
+        aria-label="Open Chatbot"
       >
-        <span className="text-3xl">💬</span>
+        💬
       </button>
 
-      {/* Fullscreen Modal */}
+      {/* Fullscreen Chat Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-[100] bg-black/90 flex flex-col">
           {/* Header */}
-          <div className="flex items-center justify-between bg-white px-6 py-4 border-b border-yellow-400">
+          <div className="bg-white px-6 py-4 flex items-center justify-between border-b border-yellow-400">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-yellow-400 flex items-center justify-center text-2xl">
+              <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-2xl">
                 🇵🇰
               </div>
               <div>
-                <h2 className="font-semibold text-black text-lg">Pakistan Models Hub</h2>
-                <p className="text-xs text-green-600">● Online</p>
+                <h2 className="text-black font-semibold">Pakistan Models Hub</h2>
+                <p className="text-green-600 text-sm">● Always Online</p>
               </div>
             </div>
-
             <button
               onClick={closeChat}
-              className="text-black hover:bg-gray-100 p-3 rounded-full transition-colors text-xl"
-              aria-label="Close Chat"
+              className="text-3xl text-black hover:bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
             >
               ✕
             </button>
           </div>
 
-          {/* Chat Messages Area */}
+          {/* Messages */}
           <div
             ref={chatContainerRef}
             className="flex-1 overflow-y-auto bg-white p-4 space-y-4"
@@ -195,10 +185,10 @@ const Chatbot: React.FC = () => {
                 className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[75%] rounded-2xl px-4 py-3 text-[15px] leading-relaxed ${
+                  className={`max-w-[75%] px-4 py-3 rounded-2xl text-[15px] leading-relaxed ${
                     msg.isUser
-                      ? 'bg-white text-black border border-gray-200 rounded-br-none'
-                      : 'bg-yellow-100 text-black rounded-bl-none'
+                      ? 'bg-white border border-gray-200 rounded-br-none'
+                      : 'bg-yellow-100 rounded-bl-none'
                   }`}
                 >
                   {msg.text}
@@ -208,37 +198,33 @@ const Chatbot: React.FC = () => {
 
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-yellow-100 text-black rounded-2xl rounded-bl-none px-4 py-3">
+                <div className="bg-yellow-100 text-black px-4 py-3 rounded-2xl rounded-bl-none">
                   typing...
                 </div>
               </div>
             )}
           </div>
 
-          {/* Input Area */}
-          <div className="bg-white border-t border-gray-200 p-4">
+          {/* Input Bar */}
+          <div className="bg-white p-4 border-t">
             <div className="flex gap-2 max-w-3xl mx-auto">
               <input
-                ref={inputRef}
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Type your message..."
-                className="flex-1 bg-gray-100 text-black rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-[15px]"
+                className="flex-1 bg-gray-100 rounded-full px-6 py-3 text-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
                 disabled={isTyping}
               />
               <button
                 onClick={sendMessage}
                 disabled={!input.trim() || isTyping}
-                className="bg-yellow-400 hover:bg-yellow-300 disabled:bg-gray-300 text-black px-8 rounded-full font-medium transition-colors"
+                className="bg-yellow-400 hover:bg-yellow-300 disabled:bg-gray-300 px-8 rounded-full font-medium text-black transition-colors"
               >
                 Send
               </button>
             </div>
-            <p className="text-center text-[10px] text-gray-400 mt-2">
-              Pakistan Models Hub Assistant
-            </p>
           </div>
         </div>
       )}
