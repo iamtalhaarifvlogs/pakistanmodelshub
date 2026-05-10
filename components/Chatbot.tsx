@@ -117,7 +117,7 @@ const Chatbot: React.FC = () => {
           { id: greetingId, text: '', isUser: false, timestamp: new Date() },
         ]);
         typeMessage(
-          "Hello! 👋 Welcome to Pakistan Models Hub. How can I help you today?",
+          "Hey handsome! looking for some fun tonight?",
           greetingId
         );
       }, 400);
