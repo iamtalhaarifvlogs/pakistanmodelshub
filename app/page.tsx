@@ -34,11 +34,11 @@ export default function Home() {
           </p>
 
           <a 
-            href="https://wa.me/03051271111"
+            href="https://wa.me/92310 4441188"
             target="_blank"
             className="inline-block bg-yellow-400 hover:bg-white hover:text-black text-black font-bold text-lg px-14 py-5 rounded-full transition-all duration-300 shadow-xl"
           >
-            WHATSAPP 03051271111
+            WHATSAPP 0310 4441188
           </a>
         </div>
 
