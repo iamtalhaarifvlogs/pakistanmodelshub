@@ -85,7 +85,7 @@ export default function Home() {
               { name: "Mövenpick Hotel Karachi", img: "/m18.jpg", desc: "Elegant escorts service at Mövenpick Hotel Karachi. Perfect for VIP clients seeking sophistication." },
               { name: "Avari Towers Karachi", img: "/m19.jpg", desc: "Premium Karachi Escorts in Avari Towers. Professional and discreet hotel escort service." },
               { name: "Beach Luxury Hotel", img: "/m20.jpg", desc: "Exclusive Karachi Escorts in Beach Luxury Hotel with beautiful sea views and privacy." },
-              { name: "Galax Hotel Karachi", img: "/m21.jpg", desc: "Reliable call girls and Karachi Escorts in Galax Hotel for comfortable private meetings." },
+              { name: "Galaxy Hotel Karachi", img: "/m21.jpg", desc: "Reliable call girls and Karachi Escorts in Galax Hotel for comfortable private meetings." },
               { name: "Sunset Hotel DHA", img: "/m12.jpg", desc: "Premium escorts in Sunset Hotel DHA Karachi – perfect location for luxury companionship." },
               { name: "Ramada Creek DHA", img: "/m23.jpg", desc: "High-class call girls in Ramada Creek DHA. Fast and discreet Karachi Escorts service." },
               { name: "Farhan Hotel Karachi", img: "/m24.jpg", desc: "Comfortable and private escorts service in Farhan Hotel Karachi." },
@@ -108,11 +108,11 @@ export default function Home() {
                     {hotel.desc}
                   </p>
                   <a 
-                    href="https://wa.me/03051271111"
+                    href="https://wa.me/923104441188"
                     target="_blank"
                     className="block w-full bg-red-600 hover:bg-black text-white text-center py-4 rounded-2xl font-semibold transition-all"
                   >
-                    Book Now - 03051271111
+                    Book Now - 0310 4441188
                   </a>
                 </div>
               </div>
