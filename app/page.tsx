@@ -10,35 +10,6 @@ export default function Home() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 90;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition - bodyRect - offset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
-    closeMenu();
-  };
-
-  const hotels = [
-    { id: "seashell-inn", name: "Seashell Inn", img: "/m12.jpg" },
-    { id: "seashell-legacy", name: "Seashell Legacy", img: "/m13.jpg" },
-    { id: "seashell-grand", name: "Seashell Grand", img: "/m14.jpg" },
-    { id: "seashell-forte", name: "Seashell Forte", img: "/m15.jpg" },
-    { id: "pc-hotel", name: "PC Hotel Karachi", img: "/m16.jpg" },
-    { id: "marriott-hotel", name: "Marriott Hotel", img: "/m17.jpg" },
-    { id: "movenpick", name: "Mövenpick Hotel", img: "/m18.jpg" },
-    { id: "avari-towers", name: "Avari Towers", img: "/m19.jpg" },
-    { id: "beach-luxury", name: "Beach Luxury Hotel", img: "/m20.jpg" },
-    { id: "galaxy-hotel", name: "Galaxy Hotel", img: "/m21.jpg" },
-    { id: "ocean-pearl", name: "Ocean Pearl", img: "/m22.jpg" },
-    { id: "ramada-creek", name: "Ramada Creek", img: "/m23.jpg" },
-    { id: "ramada-airport", name: "Ramada Airport", img: "/m24.jpg" },
-    { id: "guest-houses", name: "Guest Houses Karachi", img: "/m25.jpg" },
-  ];
-
   return (
     <main className="bg-white text-black font-sans overflow-hidden">
       {/* Hero Section */}
@@ -46,7 +17,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image 
             src="/m21.jpg" 
-            alt="Escorts in Karachi - Premium Call Girls DHA Clifton PECHS Bahria"
+            alt="Karachi Escorts - Premium Call Girls DHA Clifton PECHS"
             fill 
             className="object-cover brightness-65"
             priority
@@ -55,16 +26,19 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-[58px] font-bold text-white leading-none tracking-tighter mb-10">
-            KARACHI ESCORTS<br />
-            <span className="text-yellow-400">0310-444-1188</span>
+          <h1 className="text-5xl md:text-[58px] font-bold text-white leading-none tracking-tighter mb-8">
+            KARACHI ESCORTS
           </h1>
+          <p className="text-2xl md:text-3xl text-white/90 mb-10">
+            Premium Escorts in Karachi • Escorts in DHA • Escorts in Clifton • Verified Call Girls
+          </p>
 
           <a 
-            href="tel:03104441188"
+            href="https://wa.me/03051271111"
+            target="_blank"
             className="inline-block bg-yellow-400 hover:bg-white hover:text-black text-black font-bold text-lg px-14 py-5 rounded-full transition-all duration-300 shadow-xl"
           >
-            CALL NOW
+            WHATSAPP 03051271111
           </a>
         </div>
 
@@ -78,7 +52,7 @@ export default function Home() {
       <section className="py-12 bg-black text-white text-center">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-yellow-400 font-medium tracking-widest mb-2">PREMIUM • DISCREET • VERIFIED</p>
-          <p className="text-lg">Serving DHA, Clifton, PECHS, Bahria Town, Nazimabad, Tariq Road & All Major Hotels</p>
+          <p className="text-lg">Karachi Escorts • Escorts in DHA • Escorts in Clifton • All Major Hotels</p>
         </div>
       </section>
 
@@ -86,102 +60,59 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold tracking-tight mb-4">Why Gentlemen Choose Us</h2>
-            <p className="text-xl text-black/70 max-w-2xl mx-auto">
-              We deliver the highest quality, most discreet, and professional escort experience in Karachi.
-            </p>
+            <h2 className="text-5xl font-bold tracking-tight mb-4">Why Gentlemen Choose Karachi Escorts at Girls Hub Pakistan</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
-            {[22,23,24,25,26,27].map((num, index) => {
-              const titles = [
-                "Verified & Beautiful Escorts",
-                "Complete Privacy Guaranteed",
-                "Fast Response & Reliable Service",
-                "24/7 Availability Across Karachi",
-                "Luxury Experience Every Time",
-                "Client Satisfaction First"
-              ];
-              const descs = [
-                "Every companion is personally verified for authenticity, beauty, and professionalism.",
-                "Your privacy and safety are our top priority. All interactions are strictly confidential.",
-                "We respond quickly and arrange your meeting within 30-90 minutes in most areas.",
-                "Need companionship at any hour? We are available day and night, 7 days a week.",
-                "From elegant dinner dates to passionate private moments — we create unforgettable experiences.",
-                "Our goal is simple: every client leaves fully satisfied and wanting to return."
-              ];
-
-              return (
-                <div key={num} className="group">
-                  <div className="relative h-80 mb-8 overflow-hidden rounded-3xl">
-                    <Image 
-                      src={`/m${num}.jpg`} 
-                      alt={titles[index]}
-                      fill 
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-3">{titles[index]}</h3>
-                  <p className="text-black/70 leading-relaxed">{descs[index]}</p>
-                  <a href="tel:03104441188" className="mt-6 inline-block text-red-600 font-semibold hover:text-black transition-colors">
-                    Call 0310-444-1188 →
-                  </a>
-                </div>
-              );
-            })}
+            {/* You can keep or expand this section as needed */}
           </div>
         </div>
       </section>
 
-      {/* Hotels Section */}
+      {/* Hotels Section - Detailed with all requested hotels */}
       <section className="py-24 bg-zinc-50" id="hotels">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold tracking-tight mb-4">Escort Services in Karachi Hotels</h2>
-            <p className="text-xl text-black/70">Discreet & Professional Hotel Escort Service – 24/7 Availability</p>
+            <h2 className="text-5xl font-bold tracking-tight mb-4">Escorts Service in Karachi Hotels</h2>
+            <p className="text-xl text-black/70">Premium Karachi Escorts • Discreet Hotel Delivery • 24/7</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
-              { id: "seashell-inn", name: "Seashell Inn", img: "/m12.jpg", desc: "Popular choice for guests seeking luxury and privacy in a serene environment." },
-              { id: "seashell-legacy", name: "Seashell Legacy", img: "/m13.jpg", desc: "Modern luxury hotel with excellent service." },
-              { id: "seashell-grand", name: "Seashell Grand", img: "/m14.jpg", desc: "High-end property perfect for VIP clients." },
-              { id: "seashell-forte", name: "Seashell Forte", img: "/m15.jpg", desc: "Contemporary hotel with great amenities." },
-              { id: "pc-hotel", name: "PC Hotel Karachi", img: "/m16.jpg", desc: "One of Karachi's most prestigious 5-star hotels." },
-              { id: "marriott-hotel", name: "Marriott Hotel", img: "/m17.jpg", desc: "Iconic 5-star hotel perfect for business travelers." },
-              { id: "movenpick", name: "Mövenpick Hotel", img: "/m18.jpg", desc: "Luxury beachfront hotel with excellent facilities." },
-              { id: "avari-towers", name: "Avari Towers", img: "/m19.jpg", desc: "Historic 5-star hotel known for its elegance." },
-              { id: "beach-luxury", name: "Beach Luxury Hotel", img: "/m20.jpg", desc: "Classic luxury hotel with beautiful sea views." },
-              { id: "galaxy-hotel", name: "Galaxy Hotel", img: "/m21.jpg", desc: "Popular choice for comfort and privacy." },
-              { id: "ocean-pearl", name: "Ocean Pearl", img: "/m22.jpg", desc: "Modern hotel with excellent location." },
-              { id: "ramada-creek", name: "Ramada Creek", img: "/m23.jpg", desc: "Convenient location with excellent facilities." },
-              { id: "ramada-airport", name: "Ramada Airport", img: "/m24.jpg", desc: "Perfect for travelers near the airport." },
-              { id: "guest-houses", name: "Guest Houses Karachi", img: "/m25.jpg", desc: "Private and discreet guest houses for maximum privacy." },
+              { name: "PC Hotel Karachi", img: "/m16.jpg", desc: "We provide premium Karachi Escorts in PC Hotel with complete discretion and luxury service." },
+              { name: "Marriott Hotel Karachi", img: "/m17.jpg", desc: "Enjoy high-class Karachi Escorts in Marriott Hotel. Verified companions for a memorable experience." },
+              { name: "Ramada Plaza Hotel", img: "/m23.jpg", desc: "Luxury Karachi Escorts in Ramada Plaza Hotel available 24/7 with fast and discreet service." },
+              { name: "Mövenpick Hotel Karachi", img: "/m18.jpg", desc: "Elegant escorts service at Mövenpick Hotel Karachi. Perfect for VIP clients seeking sophistication." },
+              { name: "Avari Towers Karachi", img: "/m19.jpg", desc: "Premium Karachi Escorts in Avari Towers. Professional and discreet hotel escort service." },
+              { name: "Beach Luxury Hotel", img: "/m20.jpg", desc: "Exclusive Karachi Escorts in Beach Luxury Hotel with beautiful sea views and privacy." },
+              { name: "Galax Hotel Karachi", img: "/m21.jpg", desc: "Reliable call girls and Karachi Escorts in Galax Hotel for comfortable private meetings." },
+              { name: "Sunset Hotel DHA", img: "/m12.jpg", desc: "Premium escorts in Sunset Hotel DHA Karachi – perfect location for luxury companionship." },
+              { name: "Ramada Creek DHA", img: "/m23.jpg", desc: "High-class call girls in Ramada Creek DHA. Fast and discreet Karachi Escorts service." },
+              { name: "Farhan Hotel Karachi", img: "/m24.jpg", desc: "Comfortable and private escorts service in Farhan Hotel Karachi." },
             ].map((hotel) => (
-              <div key={hotel.id} id={hotel.id} className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+              <div key={hotel.name} className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
                 <div className="relative h-80">
                   <Image 
                     src={hotel.img} 
-                    alt={`Escorts at ${hotel.name} Karachi`}
+                    alt={`${hotel.name} - Karachi Escorts`}
                     fill 
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-6 left-6 text-white">
                     <h3 className="text-2xl font-semibold">{hotel.name}</h3>
-                    <p className="text-sm opacity-90">Karachi</p>
                   </div>
                 </div>
-
                 <div className="p-8">
                   <p className="text-black/70 mb-6 leading-relaxed">
-                    {hotel.desc} Our verified VIP companions provide premium and discreet service at {hotel.name}.
+                    {hotel.desc}
                   </p>
                   <a 
-                    href="tel:03104441188"
+                    href="https://wa.me/03051271111"
+                    target="_blank"
                     className="block w-full bg-red-600 hover:bg-black text-white text-center py-4 rounded-2xl font-semibold transition-all"
                   >
-                    Book Now - 0310-444-1188
+                    Book Now - 03051271111
                   </a>
                 </div>
               </div>
@@ -190,12 +121,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Rate List Section */}
+      {/* Rates List Section */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold tracking-tight mb-4">Karachi Escorts Price List</h2>
-            <p className="text-xl text-black/70">Transparent Pricing – No Hidden Charges</p>
+            <p className="text-xl text-black/70">Transparent Pricing for Premium Escorts in Karachi</p>
           </div>
 
           <div className="max-w-4xl mx-auto overflow-x-auto">
@@ -204,62 +135,32 @@ export default function Home() {
                 <tr>
                   <th className="p-5 border-b font-semibold">Service Type</th>
                   <th className="p-5 border-b font-semibold">Duration</th>
-                  <th className="p-5 border-b font-semibold text-center">Price Range (PKR)</th>
+                  <th className="p-5 border-b font-semibold text-center">Price (PKR)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b">
-                  <td className="p-5">Short Time Session</td>
-                  <td className="p-5">1 Hour</td>
-                  <td className="p-5 text-center font-medium">35,000 – 65,000</td>
+                  <td className="p-5">Short Time</td>
+                  <td className="p-5">1-2 Hours</td>
+                  <td className="p-5 text-center font-medium">40,000 - 60,000</td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-5">Extended Session</td>
-                  <td className="p-5">2–3 Hours</td>
-                  <td className="p-5 text-center font-medium">60,000 – 90,000</td>
+                  <td className="p-5">3-4 Hours</td>
+                  <td className="p-5 text-center font-medium">70,000 - 90,000</td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-5">Full Night Experience</td>
-                  <td className="p-5">8–10 Hours</td>
-                  <td className="p-5 text-center font-medium">80,000 – 120,000</td>
+                  <td className="p-5">6-8 Hours</td>
+                  <td className="p-5 text-center font-medium">80,000 - 120,000</td>
                 </tr>
-                <tr className="border-b">
-                  <td className="p-5">VIP / Celebrity Level</td>
-                  <td className="p-5">Custom</td>
-                  <td className="p-5 text-center font-medium">120,000 – 150,000+</td>
+                <tr>
+                  <td className="p-5">VIP Overnight</td>
+                  <td className="p-5">Overnight / Weekend</td>
+                  <td className="p-5 text-center font-medium">1,20,000+</td>
                 </tr>
               </tbody>
             </table>
-          </div>
-
-          <p className="text-center text-sm text-black/60 mt-8">
-            Prices may vary based on companion, duration, and location. Contact us for exact rates.
-          </p>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-5xl font-bold text-center mb-16">Frequently Asked Questions</h2>
-          
-          <div className="space-y-10 text-lg">
-            <div>
-              <h3 className="font-semibold mb-3">Do you provide escorts in all major hotels in Karachi?</h3>
-              <p className="text-black/70">Yes, we provide discreet hotel escort service at Seashell Inn, Seashell Legacy, PC Hotel, Marriott, Avari Towers, Beach Luxury, Galaxy Hotel, Ramada, Ocean Pearl and many more.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-3">How fast can you arrange a meeting?</h3>
-              <p className="text-black/70">We usually arrange meetings within 30-90 minutes depending on your location and availability.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-3">Is 0310-444-1188 available 24/7?</h3>
-              <p className="text-black/70">Yes, our service is available round the clock for incall and outcall bookings.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-3">Are your services completely discreet?</h3>
-              <p className="text-black/70">Absolutely. Privacy and confidentiality are our top priorities.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -268,17 +169,14 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-red-700 to-black text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">
-            Ready to Meet Beautiful Karachi Escorts?
+            Ready for the Best Karachi Escorts?
           </h2>
-          <p className="text-xl text-white/80 mb-10">
-            Fast response • Complete discretion • 24/7 availability
-          </p>
-          
           <a 
-            href="tel:03104441188"
+            href="https://wa.me/03051271111"
+            target="_blank"
             className="inline-block bg-black text-white font-semibold text-2xl px-16 py-6 rounded-full hover:bg-yellow-400 transition-all shadow-lg"
           >
-            Book Now
+            03051271111
           </a>
         </div>
       </section>
