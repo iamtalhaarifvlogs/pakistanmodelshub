@@ -48,7 +48,7 @@ export default function RootLayout({
         <WhatsAppButton />
         
         <Header />
-        <Chatbot />
+        
         
         <main className="flex-1">
           {children}
