@@ -40,7 +40,7 @@ export default function KarachiEscortsCliftonPage() {
             href="tel:03051271111"
             className="hidden md:block bg-red-600 hover:bg-black text-white px-8 py-3 rounded-full font-semibold transition-all text-sm tracking-wider"
           >
-            CALL 0305-127-1111
+            CALL 0310-4441188
           </a>
 
           <button 
