@@ -156,61 +156,7 @@ export default function KarachiEscortsCliftonPage() {
           </div>
         </div>
       </section>
-
-      {/* Booking Form */}
-      <section id="booking-form" className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold mb-4">Book Your Dream Escort in Clifton</h2>
-            <p className="text-xl text-black/70">Fast Response • Complete Privacy • 24/7 Availability</p>
-          </div>
-
-          <div className="bg-zinc-50 p-10 md:p-14 rounded-3xl">
-            {formSubmitted ? (
-              <div className="text-center py-20">
-                <div className="text-7xl mb-6">💋</div>
-                <h3 className="text-4xl font-bold mb-4">Request Received</h3>
-                <p className="text-lg text-black/70">Our team will contact you shortly via WhatsApp or Call.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Your Name</label>
-                    <input type="text" required className="w-full px-6 py-4 rounded-2xl border border-black/20 focus:border-red-500 outline-none" placeholder="Enter your name" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Phone / WhatsApp</label>
-                    <input type="tel" required className="w-full px-6 py-4 rounded-2xl border border-black/20 focus:border-red-500 outline-none" placeholder="0300 XXXXXXX" />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2">Preferred Location in Clifton</label>
-                  <input type="text" className="w-full px-6 py-4 rounded-2xl border border-black/20 focus:border-red-500 outline-none" placeholder="e.g. Clifton Block 5, Sea View, or Hotel" />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2">Message / Requirements</label>
-                  <textarea 
-                    rows={6}
-                    required
-                    className="w-full px-6 py-4 rounded-3xl border border-black/20 focus:border-red-500 outline-none resize-y"
-                    placeholder="Date, time, duration, and any special requests..."
-                  ></textarea>
-                </div>
-
-                <button 
-                  type="submit"
-                  className="w-full bg-red-600 hover:bg-black text-white font-bold text-xl py-7 rounded-2xl transition-all duration-300"
-                >
-                  SEND BOOKING REQUEST - CALL 0305-127-1111
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
-      </section>
+           
 
       {/* FAQ Section */}
       <section className="py-24 bg-zinc-100">
