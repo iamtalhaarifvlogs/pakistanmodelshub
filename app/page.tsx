@@ -4,6 +4,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
+// SEO Metadata - Critical for ranking "Karachi escorts" and long-tail keywords
+export const metadata = {
+  title: "Karachi Escorts | Premium Escorts in DHA, Clifton & All Major Hotels | Verified Call Girls",
+  description: "Premium Karachi escorts & verified call girls in DHA, Clifton, PECHS & top hotels. Discreet luxury escorts service in PC Hotel, Marriott, Mövenpick, Avari Towers & more. 24/7 bookings.",
+  keywords: [
+    "Karachi escorts", "Karachi escorts in DHA", "Karachi escorts in Clifton", 
+    "premium Karachi escorts", "verified call girls Karachi", "escorts in DHA Karachi",
+    "escorts in Clifton Karachi", "Karachi call girls", "luxury escorts Karachi",
+    "discreet Karachi escorts", "escorts service in PC Hotel Karachi", 
+    "Marriott Hotel Karachi escorts", "Mövenpick Hotel Karachi escorts",
+    "Avari Towers Karachi escorts", "best escorts in Karachi", "high class call girls Karachi"
+  ],
+  openGraph: {
+    title: "Karachi Escorts | Premium Escorts in DHA, Clifton & Top Hotels",
+    description: "Book premium Karachi escorts and verified call girls in DHA, Clifton, and all major hotels. Discreet, luxurious, and 24/7 available.",
+    images: [{ url: "/m21.jpg" }],
+  },
+};
+
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -12,12 +31,12 @@ export default function Home() {
 
   return (
     <main className="bg-white text-black font-sans overflow-hidden">
-      {/* Hero Section */}
+      {/* Hero Section - Strong Primary Keyword Focus */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/m21.jpg" 
-            alt="Karachi Escorts - Premium Call Girls DHA Clifton PECHS"
+            alt="Premium Karachi Escorts - Elite Call Girls in DHA Clifton PECHS Karachi"
             fill 
             className="object-cover brightness-65"
             priority
@@ -30,11 +49,11 @@ export default function Home() {
             KARACHI ESCORTS
           </h1>
           <p className="text-2xl md:text-3xl text-white/90 mb-10">
-            Premium Escorts in Karachi • Escorts in DHA • Escorts in Clifton • Verified Call Girls
+            Premium Escorts in Karachi • Escorts in DHA • Escorts in Clifton • Verified Call Girls in Karachi
           </p>
 
           <a 
-            href="https://wa.me/92310 4441188"
+            href="https://wa.me/923104441188"
             target="_blank"
             className="inline-block bg-yellow-400 hover:bg-white hover:text-black text-black font-bold text-lg px-14 py-5 rounded-full transition-all duration-300 shadow-xl"
           >
@@ -42,59 +61,130 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/70 text-sm flex flex-col items-center">
+        <div className="absolute bottom-12 left-1/2 -translate-x/2 text-white/70 text-sm flex flex-col items-center">
           <span>SCROLL TO EXPLORE</span>
           <div className="w-px h-12 bg-white/30 mt-3" />
         </div>
       </section>
 
-      {/* Trust Bar */}
+      {/* Trust Bar - Keyword Reinforced */}
       <section className="py-12 bg-black text-white text-center">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-yellow-400 font-medium tracking-widest mb-2">PREMIUM • DISCREET • VERIFIED</p>
-          <p className="text-lg">Karachi Escorts • Escorts in DHA • Escorts in Clifton • All Major Hotels</p>
+          <p className="text-lg">Karachi Escorts • Premium Escorts in DHA • Escorts in Clifton • All Major Hotels in Karachi</p>
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Why Choose Us - Now Filled with High-Value SEO Content */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold tracking-tight mb-4">Why Gentlemen Choose Karachi Escorts at Girls Hub Pakistan</h2>
+            <h2 className="text-5xl font-bold tracking-tight mb-4">
+              Why Gentlemen Choose Premium Karachi Escorts at Girls Hub Pakistan
+            </h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Experience the finest selection of verified and professional Karachi escorts. 
+              We specialize in providing premium companions in DHA, Clifton, and all major hotels across Karachi.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
-            {/* You can keep or expand this section as needed */}
+            {/* Card 1 */}
+            <div className="bg-zinc-50 p-10 rounded-3xl">
+              <h3 className="text-2xl font-semibold mb-4">Verified & Premium Karachi Escorts</h3>
+              <p className="text-black/70 leading-relaxed">
+                Every companion in our Karachi escorts collection is personally verified. 
+                We only work with professional, elegant, and well-mannered call girls in Karachi who understand the importance of discretion and quality service.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-zinc-50 p-10 rounded-3xl">
+              <h3 className="text-2xl font-semibold mb-4">Discreet Escorts Service in DHA & Clifton</h3>
+              <p className="text-black/70 leading-relaxed">
+                Whether you need premium escorts in DHA, high-class companions in Clifton, or luxury call girls in PECHS, 
+                we guarantee complete privacy and professional service across all prime locations in Karachi.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-zinc-50 p-10 rounded-3xl">
+              <h3 className="text-2xl font-semibold mb-4">Luxury Hotel Escorts Across Karachi</h3>
+              <p className="text-black/70 leading-relaxed">
+                From PC Hotel Karachi and Marriott Hotel to Mövenpick, Avari Towers, and Sunset Hotel DHA — 
+                we provide discreet and premium Karachi escorts service in all major hotels with fast and confidential delivery.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Hotels Section - Detailed with all requested hotels */}
+      {/* Hotels Section - Significantly Enriched with Long-Tail Keywords */}
       <section className="py-24 bg-zinc-50" id="hotels">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold tracking-tight mb-4">Escorts Service in Karachi Hotels</h2>
-            <p className="text-xl text-black/70">Premium Karachi Escorts • Discreet Hotel Delivery • 24/7</p>
+            <p className="text-xl text-black/70">Premium Karachi Escorts • Discreet Hotel Delivery • 24/7 Available in All Major Hotels</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
-              { name: "PC Hotel Karachi", img: "/m16.jpg", desc: "We provide premium Karachi Escorts in PC Hotel with complete discretion and luxury service." },
-              { name: "Marriott Hotel Karachi", img: "/m17.jpg", desc: "Enjoy high-class Karachi Escorts in Marriott Hotel. Verified companions for a memorable experience." },
-              { name: "Ramada Plaza Hotel", img: "/m23.jpg", desc: "Luxury Karachi Escorts in Ramada Plaza Hotel available 24/7 with fast and discreet service." },
-              { name: "Mövenpick Hotel Karachi", img: "/m18.jpg", desc: "Elegant escorts service at Mövenpick Hotel Karachi. Perfect for VIP clients seeking sophistication." },
-              { name: "Avari Towers Karachi", img: "/m19.jpg", desc: "Premium Karachi Escorts in Avari Towers. Professional and discreet hotel escort service." },
-              { name: "Beach Luxury Hotel", img: "/m20.jpg", desc: "Exclusive Karachi Escorts in Beach Luxury Hotel with beautiful sea views and privacy." },
-              { name: "Galaxy Hotel Karachi", img: "/m21.jpg", desc: "Reliable call girls and Karachi Escorts in Galax Hotel for comfortable private meetings." },
-              { name: "Sunset Hotel DHA", img: "/m12.jpg", desc: "Premium escorts in Sunset Hotel DHA Karachi – perfect location for luxury companionship." },
-              { name: "Ramada Creek DHA", img: "/m23.jpg", desc: "High-class call girls in Ramada Creek DHA. Fast and discreet Karachi Escorts service." },
-              { name: "Farhan Hotel Karachi", img: "/m24.jpg", desc: "Comfortable and private escorts service in Farhan Hotel Karachi." },
+              { 
+                name: "PC Hotel Karachi", 
+                img: "/m16.jpg", 
+                desc: "We provide premium Karachi escorts in PC Hotel Karachi with complete discretion and luxury service. Our verified companions are available for short time and overnight stays in Pakistan's most iconic hotel." 
+              },
+              { 
+                name: "Marriott Hotel Karachi", 
+                img: "/m17.jpg", 
+                desc: "Enjoy high-class Karachi escorts in Marriott Hotel Karachi. Our verified and professional companions offer discreet luxury service for gentlemen seeking memorable experiences in one of Karachi's top hotels." 
+              },
+              { 
+                name: "Ramada Plaza Hotel", 
+                img: "/m23.jpg", 
+                desc: "Luxury Karachi escorts in Ramada Plaza Hotel available 24/7 with fast and discreet service. Perfect for clients looking for premium call girls in a central and secure location in Karachi." 
+              },
+              { 
+                name: "Mövenpick Hotel Karachi", 
+                img: "/m18.jpg", 
+                desc: "Elegant escorts service at Mövenpick Hotel Karachi. We offer sophisticated and premium Karachi escorts for VIP clients who appreciate quality, privacy, and world-class hospitality." 
+              },
+              { 
+                name: "Avari Towers Karachi", 
+                img: "/m19.jpg", 
+                desc: "Premium Karachi escorts in Avari Towers Karachi. Our professional and discreet companions provide high-class escort service with complete confidentiality in this iconic luxury hotel." 
+              },
+              { 
+                name: "Beach Luxury Hotel", 
+                img: "/m20.jpg", 
+                desc: "Exclusive Karachi escorts in Beach Luxury Hotel with beautiful sea views and maximum privacy. Ideal for gentlemen seeking a premium and romantic experience with our verified companions." 
+              },
+              { 
+                name: "Galaxy Hotel Karachi", 
+                img: "/m21.jpg", 
+                desc: "Reliable call girls and premium Karachi escorts in Galaxy Hotel for comfortable and private meetings. Our companions are available for both short visits and extended overnight stays." 
+              },
+              { 
+                name: "Sunset Hotel DHA", 
+                img: "/m12.jpg", 
+                desc: "Premium escorts in Sunset Hotel DHA Karachi – perfect location for luxury companionship. Enjoy discreet and high-class Karachi escorts service in the heart of Defence Housing Authority." 
+              },
+              { 
+                name: "Ramada Creek DHA", 
+                img: "/m23.jpg", 
+                desc: "High-class call girls in Ramada Creek DHA. Fast and discreet Karachi escorts service with professional companions who understand the importance of privacy and quality time." 
+              },
+              { 
+                name: "Farhan Hotel Karachi", 
+                img: "/m24.jpg", 
+                desc: "Comfortable and private escorts service in Farhan Hotel Karachi. Our verified companions provide a relaxing and memorable experience with complete discretion." 
+              },
             ].map((hotel) => (
               <div key={hotel.name} className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
                 <div className="relative h-80">
                   <Image 
                     src={hotel.img} 
-                    alt={`${hotel.name} - Karachi Escorts`}
+                    alt={`${hotel.name} Karachi Escorts - Premium Call Girls in ${hotel.name}`}
                     fill 
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
@@ -121,12 +211,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Rates List Section */}
+      {/* Rates List Section - Enhanced SEO Intro */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold tracking-tight mb-4">Karachi Escorts Price List</h2>
-            <p className="text-xl text-black/70">Transparent Pricing for Premium Escorts in Karachi</p>
+            <h2 className="text-5xl font-bold tracking-tight mb-4">Karachi Escorts Price List 2026</h2>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              Transparent and competitive pricing for premium Karachi escorts, verified call girls in DHA, 
+              and luxury companions across all major hotels in Karachi. No hidden charges.
+            </p>
           </div>
 
           <div className="max-w-4xl mx-auto overflow-x-auto">
@@ -165,19 +258,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* NEW: Popular Karachi Escorts Searches - Strong Internal Linking + Long-Tail Keywords */}
+      <section className="py-16 bg-zinc-50 border-t">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Popular Karachi Escorts Searches</h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-3 text-sm">
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">Premium Karachi escorts in DHA</Link>
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">Escorts in Clifton Karachi</Link>
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">Karachi escorts in PC Hotel</Link>
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">Marriott Hotel Karachi escorts</Link>
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">Verified call girls in DHA</Link>
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">Luxury escorts in Mövenpick Hotel</Link>
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">Discreet escorts in Avari Towers</Link>
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">High class call girls Karachi</Link>
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">Escorts service in Sunset Hotel DHA</Link>
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">Best escorts in Karachi 2026</Link>
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">Karachi escorts price list</Link>
+            <Link href="#hotels" className="hover:text-red-600 transition-colors">Ramada Creek DHA escorts</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-20 bg-gradient-to-br from-red-700 to-black text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">
-            Ready for the Best Karachi Escorts?
+            Ready for the Best Karachi Escorts Experience?
           </h2>
           <a 
-            href="https://wa.me/03051271111"
+            href="https://wa.me/923104441188"
             target="_blank"
             className="inline-block bg-black text-white font-semibold text-2xl px-16 py-6 rounded-full hover:bg-yellow-400 transition-all shadow-lg"
           >
-            03104441188
+            0310 4441188
           </a>
+          <p className="mt-6 text-white/70 text-sm">Discreet • Professional • Available 24/7</p>
         </div>
       </section>
     </main>
