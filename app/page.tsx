@@ -27,7 +27,7 @@ export default function Home() {
     <main className="bg-white text-black font-sans overflow-hidden">
       
       {/* ==================== MOBILE MENU ==================== */}
-      <MobileMenu />
+      
 
       {/* ==================== HERO SECTION ==================== */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
