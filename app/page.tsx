@@ -1,5 +1,5 @@
 // app/page.tsx
-import MobileMenu from './components/MobileMenu';
+import MobileMenu from '@/components/MobileMenu';
 import Image from 'next/image';
 
 // ==================== SEO METADATA ====================
