@@ -13,6 +13,27 @@ export default function Header() {
     setServicesOpen(false);
   };
 
+const socialLinks = [
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/pakistanmodelshub?igsh=cjBrNW8yNG02Y2c5",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+          <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5C18.55 4 20 5.45 20 7.75v8.5c0 2.3-1.45 3.75-3.75 3.75h-8.5C5.45 20 4 18.55 4 16.25v-8.5C4 5.45 5.45 4 7.75 4zm8.75 2a1 1 0 100 2 1 1 0 000-2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z" />
+        </svg>
+      ),
+    },
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/share/1MMYc4FNWY/",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+          <path d="M22 12a10 10 0 10-11.63 9.87v-6.99H7.9V12h2.47V9.8c0-2.44 1.45-3.8 3.67-3.8 1.06 0 2.17.19 2.17.19v2.39h-1.22c-1.21 0-1.58.75-1.58 1.52V12h2.69l-.43 2.88h-2.26v6.99A10 10 0 0022 12z" />
+        </svg>
+      ),
+    },
+  ];
+
   const scrollToHotel = (id: string) => {
     closeMenu();
     setTimeout(() => {
