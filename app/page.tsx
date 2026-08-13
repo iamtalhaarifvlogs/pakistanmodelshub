@@ -95,7 +95,7 @@ export default function Home() {
             src="/m1.jpg" 
             alt="Karachi Escorts - Premium verified call girls and celebrity escorts in DHA Clifton Bahria Town Pakistan Models Hub"
             fill 
-            className="object-cover brightness-[0.92]"
+            className="object-cover brightness-[1.92]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/75 to-zinc-950" />
