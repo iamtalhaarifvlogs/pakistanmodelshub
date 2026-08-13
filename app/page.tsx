@@ -1,6 +1,52 @@
-```tsx
 // app/page.tsx
 import Image from 'next/image';
+
+// ==================== PREMIUM STYLES (extracted to avoid Turbopack parse error) ====================
+const premiumStyles = `
+  @keyframes liquidGlow {
+    0%, 100% { 
+      transform: scale(1); 
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.5), 0 0 40px rgba(250, 204, 21, 0.25), 0 0 60px rgba(250, 204, 21, 0.1); 
+    }
+    50% { 
+      transform: scale(1.04); 
+      box-shadow: 0 0 30px rgba(250, 204, 21, 0.8), 0 0 55px rgba(250, 204, 21, 0.45), 0 0 80px rgba(250, 204, 21, 0.2); 
+    }
+  }
+  @keyframes neonPulseRed {
+    0%, 100% { 
+      box-shadow: 0 0 12px rgba(220, 38, 38, 0.15), inset 0 0 8px rgba(220, 38, 38, 0.08); 
+      border-color: rgba(220, 38, 38, 0.25); 
+    }
+    50% { 
+      box-shadow: 0 0 22px rgba(220, 38, 38, 0.45), inset 0 0 12px rgba(220, 38, 38, 0.2); 
+      border-color: rgba(220, 38, 38, 0.55); 
+    }
+  }
+  @keyframes neonPulseGold {
+    0%, 100% { box-shadow: 0 0 12px rgba(250, 204, 21, 0.08); border-color: rgba(250, 204, 21, 0.18); }
+    50% { box-shadow: 0 0 22px rgba(250, 204, 21, 0.28); border-color: rgba(250, 204, 21, 0.4); }
+  }
+  @keyframes softFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-liquid-glow { animation: liquidGlow 2.8s infinite ease-in-out; }
+  .animate-neon-card-red { animation: neonPulseRed 3.2s infinite ease-in-out; }
+  .animate-neon-card-gold { animation: neonPulseGold 3.8s infinite ease-in-out; }
+  .animate-float { animation: softFloat 5s ease-in-out infinite; }
+  .scroll-fade {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 0.9s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 5% cover 35%;
+  }
+`;
 
 // ==================== SEO METADATA ====================
 export const metadata = {
@@ -27,51 +73,7 @@ export default function Home() {
     <main className="bg-zinc-950 text-gray-100 font-sans overflow-x-hidden">
       
       {/* ==================== PREMIUM KEYFRAME ANIMATIONS ==================== */}
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes liquidGlow {
-          0%, 100% { 
-            transform: scale(1); 
-            box-shadow: 0 0 20px rgba(250, 204, 21, 0.5), 0 0 40px rgba(250, 204, 21, 0.25), 0 0 60px rgba(250, 204, 21, 0.1); 
-          }
-          50% { 
-            transform: scale(1.04); 
-            box-shadow: 0 0 30px rgba(250, 204, 21, 0.8), 0 0 55px rgba(250, 204, 21, 0.45), 0 0 80px rgba(250, 204, 21, 0.2); 
-          }
-        }
-        @keyframes neonPulseRed {
-          0%, 100% { 
-            box-shadow: 0 0 12px rgba(220, 38, 38, 0.15), inset 0 0 8px rgba(220, 38, 38, 0.08); 
-            border-color: rgba(220, 38, 38, 0.25); 
-          }
-          50% { 
-            box-shadow: 0 0 22px rgba(220, 38, 38, 0.45), inset 0 0 12px rgba(220, 38, 38, 0.2); 
-            border-color: rgba(220, 38, 38, 0.55); 
-          }
-        }
-        @keyframes neonPulseGold {
-          0%, 100% { box-shadow: 0 0 12px rgba(250, 204, 21, 0.08); border-color: rgba(250, 204, 21, 0.18); }
-          50% { box-shadow: 0 0 22px rgba(250, 204, 21, 0.28); border-color: rgba(250, 204, 21, 0.4); }
-        }
-        @keyframes softFloat {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
-        }
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(40px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-liquid-glow { animation: liquidGlow 2.8s infinite ease-in-out; }
-        .animate-neon-card-red { animation: neonPulseRed 3.2s infinite ease-in-out; }
-        .animate-neon-card-gold { animation: neonPulseGold 3.8s infinite ease-in-out; }
-        .animate-float { animation: softFloat 5s ease-in-out infinite; }
-        .scroll-fade {
-          opacity: 0;
-          transform: translateY(40px);
-          animation: fadeInUp 0.9s ease-out forwards;
-          animation-timeline: view();
-          animation-range: entry 5% cover 35%;
-        }
-      `}} />
+      <style dangerouslySetInnerHTML={{ __html: premiumStyles }} />
 
       {/* ==================== FLOATING WHATSAPP CTA ==================== */}
       <a 
@@ -86,7 +88,7 @@ export default function Home() {
         </svg>
       </a>
 
-      {/* ==================== HERO SECTION (m1.jpg + reduced text) ==================== */}
+      {/* ==================== HERO SECTION ==================== */}
       <section className="relative min-h-screen flex items-center justify-center pt-16">
         <div className="absolute inset-0 z-0">
           <Image 
@@ -252,430 +254,50 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
 
-            {/* 1. Regent Plaza - m2 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m2.jpg" 
-                  alt="Escorts at Regent Plaza Hotel Karachi - Premium Karachi escorts and call girls Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Regent Plaza Hotel</h3>
+            {/* Hotel cards m2 → m18 */}
+            {[
+              { img: 2, title: "Regent Plaza Hotel", desc: "Escorts at Regent Plaza Hotel Karachi. Pakistan Models Hub delivers premium verified call girls and celebrity escorts for discreet short visits, overnight stays and VIP arrangements. Perfect for business travelers seeking elite companionship with absolute privacy." },
+              { img: 3, title: "Nishat Hotel Karachi", desc: "Luxury escorts service at Nishat Hotel Karachi. Pakistan Models Hub provides elegant, verified high-class call girls for discreet meetings and overnight stays. Ideal for gentlemen who value privacy and professional hospitality." },
+              { img: 4, title: "Ramada Creek DHA", desc: "High-end escorts in Ramada Creek DHA. Pakistan Models Hub offers professional partners well-versed in executive etiquette. Secure bookings for short visits and full-night arrangements inside Defence Housing Authority." },
+              { img: 5, title: "Beach View Hotel", desc: "Exclusive beachside arrangements at Beach View Hotel. Pakistan Models Hub offers premium verified companions with complete privacy. Designed for elite clients seeking refined evening company near the coast." },
+              { img: 6, title: "Sea View Karachi", desc: "Discreet luxury escorts available at Sea View locations. Pakistan Models Hub specializes in high-class companions for private residences and hotel suites along the famous Sea View strip. 24/7 verified service." },
+              { img: 7, title: "Private Airbnb & Residences", desc: "Premium outcall service to private Airbnb apartments and luxury residences across DHA, Clifton, Bahria Town and PECHS. Pakistan Models Hub ensures absolute discretion for non-hotel environments." },
+              { img: 8, title: "Seashell Hotel", desc: "Elegant companion arrangements at Seashell Hotel. Pakistan Models Hub delivers verified high-profile escorts for short visits and overnight stays. Ideal for clients seeking a quieter private luxury experience." },
+              { img: 9, title: "Mehran Hotel", desc: "Reliable luxury escorts at Mehran Hotel Karachi. Pakistan Models Hub provides verified professional companions for corporate travelers and private clients. Complete confidentiality and prompt outcall delivery." },
+              { img: 10, title: "Holiday Inn Karachi", desc: "Premium companion services at Holiday Inn Karachi. Pakistan Models Hub offers discreet, high-class escorts for business meetings and overnight stays. Verified profiles and absolute privacy guaranteed." },
+              { img: 11, title: "Farhan Hotel", desc: "Comfortable and entirely confidential hosting at Farhan Hotel. Pakistan Models Hub provides verified companions for relaxing short visits and extended stays with maximum privacy." },
+              { img: 12, title: "Marriott Hotel Karachi", desc: "Enjoy high-class companionship at the Marriott Hotel. Pakistan Models Hub delivers refined, professional partners offering discreet luxury tailored for high-profile business gentlemen and VIP clients." },
+              { img: 13, title: "PC Hotel Karachi", desc: "Premium hosting services within PC Hotel Karachi with complete discretion and luxury care. Pakistan Models Hub verified companions available for short tours, overnight corporate stays and exclusive VIP arrangements." },
+              { img: 14, title: "Ramada Plaza Hotel", desc: "Luxury companion services at Ramada Plaza available 24/7 with immediate dispatch. Pakistan Models Hub specializes in exceptional quality partners for secure locations and refined overnight company." },
+              { img: 15, title: "Avari Towers Karachi", desc: "Elite service structures tailored for premium rooms at Avari Towers. Pakistan Models Hub professional hosts guarantee total personal security, privacy and world-class companionship for high-profile gentlemen." },
+              { img: 16, title: "Beach Luxury Hotel", desc: "Exclusive arrangements at Beach Luxury Hotel featuring absolute privacy. Pakistan Models Hub designs thoughtful experiences for elite individuals seeking premier evening companions by the waterfront." },
+              { img: 17, title: "Sunset Hotel DHA", desc: "Premium arrangements within Sunset Hotel DHA Karachi. Experience top-tier local hosting inside the secure central limits of the Defence Housing Authority with verified companions available 24/7." },
+              { img: 18, title: "Galaxy Hotel Karachi", desc: "Reliable companionship options inside Galaxy Hotel for comfortable, completely private bookings. Pakistan Models Hub verified escorts available for both brief calls and extended overnight stays with full discretion." },
+            ].map((hotel) => (
+              <div key={hotel.img} className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
+                <div className="relative h-72 overflow-hidden">
+                  <Image 
+                    src={`/m${hotel.img}.jpg`} 
+                    alt={`${hotel.title} - Karachi escorts premium call girls Pakistan Models Hub`}
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
+                  <div className="absolute bottom-5 left-6 right-6">
+                    <h3 className="text-xl font-bold tracking-tight text-white">{hotel.title}</h3>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
+                    {hotel.desc}
+                  </p>
+                  <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
+                    className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                    Request Booking
+                  </a>
                 </div>
               </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Escorts at Regent Plaza Hotel Karachi. Pakistan Models Hub delivers premium verified call girls and celebrity escorts for discreet short visits, overnight stays and VIP arrangements. Perfect for business travelers seeking elite companionship with absolute privacy.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 2. Nishat - m3 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m3.jpg" 
-                  alt="Escorts at Nishat Hotel Karachi - Verified Karachi escorts DHA Clifton"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Nishat Hotel Karachi</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Luxury escorts service at Nishat Hotel Karachi. Pakistan Models Hub provides elegant, verified high-class call girls for discreet meetings and overnight stays. Ideal for gentlemen who value privacy and professional hospitality.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 3. Ramada Creek - m4 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m4.jpg" 
-                  alt="Escorts at Ramada Creek DHA - Premium Karachi escorts Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Ramada Creek DHA</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  High-end escorts in Ramada Creek DHA. Pakistan Models Hub offers professional partners well-versed in executive etiquette. Secure bookings for short visits and full-night arrangements inside Defence Housing Authority.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 4. Beach View - m5 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m5.jpg" 
-                  alt="Escorts at Beach View Hotel Karachi - Luxury call girls Clifton"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Beach View Hotel</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Exclusive beachside arrangements at Beach View Hotel. Pakistan Models Hub offers premium verified companions with complete privacy. Designed for elite clients seeking refined evening company near the coast.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 5. Sea View - m6 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m6.jpg" 
-                  alt="Sea View Karachi Escorts - Premium call girls Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Sea View Karachi</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Discreet luxury escorts available at Sea View locations. Pakistan Models Hub specializes in high-class companions for private residences and hotel suites along the famous Sea View strip. 24/7 verified service.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 6. Airbnb / Private - m7 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m7.jpg" 
-                  alt="Private Airbnb Stays Karachi Escorts - Verified call girls DHA Clifton Bahria Town"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Private Airbnb & Residences</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Premium outcall service to private Airbnb apartments and luxury residences across DHA, Clifton, Bahria Town and PECHS. Pakistan Models Hub ensures absolute discretion for non-hotel environments.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 7. Seashell - m8 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m8.jpg" 
-                  alt="Escorts at Seashell Hotel Karachi - Luxury call girls Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Seashell Hotel</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Elegant companion arrangements at Seashell Hotel. Pakistan Models Hub delivers verified high-profile escorts for short visits and overnight stays. Ideal for clients seeking a quieter private luxury experience.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 8. Mehran - m9 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m9.jpg" 
-                  alt="Escorts at Mehran Hotel Karachi - Premium call girls Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Mehran Hotel</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Reliable luxury escorts at Mehran Hotel Karachi. Pakistan Models Hub provides verified professional companions for corporate travelers and private clients. Complete confidentiality and prompt outcall delivery.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 9. Holiday Inn - m10 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m10.jpg" 
-                  alt="Escorts at Holiday Inn Karachi - Verified call girls Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Holiday Inn Karachi</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Premium companion services at Holiday Inn Karachi. Pakistan Models Hub offers discreet, high-class escorts for business meetings and overnight stays. Verified profiles and absolute privacy guaranteed.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 10. Farhan - m11 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m11.jpg" 
-                  alt="Escorts at Farhan Hotel Karachi - Luxury call girls Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Farhan Hotel</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Comfortable and entirely confidential hosting at Farhan Hotel. Pakistan Models Hub provides verified companions for relaxing short visits and extended stays with maximum privacy.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 11. Marriott - m12 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m12.jpg" 
-                  alt="Escorts in Marriott Hotel Karachi - Premium Karachi escorts Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Marriott Hotel Karachi</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Enjoy high-class companionship at the Marriott Hotel. Pakistan Models Hub delivers refined, professional partners offering discreet luxury tailored for high-profile business gentlemen and VIP clients.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 12. PC Hotel - m13 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m13.jpg" 
-                  alt="Escorts in PC Hotel Karachi - Verified call girls Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">PC Hotel Karachi</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Premium hosting services within PC Hotel Karachi with complete discretion and luxury care. Pakistan Models Hub verified companions available for short tours, overnight corporate stays and exclusive VIP arrangements.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 13. Ramada Plaza - m14 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m14.jpg" 
-                  alt="Escorts at Ramada Plaza Hotel Karachi - Luxury call girls Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Ramada Plaza Hotel</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Luxury companion services at Ramada Plaza available 24/7 with immediate dispatch. Pakistan Models Hub specializes in exceptional quality partners for secure locations and refined overnight company.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 14. Avari Towers - m15 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m15.jpg" 
-                  alt="Escorts at Avari Towers Karachi - Premium Karachi escorts Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Avari Towers Karachi</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Elite service structures tailored for premium rooms at Avari Towers. Pakistan Models Hub professional hosts guarantee total personal security, privacy and world-class companionship for high-profile gentlemen.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 15. Beach Luxury - m16 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m16.jpg" 
-                  alt="Escorts at Beach Luxury Hotel Karachi - Verified call girls Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Beach Luxury Hotel</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Exclusive arrangements at Beach Luxury Hotel featuring absolute privacy. Pakistan Models Hub designs thoughtful experiences for elite individuals seeking premier evening companions by the waterfront.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 16. Sunset Hotel DHA - m17 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m17.jpg" 
-                  alt="Escorts at Sunset Hotel DHA Karachi - Premium call girls Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Sunset Hotel DHA</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Premium arrangements within Sunset Hotel DHA Karachi. Experience top-tier local hosting inside the secure central limits of the Defence Housing Authority with verified companions available 24/7.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
-
-            {/* 17. Galaxy Hotel - m18 */}
-            <div className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red">
-              <div className="relative h-72 overflow-hidden">
-                <Image 
-                  src="/m18.jpg" 
-                  alt="Escorts at Galaxy Hotel Karachi - Luxury call girls Pakistan Models Hub"
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/70 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <h3 className="text-xl font-bold tracking-tight text-white">Galaxy Hotel Karachi</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                  Reliable companionship options inside Galaxy Hotel for comfortable, completely private bookings. Pakistan Models Hub verified escorts available for both brief calls and extended overnight stays with full discretion.
-                </p>
-                <a href="https://wa.me/923104441188" target="_blank" rel="noopener noreferrer"
-                  className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  Request Booking
-                </a>
-              </div>
-            </div>
+            ))}
 
           </div>
         </div>
