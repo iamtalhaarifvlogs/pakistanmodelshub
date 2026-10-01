@@ -15,7 +15,7 @@ export default function RegentPlazaEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m28.jpg" 
+            src="/Premium escorts in Karachi.jpg" 
             alt="Escorts in Regent Plaza Hotel Karachi - VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -119,7 +119,7 @@ export default function RegentPlazaEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m29.jpg" alt="VIP Escorts Regent Plaza Hotel Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Escorts near north karachi.jpg" alt="VIP Escorts Regent Plaza Hotel Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>

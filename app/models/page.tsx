@@ -81,7 +81,7 @@ export default function ContactPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m16.jpg" 
+            src="/Escorts in dha Karachi.jpg" 
             alt="Contact Pakistan Models Hub - Book Professional Models in Karachi"
             fill 
             className="object-cover brightness-70"
@@ -149,7 +149,7 @@ export default function ContactPage() {
 
               <div className="mt-16">
                 <Image 
-                  src="/m17.jpg" 
+                  src="/Escorts in Clifton Karachi.jpg" 
                   alt="Professional model posing for commercial shoot Karachi"
                   width={500}
                   height={600}

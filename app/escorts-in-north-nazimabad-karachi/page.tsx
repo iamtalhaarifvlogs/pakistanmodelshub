@@ -120,7 +120,7 @@ export default function NorthNazimabadEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m42.jpg" alt="VIP Escorts North Nazimabad Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Elite Escorts in Bahria Town Karachi.jpg" alt="VIP Escorts North Nazimabad Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>

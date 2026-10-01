@@ -16,7 +16,7 @@ export default function AvariTowersEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m5.jpg" 
+            src="/sex workers in karachi.jpg" 
             alt="Escorts in Avari Towers Hotel Karachi - Luxury Companions"
             fill 
             className="object-cover brightness-70"

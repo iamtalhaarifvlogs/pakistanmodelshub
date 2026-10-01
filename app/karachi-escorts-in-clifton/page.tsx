@@ -59,7 +59,7 @@ export default function KarachiEscortsCliftonPage() {
       <section className="relative min-h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m20.jpg" 
+            src="/sexy call girls in Karachi.jpg" 
             alt="Karachi Escorts in Clifton - High Class Call Girls Clifton Karachi"
             fill 
             className="object-cover brightness-[0.65] contrast-110"
@@ -123,7 +123,7 @@ export default function KarachiEscortsCliftonPage() {
             </div>
             <div className="relative h-[560px] rounded-3xl overflow-hidden shadow-2xl">
               <Image 
-                src="/m21.jpg" 
+                src="/Karachi escorts contact no.jpg" 
                 alt="Seductive Karachi escort in Clifton luxury apartment" 
                 fill 
                 className="object-cover"

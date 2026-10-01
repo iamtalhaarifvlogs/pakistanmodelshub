@@ -16,7 +16,7 @@ export default function GuestHouseEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m27.jpg" 
+            src="/Escorts near Sea View.jpg" 
             alt="Escorts in Guest House Karachi - VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -120,7 +120,7 @@ export default function GuestHouseEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m28.jpg" alt="VIP Escorts Guest House Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Premium escorts in Karachi.jpg" alt="VIP Escorts Guest House Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>

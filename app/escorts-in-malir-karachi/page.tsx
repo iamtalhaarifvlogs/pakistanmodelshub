@@ -16,7 +16,7 @@ export default function MalirEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m40.jpg" 
+            src="/Hire elite call girls in Karachi.jpg" 
             alt="Escorts in Malir Karachi - VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -120,7 +120,7 @@ export default function MalirEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m41.jpg" alt="VIP Escorts Malir Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Hire elite call girls in Avari Towers Karachi.jpg" alt="VIP Escorts Malir Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>

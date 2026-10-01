@@ -15,7 +15,7 @@ export default function DhaEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m8.jpg" 
+            src="/hot females.jpg" 
             alt="Karachi Escorts in DHA - VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -119,7 +119,7 @@ export default function DhaEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m9.jpg" alt="VIP Escorts DHA Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/prostitution near me.jpg" alt="VIP Escorts DHA Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>

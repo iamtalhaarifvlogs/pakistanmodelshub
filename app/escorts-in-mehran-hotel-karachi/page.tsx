@@ -16,7 +16,7 @@ export default function MehranHotelEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m41.jpg" 
+            src="/Hire elite call girls in Avari Towers Karachi.jpg" 
             alt="Escorts in Hotel Mehran Karachi - VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -120,7 +120,7 @@ export default function MehranHotelEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m42.jpg" alt="VIP Escorts Hotel Mehran Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Elite Escorts in Bahria Town Karachi.jpg" alt="VIP Escorts Hotel Mehran Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>

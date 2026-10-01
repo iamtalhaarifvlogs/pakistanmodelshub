@@ -108,7 +108,7 @@ export const metadata = {
       "Verified celebrity escorts in Karachi. Luxury outcall to PC Hotel, Marriott, Avari Towers and 17 elite hotels. Discreet 24/7 service across DHA, Clifton and Bahria Town.",
     images: [
       {
-        url: "/m28.jpg",
+        url: "/Premium escorts in Karachi.jpg",
         width: 1200,
         height: 630,
         alt: "Karachi Escorts — Pakistan Models Hub premium companion in DHA and Clifton",
@@ -120,7 +120,7 @@ export const metadata = {
     title: "Karachi Escorts | DHA, Clifton & Bahria Town | Pakistan Models Hub",
     description:
       "Verified VIP call girls and luxury hotel outcall across Karachi. Discreet 24/7 bookings.",
-    images: ["/m28.jpg"],
+    images: ["/Premium escorts in Karachi.jpg"],
   },
 };
 
@@ -227,11 +227,11 @@ export default function Home() {
         <WhatsAppIcon className="w-8 h-8 fill-current" />
       </a>
 
-      {/* ==================== HERO — m28.jpg visible, H1 readable ==================== */}
+      {/* ==================== HERO — Premium escorts in Karachi.jpg visible, H1 readable ==================== */}
       <section className="relative min-h-[100svh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/m28.jpg"
+            src="/Premium escorts in Karachi.jpg"
             alt="Karachi Escorts — premium verified call girls and celebrity escorts in DHA, Clifton and Bahria Town | Pakistan Models Hub"
             fill
             priority

@@ -137,7 +137,7 @@ export default function AboutPage() {
       <section className="relative min-h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m10.jpg" 
+            src="/sex places near me.jpg" 
             alt="Karachi Escorts - Premium Companions in Karachi"
             fill 
             className="object-cover brightness-70"
@@ -213,17 +213,17 @@ export default function AboutPage() {
               {
                 title: "Professional Excellence",
                 desc: "We maintain the highest standards of beauty, manners, and reliability for every escort in Karachi.",
-                image: "/m12.jpg"
+                image: "/night girls number.jpg"
               },
               {
                 title: "Complete Discretion",
                 desc: "Your privacy is our top priority. All bookings are handled with strict confidentiality.",
-                image: "/m13.jpg"
+                image: "/karachi girls number.jpg"
               },
               {
                 title: "Client Satisfaction",
                 desc: "We focus on delivering memorable and personalized experiences tailored to your preferences.",
-                image: "/m14.jpg"
+                image: "/girls for sex in karachi.jpg"
               }
             ].map((item, i) => (
               <div key={i} className="group">
@@ -270,7 +270,7 @@ export default function AboutPage() {
 
             <div className="relative h-[500px] rounded-3xl overflow-hidden">
               <Image 
-                src="/m15.jpg" 
+                src="/escorts service pakistan.jpg" 
                 alt="Luxury Escort Experience in Karachi"
                 fill 
                 className="object-cover"

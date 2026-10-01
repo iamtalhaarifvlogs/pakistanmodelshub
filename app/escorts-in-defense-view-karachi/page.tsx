@@ -16,7 +16,7 @@ export default function DefenseViewEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m19.jpg" 
+            src="/Escorts in malir.jpg" 
             alt="Escorts in Defense View Karachi - VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -120,7 +120,7 @@ export default function DefenseViewEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m24.jpg" alt="VIP Escorts Defense View Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/call girl numbers karachi.jpg" alt="VIP Escorts Defense View Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>

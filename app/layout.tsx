@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pakistan Models Hub | Elite Karachi Models & Escorts",
     description: "Premium models and discreet companionship services in Karachi. DHA, Clifton, PECHS & Major Hotels.",
-    images: [{ url: "/m1.jpg" }],
+    images: [{ url: "/karachi call girls.jpg" }],
   },
 };
 

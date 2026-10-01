@@ -16,7 +16,7 @@ export default function HotelOneEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m34.jpg" 
+            src="/Call girl in Hilton Karachi.jpg" 
             alt="Escorts in Hotel One Karachi - VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -120,7 +120,7 @@ export default function HotelOneEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m35.jpg" alt="VIP Escorts Hotel One Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Call girls service in marriott hotel Karachi.jpg" alt="VIP Escorts Hotel One Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>

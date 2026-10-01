@@ -16,7 +16,7 @@ export default function BahadurabadEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m18.jpg" 
+            src="/Karachi Escorts.jpg" 
             alt="Escorts in Bahadurabad Karachi - Premium Call Girls"
             fill 
             className="object-cover brightness-70"

@@ -16,7 +16,7 @@ export default function BahriaTownEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m18.jpg" 
+            src="/Karachi Escorts.jpg" 
             alt="Escorts in Bahria Town Karachi - Premium VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -87,7 +87,7 @@ export default function BahriaTownEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m19.jpg" alt="VIP Escorts Bahria Town Karachi" width={600} height={800} className="rounded-3xl shadow-xl" />
+              <Image src="/Escorts in malir.jpg" alt="VIP Escorts Bahria Town Karachi" width={600} height={800} className="rounded-3xl shadow-xl" />
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function BahriaTownEscortsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Types of Escorts in Bahria Town Karachi</h2>
           <div className="grid md:grid-cols-2 gap-10">
-            <Image src="/m20.jpg" alt="VIP Escorts Bahria Town" width={600} height={400} className="rounded-3xl" />
+            <Image src="/sexy call girls in Karachi.jpg" alt="VIP Escorts Bahria Town" width={600} height={400} className="rounded-3xl" />
             <div className="space-y-8 pt-8">
               <div>
                 <h3 className="font-semibold text-xl mb-3">VIP Escorts in Bahria Town Karachi</h3>

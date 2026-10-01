@@ -15,7 +15,7 @@ export default function PECHSEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m30.jpg" 
+            src="/ Booking girl In PC Hotel.jpg" 
             alt="Escorts in PECHS Karachi - VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -119,7 +119,8 @@ export default function PECHSEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m31.jpg" alt="VIP Escorts PECHS Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Call girl service in PC hotel Karachi.jpg
+" alt="VIP Escorts PECHS Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function CliftonEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m18.jpg" 
+            src="/Karachi Escorts.jpg" 
             alt="Escorts in Clifton Karachi - VIP Call Girls"
             fill 
             className="object-cover brightness-70"
@@ -119,7 +119,7 @@ export default function CliftonEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m20.jpg" alt="VIP Escorts Clifton Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/sexy call girls in Karachi.jpg" alt="VIP Escorts Clifton Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>
