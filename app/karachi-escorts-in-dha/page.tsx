@@ -182,10 +182,19 @@ export default function DhaEscortsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[8,9,10,11,12,13,14,15].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/hot females.jpg",
+              "/prostitution near me.jpg",
+              "/sex places near me.jpg",
+              "/Karachi dating girls.jpg",
+              "/night girls number.jpg",
+              "/karachi girls number.jpg",
+              "/girls for sex in karachi.jpg",
+              "/escorts service pakistan.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="DHA Karachi Escorts" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 

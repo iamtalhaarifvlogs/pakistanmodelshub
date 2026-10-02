@@ -1,21 +1,17 @@
 'use client';
-
 import Image from 'next/image';
 import { useState } from 'react';
-
 export default function CelebrityEscortsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
-
   return (
     <main className="bg-white text-black font-sans overflow-hidden">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m50.jpg" 
+            src="/Hire elite call girls in Karachi.jpg" 
             alt="Celebrity Escorts in Karachi - Exclusive VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -23,7 +19,6 @@ export default function CelebrityEscortsPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/90" />
         </div>
-
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold text-white leading-none tracking-tighter mb-4">
             KARACHI CELEBRITY ESCORTS<br />
@@ -32,7 +27,6 @@ export default function CelebrityEscortsPage() {
           <h2 className="text-3xl md:text-4xl font-medium text-white/90 mt-3">
             Exclusive VIP Celebrity Escorts in Karachi
           </h2>
-
           <a 
             href="tel:03104441188"
             className="mt-12 inline-block bg-yellow-400 hover:bg-white hover:text-black text-black font-bold text-lg px-14 py-5 rounded-full transition-all duration-300 shadow-xl"
@@ -41,7 +35,6 @@ export default function CelebrityEscortsPage() {
           </a>
         </div>
       </section>
-
       {/* Introduction */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
@@ -60,7 +53,6 @@ export default function CelebrityEscortsPage() {
           </div>
         </div>
       </section>
-
       {/* Why Choose Us */}
       <section className="py-20 bg-zinc-50">
         <div className="max-w-6xl mx-auto px-6">
@@ -93,7 +85,6 @@ export default function CelebrityEscortsPage() {
           </div>
         </div>
       </section>
-
       {/* Types & Services */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
@@ -120,12 +111,11 @@ export default function CelebrityEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m51.jpg" alt="Celebrity Escorts Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Hire elite call girls in Avari Towers Karachi.jpg" alt="Celebrity Escorts Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>
       </section>
-
       {/* Pricing */}
       <section className="py-20 bg-zinc-50">
         <div className="max-w-6xl mx-auto px-6">
@@ -161,16 +151,24 @@ export default function CelebrityEscortsPage() {
           </div>
         </div>
       </section>
-
       {/* Gallery */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Exclusive Celebrity Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[52,53,54,55,56,57,58,59].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/Elite Escorts in Bahria Town Karachi.jpg",
+              "/Call girl in Avari Towers Karachi.jpg",
+              "/DHA Karachi girls.jpg",
+              "/Party girls booking in karachi.jpg",
+              "/Girl booking in Ramada by Wyndham Karachi.jpg",
+              "/Call girls service in marriott hotel Karachi.jpg",
+              "/Hire elite call girls in Karachi.jpg",
+              "/Hire elite call girls in Avari Towers Karachi.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="Celebrity Escorts Karachi" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 
@@ -180,7 +178,6 @@ export default function CelebrityEscortsPage() {
           </div>
         </div>
       </section>
-
       {/* Final CTA */}
       <section className="py-24 bg-black text-white text-center">
         <div className="max-w-4xl mx-auto px-6">

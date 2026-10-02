@@ -124,24 +124,51 @@ export const metadata = {
   },
 };
 
+// ==================== HOTELS (updated with exact keyword image names) ====================
 const hotels = [
-  { img: 2, title: "Regent Plaza Hotel", desc: "Escorts at Regent Plaza Hotel Karachi. Pakistan Models Hub delivers premium verified call girls and celebrity escorts for discreet short visits, overnight stays and VIP arrangements. Perfect for business travelers seeking elite companionship with absolute privacy." },
-  { img: 3, title: "Nishat Hotel Karachi", desc: "Luxury escorts service at Nishat Hotel Karachi. Pakistan Models Hub provides elegant, verified high-class call girls for discreet meetings and overnight stays. Ideal for gentlemen who value privacy and professional hospitality." },
-  { img: 4, title: "Ramada Creek DHA", desc: "High-end escorts in Ramada Creek DHA. Pakistan Models Hub offers professional partners well-versed in executive etiquette. Secure bookings for short visits and full-night arrangements inside Defence Housing Authority." },
-  { img: 5, title: "Beach View Hotel", desc: "Exclusive beachside arrangements at Beach View Hotel. Pakistan Models Hub offers premium verified companions with complete privacy. Designed for elite clients seeking refined evening company near the coast." },
-  { img: 6, title: "Sea View Karachi", desc: "Discreet luxury escorts available at Sea View locations. Pakistan Models Hub specializes in high-class companions for private residences and hotel suites along the famous Sea View strip. 24/7 verified service." },
-  { img: 7, title: "Private Airbnb & Residences", desc: "Premium outcall service to private Airbnb apartments and luxury residences across DHA, Clifton, Bahria Town and PECHS. Pakistan Models Hub ensures absolute discretion for non-hotel environments." },
-  { img: 8, title: "Seashell Hotel", desc: "Elegant companion arrangements at Seashell Hotel. Pakistan Models Hub delivers verified high-profile escorts for short visits and overnight stays. Ideal for clients seeking a quieter private luxury experience." },
-  { img: 9, title: "Mehran Hotel", desc: "Reliable luxury escorts at Mehran Hotel Karachi. Pakistan Models Hub provides verified professional companions for corporate travelers and private clients. Complete confidentiality and prompt outcall delivery." },
-  { img: 10, title: "Holiday Inn Karachi", desc: "Premium companion services at Holiday Inn Karachi. Pakistan Models Hub offers discreet, high-class escorts for business meetings and overnight stays. Verified profiles and absolute privacy guaranteed." },
-  { img: 11, title: "Farhan Hotel", desc: "Comfortable and entirely confidential hosting at Farhan Hotel. Pakistan Models Hub provides verified companions for relaxing short visits and extended stays with maximum privacy." },
-  { img: 12, title: "Marriott Hotel Karachi", desc: "Enjoy high-class companionship at the Marriott Hotel. Pakistan Models Hub delivers refined, professional partners offering discreet luxury tailored for high-profile business gentlemen and VIP clients." },
-  { img: 13, title: "PC Hotel Karachi", desc: "Premium hosting services within PC Hotel Karachi with complete discretion and luxury care. Pakistan Models Hub verified companions available for short tours, overnight corporate stays and exclusive VIP arrangements." },
-  { img: 14, title: "Ramada Plaza Hotel", desc: "Luxury companion services at Ramada Plaza available 24/7 with immediate dispatch. Pakistan Models Hub specializes in exceptional quality partners for secure locations and refined overnight company." },
-  { img: 15, title: "Avari Towers Karachi", desc: "Elite service structures tailored for premium rooms at Avari Towers. Pakistan Models Hub professional hosts guarantee total personal security, privacy and world-class companionship for high-profile gentlemen." },
-  { img: 16, title: "Beach Luxury Hotel", desc: "Exclusive arrangements at Beach Luxury Hotel featuring absolute privacy. Pakistan Models Hub designs thoughtful experiences for elite individuals seeking premier evening companions by the waterfront." },
-  { img: 17, title: "Sunset Hotel DHA", desc: "Premium arrangements within Sunset Hotel DHA Karachi. Experience top-tier local hosting inside the secure central limits of the Defence Housing Authority with verified companions available 24/7." },
-  { img: 18, title: "Galaxy Hotel Karachi", desc: "Reliable companionship options inside Galaxy Hotel for comfortable, completely private bookings. Pakistan Models Hub verified escorts available for both brief calls and extended overnight stays with full discretion." },
+  { img: "/call girls in karachi.jpg", title: "Regent Plaza Hotel", desc: "Escorts at Regent Plaza Hotel Karachi. Pakistan Models Hub delivers premium verified call girls and celebrity escorts for discreet short visits, overnight stays and VIP arrangements. Perfect for business travelers seeking elite companionship with absolute privacy." },
+  { img: "/sex service in karachi.jpg", title: "Nishat Hotel Karachi", desc: "Luxury escorts service at Nishat Hotel Karachi. Pakistan Models Hub provides elegant, verified high-class call girls for discreet meetings and overnight stays. Ideal for gentlemen who value privacy and professional hospitality." },
+  { img: "/escorts in karachi.jpg", title: "Ramada Creek DHA", desc: "High-end escorts in Ramada Creek DHA. Pakistan Models Hub offers professional partners well-versed in executive etiquette. Secure bookings for short visits and full-night arrangements inside Defence Housing Authority." },
+  { img: "/sex workers in karachi.jpg", title: "Beach View Hotel", desc: "Exclusive beachside arrangements at Beach View Hotel. Pakistan Models Hub offers premium verified companions with complete privacy. Designed for elite clients seeking refined evening company near the coast." },
+  { img: "/VIP Escorts in Karachi.jpg", title: "Sea View Karachi", desc: "Discreet luxury escorts available at Sea View locations. Pakistan Models Hub specializes in high-class companions for private residences and hotel suites along the famous Sea View strip. 24/7 verified service." },
+  { img: "/independent escorts.jpg", title: "Private Airbnb & Residences", desc: "Premium outcall service to private Airbnb apartments and luxury residences across DHA, Clifton, Bahria Town and PECHS. Pakistan Models Hub ensures absolute discretion for non-hotel environments." },
+  { img: "/hot females.jpg", title: "Seashell Hotel", desc: "Elegant companion arrangements at Seashell Hotel. Pakistan Models Hub delivers verified high-profile escorts for short visits and overnight stays. Ideal for clients seeking a quieter private luxury experience." },
+  { img: "/prostitution near me.jpg", title: "Mehran Hotel", desc: "Reliable luxury escorts at Mehran Hotel Karachi. Pakistan Models Hub provides verified professional companions for corporate travelers and private clients. Complete confidentiality and prompt outcall delivery." },
+  { img: "/sex places near me.jpg", title: "Holiday Inn Karachi", desc: "Premium companion services at Holiday Inn Karachi. Pakistan Models Hub offers discreet, high-class escorts for business meetings and overnight stays. Verified profiles and absolute privacy guaranteed." },
+  { img: "/Karachi dating girls.jpg", title: "Farhan Hotel", desc: "Comfortable and entirely confidential hosting at Farhan Hotel. Pakistan Models Hub provides verified companions for relaxing short visits and extended stays with maximum privacy." },
+  { img: "/night girls number.jpg", title: "Marriott Hotel Karachi", desc: "Enjoy high-class companionship at the Marriott Hotel. Pakistan Models Hub delivers refined, professional partners offering discreet luxury tailored for high-profile business gentlemen and VIP clients." },
+  { img: "/karachi girls number.jpg", title: "PC Hotel Karachi", desc: "Premium hosting services within PC Hotel Karachi with complete discretion and luxury care. Pakistan Models Hub verified companions available for short tours, overnight corporate stays and exclusive VIP arrangements." },
+  { img: "/girls for sex in karachi.jpg", title: "Ramada Plaza Hotel", desc: "Luxury companion services at Ramada Plaza available 24/7 with immediate dispatch. Pakistan Models Hub specializes in exceptional quality partners for secure locations and refined overnight company." },
+  { img: "/escorts service pakistan.jpg", title: "Avari Towers Karachi", desc: "Elite service structures tailored for premium rooms at Avari Towers. Pakistan Models Hub professional hosts guarantee total personal security, privacy and world-class companionship for high-profile gentlemen." },
+  { img: "/Escorts in dha Karachi.jpg", title: "Beach Luxury Hotel", desc: "Exclusive arrangements at Beach Luxury Hotel featuring absolute privacy. Pakistan Models Hub designs thoughtful experiences for elite individuals seeking premier evening companions by the waterfront." },
+  { img: "/Escorts in Clifton Karachi.jpg", title: "Sunset Hotel DHA", desc: "Premium arrangements within Sunset Hotel DHA Karachi. Experience top-tier local hosting inside the secure central limits of the Defence Housing Authority with verified companions available 24/7." },
+  { img: "/Karachi Escorts.jpg", title: "Galaxy Hotel Karachi", desc: "Reliable companionship options inside Galaxy Hotel for comfortable, completely private bookings. Pakistan Models Hub verified escorts available for both brief calls and extended overnight stays with full discretion." },
+];
+
+// ==================== FEATURED MODELS (m19 → m40 mapped to exact keyword names) ====================
+const featuredModels = [
+  "/Escorts in malir.jpg",                          // was m19
+  "/sexy call girls in Karachi.jpg",                // was m20
+  "/Karachi escorts contact no.jpg",                // was m21
+  "/escorts numbers.jpg",                           // was m22
+  "/low price escorts in Karachi.jpg",              // was m23
+  "/call girl numbers karachi.jpg",                 // was m24
+  "/cheap escorts in karachi.jpg",                  // was m25
+  "/Escorts in Bahria Town Karachi.jpg",            // was m26
+  "/Escorts near Sea View.jpg",                     // was m27
+  "/Premium escorts in Karachi.jpg",                // was m28
+  "/Escorts near north karachi.jpg",                // was m29
+  "/Booking girl In PC Hotel.jpg",                  // was m30
+  "/Call girl service in PC hotel Karachi.jpg",     // was m31
+  "/Private party girls in karachi.jpg",            // was m32
+  "/Call girl service in movenpick Karachi.jpg",    // was m33
+  "/Call girl in Hilton Karachi.jpg",               // was m34
+  "/Call girls service in marriott hotel Karachi.jpg", // was m35
+  "/Girl booking in Ramada by Wyndham Karachi.jpg", // was m36
+  "/Party girls booking in karachi.jpg",            // was m37
+  "/DHA Karachi girls.jpg",                         // was m38
+  "/Call girl in Avari Towers Karachi.jpg",         // was m39
+  "/Hire elite call girls in Karachi.jpg",          // was m40
 ];
 
 const faqs = [
@@ -227,7 +254,7 @@ export default function Home() {
         <WhatsAppIcon className="w-8 h-8 fill-current" />
       </a>
 
-      {/* ==================== HERO — Premium escorts in Karachi.jpg visible, H1 readable ==================== */}
+      {/* ==================== HERO ==================== */}
       <section className="relative min-h-[100svh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
@@ -239,7 +266,6 @@ export default function Home() {
             sizes="100vw"
             className="object-cover object-[center_24%] scale-[1.04]"
           />
-          {/* Cinematic grade only — no full-screen black plate */}
           <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/82 via-zinc-950/28 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/35 to-black/10" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_28%,transparent_0%,transparent_44%,rgba(9,9,11,0.42)_100%)]" />
@@ -378,7 +404,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ==================== FEATURED MODELS GALLERY (m19–m40) ==================== */}
+      {/* ==================== FEATURED MODELS GALLERY ==================== */}
       <section className="py-20 bg-zinc-900/50 border-y border-zinc-800 scroll-fade">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -392,23 +418,21 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
-            {[19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40].map(
-              (num) => (
-                <div
-                  key={num}
-                  className="relative aspect-[3/4] rounded-xl overflow-hidden group border border-zinc-800/60"
-                >
-                  <Image
-                    src={`/m${num}.jpg`}
-                    alt={`Premium Karachi escorts model ${num} - verified call girls DHA Clifton Bahria Town Pakistan Models Hub`}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              )
-            )}
+            {featuredModels.map((imgSrc, index) => (
+              <div
+                key={index}
+                className="relative aspect-[3/4] rounded-xl overflow-hidden group border border-zinc-800/60"
+              >
+                <Image
+                  src={imgSrc}
+                  alt={`Premium Karachi escorts model ${index + 19} - verified call girls DHA Clifton Bahria Town Pakistan Models Hub`}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -445,7 +469,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ==================== ESCORTS IN KARACHI HOTELS (m2–m18) ==================== */}
+      {/* ==================== ESCORTS IN KARACHI HOTELS ==================== */}
       <section className="py-24 md:py-28 bg-zinc-900/40 border-t border-zinc-800 scroll-fade" id="hotels">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -463,12 +487,12 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {hotels.map((hotel) => (
               <article
-                key={hotel.img}
+                key={hotel.title}
                 className="group relative bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/80 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.25)] animate-neon-card-red"
               >
                 <div className="relative h-72 overflow-hidden">
                   <Image
-                    src={`/m${hotel.img}.jpg`}
+                    src={hotel.img}
                     alt={`${hotel.title} - Karachi escorts premium call girls Pakistan Models Hub`}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -635,4 +659,3 @@ export default function Home() {
     </main>
   );
 }
-

@@ -160,9 +160,18 @@ export default function BahriaTownEscortsPage() {
       {/* Gallery / Visual Break */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[21,22,23,24,25,26,27,28].map((n) => (
-            <div key={n} className="relative aspect-[4/3] rounded-3xl overflow-hidden">
-              <Image src={`/m${n}.jpg`} alt={`Bahria Town Escorts`} fill className="object-cover hover:scale-105 transition-transform duration-700" />
+          {[
+            "/Karachi escorts contact no.jpg",
+            "/escorts numbers.jpg",
+            "/low price escorts in Karachi.jpg",
+            "/call girl numbers karachi.jpg",
+            "/cheap escorts in karachi.jpg",
+            "/Escorts in Bahria Town Karachi.jpg",
+            "/Escorts near Sea View.jpg",
+            "/Premium escorts in Karachi.jpg"
+          ].map((imgSrc, index) => (
+            <div key={index} className="relative aspect-[4/3] rounded-3xl overflow-hidden">
+              <Image src={imgSrc} alt={`Bahria Town Escorts`} fill className="object-cover hover:scale-105 transition-transform duration-700" />
             </div>
           ))}
         </div>
@@ -184,4 +193,3 @@ export default function BahriaTownEscortsPage() {
     </main>
   );
 }
-

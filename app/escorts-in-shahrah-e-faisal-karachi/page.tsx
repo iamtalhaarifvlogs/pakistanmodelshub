@@ -15,7 +15,7 @@ export default function ShahrahEFaisalEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m48.jpg" 
+            src="/Call girls service in marriott hotel Karachi.jpg" 
             alt="Escorts in Shahrah-e-Faisal Karachi - VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -120,7 +120,7 @@ export default function ShahrahEFaisalEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m49.jpg" alt="VIP Escorts Shahrah-e-Faisal Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Girl booking in Ramada by Wyndham Karachi.jpg" alt="VIP Escorts Shahrah-e-Faisal Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>
@@ -183,10 +183,19 @@ export default function ShahrahEFaisalEscortsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[50,51,52,53,54,55,56,57].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/Call girls service in marriott hotel Karachi.jpg",
+              "/Girl booking in Ramada by Wyndham Karachi.jpg",
+              "/Party girls booking in karachi.jpg",
+              "/DHA Karachi girls.jpg",
+              "/Call girl in Avari Towers Karachi.jpg",
+              "/Hire elite call girls in Karachi.jpg",
+              "/Hire elite call girls in Avari Towers Karachi.jpg",
+              "/Elite Escorts in Bahria Town Karachi.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="Shahrah-e-Faisal Escorts Karachi" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 

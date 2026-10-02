@@ -121,7 +121,7 @@ export default function GulistanEJoharEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/ Booking girl In PC Hotel.jpg" alt="VIP Escorts Gulistan-e-Johar Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Booking girl In PC Hotel.jpg" alt="VIP Escorts Gulistan-e-Johar Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>
@@ -184,10 +184,19 @@ export default function GulistanEJoharEscortsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[31,32,33,34,35,36,37,38].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/Call girl service in PC hotel Karachi.jpg",
+              "/Private party girls in karachi.jpg",
+              "/Call girl service in movenpick Karachi.jpg",
+              "/Call girl in Hilton Karachi.jpg",
+              "/Call girls service in marriott hotel Karachi.jpg",
+              "/Girl booking in Ramada by Wyndham Karachi.jpg",
+              "/Party girls booking in karachi.jpg",
+              "/DHA Karachi girls.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="Gulistan-e-Johar Escorts Karachi" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 

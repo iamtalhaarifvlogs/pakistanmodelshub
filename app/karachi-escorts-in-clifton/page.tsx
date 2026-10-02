@@ -140,11 +140,20 @@ export default function KarachiEscortsCliftonPage() {
           <h2 className="text-4xl font-bold text-center mb-12">Beautiful Call Girls in Clifton Karachi</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[22,23,24,25,26,27,28,20].map((num, index) => (
+            {[
+              "/escorts numbers.jpg",
+              "/low price escorts in Karachi.jpg",
+              "/call girl numbers karachi.jpg",
+              "/cheap escorts in karachi.jpg",
+              "/Escorts in Bahria Town Karachi.jpg",
+              "/Escorts near Sea View.jpg",
+              "/Premium escorts in Karachi.jpg",
+              "/sexy call girls in Karachi.jpg"
+            ].map((imgSrc, index) => (
               <div key={index} className="relative aspect-[4/5] rounded-3xl overflow-hidden group">
                 <Image 
-                  src={`/m${num}.jpg`} 
-                  alt={`High class escort Clifton Karachi ${num}`}
+                  src={imgSrc} 
+                  alt={`High class escort Clifton Karachi ${index + 1}`}
                   fill 
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />

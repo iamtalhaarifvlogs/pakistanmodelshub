@@ -120,8 +120,7 @@ export default function CrownInnHotelEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/Call girl service in movenpick Karachi.jpg
-" alt="VIP Escorts Hotel Crown Inn Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Call girl service in movenpick Karachi.jpg" alt="VIP Escorts Hotel Crown Inn Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>
@@ -184,10 +183,19 @@ export default function CrownInnHotelEscortsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[34,35,36,37,38,39,40,41].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/Call girl in Hilton Karachi.jpg",
+              "/Call girls service in marriott hotel Karachi.jpg",
+              "/Girl booking in Ramada by Wyndham Karachi.jpg",
+              "/Party girls booking in karachi.jpg",
+              "/DHA Karachi girls.jpg",
+              "/Call girl in Avari Towers Karachi.jpg",
+              "/Hire elite call girls in Karachi.jpg",
+              "/Hire elite call girls in Avari Towers Karachi.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="Crown Inn Hotel Escorts Karachi" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 

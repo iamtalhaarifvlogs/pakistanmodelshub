@@ -188,7 +188,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-[520px] rounded-3xl overflow-hidden">
               <Image 
-                src="/m11.jpg" 
+                src="/Karachi dating girls.jpg" 
                 alt="Luxury Escorts Experience in Karachi"
                 fill 
                 className="object-cover"

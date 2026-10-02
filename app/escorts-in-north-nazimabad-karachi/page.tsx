@@ -16,7 +16,7 @@ export default function NorthNazimabadEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m43.jpg" 
+            src="/Elite Escorts in Bahria Town Karachi.jpg" 
             alt="Escorts in North Nazimabad Karachi - VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -183,10 +183,19 @@ export default function NorthNazimabadEscortsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[43,44,45,46,47,48,49,50].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/Elite Escorts in Bahria Town Karachi.jpg",
+              "/Hire elite call girls in Avari Towers Karachi.jpg",
+              "/Hire elite call girls in Karachi.jpg",
+              "/Call girl in Avari Towers Karachi.jpg",
+              "/DHA Karachi girls.jpg",
+              "/Party girls booking in karachi.jpg",
+              "/Girl booking in Ramada by Wyndham Karachi.jpg",
+              "/Call girls service in marriott hotel Karachi.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="North Nazimabad Escorts Karachi" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 

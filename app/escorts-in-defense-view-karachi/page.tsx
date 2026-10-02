@@ -183,10 +183,19 @@ export default function DefenseViewEscortsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[25,26,27,28,29,30,31,32].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/cheap escorts in karachi.jpg",
+              "/Escorts in Bahria Town Karachi.jpg",
+              "/Escorts near Sea View.jpg",
+              "/Premium escorts in Karachi.jpg",
+              "/Escorts near north karachi.jpg",
+              "/Booking girl In PC Hotel.jpg",
+              "/Call girl service in PC hotel Karachi.jpg",
+              "/Private party girls in karachi.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="Defense View Escorts Karachi" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 
@@ -213,4 +222,3 @@ export default function DefenseViewEscortsPage() {
     </main>
   );
 }
-

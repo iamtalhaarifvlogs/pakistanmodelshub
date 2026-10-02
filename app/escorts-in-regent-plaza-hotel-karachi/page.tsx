@@ -1,14 +1,10 @@
 'use client';
-
 import Image from 'next/image';
 import { useState } from 'react';
-
 export default function RegentPlazaEscortsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
-
   return (
     <main className="bg-white text-black font-sans overflow-hidden">
       {/* Hero Section */}
@@ -23,7 +19,6 @@ export default function RegentPlazaEscortsPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/65 to-black/85" />
         </div>
-
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold text-white leading-none tracking-tighter mb-4">
             KARACHI ESCORTS<br />
@@ -32,7 +27,6 @@ export default function RegentPlazaEscortsPage() {
           <h2 className="text-3xl md:text-4xl font-medium text-white/90 mt-3">
             Escorts in Regent Plaza Hotel Karachi
           </h2>
-
           <a 
             href="tel:03104441188"
             className="mt-12 inline-block bg-yellow-400 hover:bg-white hover:text-black text-black font-bold text-lg px-14 py-5 rounded-full transition-all duration-300 shadow-xl"
@@ -41,7 +35,6 @@ export default function RegentPlazaEscortsPage() {
           </a>
         </div>
       </section>
-
       {/* Introduction */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
@@ -59,7 +52,6 @@ export default function RegentPlazaEscortsPage() {
           </div>
         </div>
       </section>
-
       {/* Why Choose Us */}
       <section className="py-20 bg-zinc-50">
         <div className="max-w-6xl mx-auto px-6">
@@ -92,7 +84,6 @@ export default function RegentPlazaEscortsPage() {
           </div>
         </div>
       </section>
-
       {/* Types of Escorts */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
@@ -124,7 +115,6 @@ export default function RegentPlazaEscortsPage() {
           </div>
         </div>
       </section>
-
       {/* Areas */}
       <section className="py-20 bg-zinc-50">
         <div className="max-w-6xl mx-auto px-6">
@@ -136,7 +126,6 @@ export default function RegentPlazaEscortsPage() {
           </div>
         </div>
       </section>
-
       {/* Pricing */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
@@ -176,16 +165,24 @@ export default function RegentPlazaEscortsPage() {
           </div>
         </div>
       </section>
-
       {/* Gallery */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[30,31,32,33,34,35,36,37].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/Booking girl In PC Hotel.jpg",
+              "/Call girl service in PC hotel Karachi.jpg",
+              "/Private party girls in karachi.jpg",
+              "/Call girl service in movenpick Karachi.jpg",
+              "/Call girl in Hilton Karachi.jpg",
+              "/Call girls service in marriott hotel Karachi.jpg",
+              "/Girl booking in Ramada by Wyndham Karachi.jpg",
+              "/Party girls booking in karachi.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="Regent Plaza Hotel Escorts Karachi" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 
@@ -195,7 +192,6 @@ export default function RegentPlazaEscortsPage() {
           </div>
         </div>
       </section>
-
       {/* Final CTA */}
       <section className="py-24 bg-black text-white text-center">
         <div className="max-w-4xl mx-auto px-6">

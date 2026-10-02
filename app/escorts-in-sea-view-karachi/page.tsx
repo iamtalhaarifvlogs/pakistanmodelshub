@@ -15,7 +15,7 @@ export default function SeaViewEscortsPage() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/m45.jpg" 
+            src="/Escorts near Sea View.jpg" 
             alt="Escorts in Sea View Karachi - VIP Companions"
             fill 
             className="object-cover brightness-70"
@@ -119,7 +119,7 @@ export default function SeaViewEscortsPage() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <Image src="/m46.jpg" alt="VIP Escorts Sea View Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
+              <Image src="/Premium escorts in Karachi.jpg" alt="VIP Escorts Sea View Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
         </div>
@@ -182,10 +182,19 @@ export default function SeaViewEscortsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[47,48,49,50,51,52,53,54].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/Escorts near Sea View.jpg",
+              "/Premium escorts in Karachi.jpg",
+              "/Escorts near north karachi.jpg",
+              "/Booking girl In PC Hotel.jpg",
+              "/Call girl service in PC hotel Karachi.jpg",
+              "/Private party girls in karachi.jpg",
+              "/Call girl service in movenpick Karachi.jpg",
+              "/Call girl in Hilton Karachi.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="Sea View Escorts Karachi" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 

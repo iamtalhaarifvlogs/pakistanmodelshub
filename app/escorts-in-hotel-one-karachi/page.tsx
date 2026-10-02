@@ -183,10 +183,18 @@ export default function HotelOneEscortsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[36,37,38,39,40,41,42].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/Girl booking in Ramada by Wyndham Karachi.jpg",
+              "/Party girls booking in karachi.jpg",
+              "/DHA Karachi girls.jpg",
+              "/Call girl in Avari Towers Karachi.jpg",
+              "/Hire elite call girls in Karachi.jpg",
+              "/Hire elite call girls in Avari Towers Karachi.jpg",
+              "/Elite Escorts in Bahria Town Karachi.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="Hotel One Escorts Karachi" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 

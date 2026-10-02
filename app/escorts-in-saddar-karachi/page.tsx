@@ -183,10 +183,19 @@ export default function SaddarEscortsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[37,38,39,40,41,42,43,44].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/Party girls booking in karachi.jpg",
+              "/DHA Karachi girls.jpg",
+              "/Call girl in Avari Towers Karachi.jpg",
+              "/Hire elite call girls in Karachi.jpg",
+              "/Hire elite call girls in Avari Towers Karachi.jpg",
+              "/Elite Escorts in Bahria Town Karachi.jpg",
+              "/Call girls service in marriott hotel Karachi.jpg",
+              "/Girl booking in Ramada by Wyndham Karachi.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="Saddar Escorts Karachi" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 

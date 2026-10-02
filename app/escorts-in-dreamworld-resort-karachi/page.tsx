@@ -184,10 +184,19 @@ export default function DreamworldResortEscortsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[27,28,29,30,31,32,33,34].map((n) => (
-              <div key={n} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            {[
+              "/Escorts near Sea View.jpg",
+              "/Premium escorts in Karachi.jpg",
+              "/Escorts near north karachi.jpg",
+              "/Booking girl In PC Hotel.jpg",
+              "/Call girl service in PC hotel Karachi.jpg",
+              "/Private party girls in karachi.jpg",
+              "/Call girl service in movenpick Karachi.jpg",
+              "/Call girl in Hilton Karachi.jpg"
+            ].map((imgSrc, index) => (
+              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
                 <Image 
-                  src={`/m${n}.jpg`} 
+                  src={imgSrc} 
                   alt="Dreamworld Resort Escorts Karachi" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 
@@ -214,4 +223,3 @@ export default function DreamworldResortEscortsPage() {
     </main>
   );
 }
-

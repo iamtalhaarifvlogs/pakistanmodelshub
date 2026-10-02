@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pakistanmodelshub.com"),
   title: "Pakistan Models Hub | Elite Karachi Models & Escorts",
   description: "Premium professional models and elite companions in Karachi. Book top talent for fashion, commercial shoots, events & private experiences.",
   keywords: [
