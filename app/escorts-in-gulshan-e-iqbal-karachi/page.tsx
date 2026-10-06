@@ -1,176 +1,238 @@
-'use client';
+import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
+export const metadata: Metadata = {
+  title: "Escorts in Gulshan-e-Iqbal Karachi | Call Girls in Gulshan Iqbal | Premium Escorts 2026",
+  description:
+    "Book verified escorts in Gulshan-e-Iqbal Karachi and call girls in Gulshan Iqbal. Premium companions available across Gulshan blocks. Discreet 24/7 service by Pakistan Models Hub.",
+  keywords: [
+    "escorts in gulshan e iqbal",
+    "call girls in gulshan iqbal",
+    "gulshan e iqbal escorts",
+    "escorts in gulshan-e-iqbal karachi",
+    "call girls gulshan iqbal",
+    "karachi call girls",
+    "escorts in karachi",
+    "Pakistan Models Hub",
+  ],
+  alternates: {
+    canonical: "https://pakistanmodelshub.com/escorts-in-gulshan-e-iqbal-karachi",
+  },
+  openGraph: {
+    title: "Escorts in Gulshan-e-Iqbal Karachi | Call Girls in Gulshan Iqbal | Pakistan Models Hub",
+    description: "Verified escorts and call girls in Gulshan-e-Iqbal Karachi. Premium outcall service.",
+    images: [{ url: "/Booking girl In PC Hotel.jpg" }],
+  },
+};
+
+const WA_LINK = "https://wa.me/923104441188";
+
+const models = [
+  { src: "/Booking girl In PC Hotel.jpg", name: "Ayesha", area: "Gulshan Iqbal" },
+  { src: "/Premium escorts in Karachi.jpg", name: "Mehwish", area: "VIP" },
+  { src: "/sexy call girls in Karachi.jpg", name: "Hira", area: "Premium" },
+  { src: "/DHA Karachi girls.jpg", name: "Anaya", area: "Elite" },
+  { src: "/Hire elite call girls in Karachi.jpg", name: "Sobia", area: "Celebrity" },
+  { src: "/Call girl in Avari Towers Karachi.jpg", name: "Zoya", area: "High Class" },
+];
+
+const faqs = [
+  {
+    q: "Are there verified call girls available in Gulshan-e-Iqbal?",
+    a: "Yes. Pakistan Models Hub offers verified escorts and call girls across Gulshan-e-Iqbal with real photos and complete discretion.",
+  },
+  {
+    q: "Do you provide home visit escorts in Gulshan Iqbal?",
+    a: "Yes. We arrange discreet home visits as well as hotel outcall in and around Gulshan-e-Iqbal.",
+  },
+  {
+    q: "How fast can I book an escort in Gulshan-e-Iqbal?",
+    a: "Most bookings are confirmed within 45–90 minutes after you message us on WhatsApp.",
+  },
+  {
+    q: "What are the rates for escorts in Gulshan-e-Iqbal Karachi?",
+    a: "Short visits start from 40,000–60,000 PKR. Extended sessions 70,000–90,000 PKR. Full night packages range from 80,000–120,000 PKR.",
+  },
+  {
+    q: "Is the service completely private in Gulshan Iqbal?",
+    a: "Absolutely. All arrangements are handled with full confidentiality. Companions arrive as private guests.",
+  },
+];
 
 export default function GulshanEIqbalEscortsPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
-
   return (
-    <main className="bg-white text-black font-sans overflow-hidden">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center pt-20">
+    <div className="bg-zinc-950 text-gray-100 font-sans min-h-screen">
+      {/* Hero */}
+      <section className="relative min-h-[85vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/Booking girl In PC Hotel.jpg" 
-            alt="Escorts in Gulshan-e-Iqbal Karachi - VIP Companions"
-            fill 
-            className="object-cover brightness-70"
+          <Image
+            src="/Booking girl In PC Hotel.jpg"
+            alt="Escorts in Gulshan-e-Iqbal Karachi - Call Girls in Gulshan Iqbal | Pakistan Models Hub"
+            fill
             priority
+            quality={90}
+            className="object-cover object-center"
+            sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/65 to-black/85" />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-black/40" />
         </div>
 
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-white leading-none tracking-tighter mb-4">
-            KARACHI ESCORTS<br />
-            <span className="text-yellow-400">0310-444-1188</span>
-          </h1>
-          <h2 className="text-3xl md:text-4xl font-medium text-white/90 mt-3">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 md:pb-24 pt-32">
+          <p className="text-yellow-400 font-semibold tracking-[0.25em] text-xs uppercase mb-4">
+            Pakistan Models Hub
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 leading-tight">
             Escorts in Gulshan-e-Iqbal Karachi
+          </h1>
+          <h2 className="text-lg md:text-xl text-yellow-300/90 font-medium mb-6">
+            Call Girls in Gulshan Iqbal • Premium Escorts • Verified Profiles
           </h2>
-
-          <a 
-            href="tel:03104441188"
-            className="mt-12 inline-block bg-yellow-400 hover:bg-white hover:text-black text-black font-bold text-lg px-14 py-5 rounded-full transition-all duration-300 shadow-xl"
+          <p className="text-gray-200 max-w-2xl mb-8 font-light leading-relaxed">
+            Book verified escorts in Gulshan-e-Iqbal Karachi and high-class call girls available across Gulshan blocks.
+            Discreet 24/7 outcall service.
+          </p>
+          <a
+            href={WA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-400 hover:from-yellow-300 text-black font-bold text-sm md:text-base px-8 py-4 rounded-full transition-all tracking-wider uppercase shadow-[0_0_30px_rgba(250,204,21,0.35)] hover:scale-105"
           >
-            BOOK NOW
+            Book Gulshan Escorts on WhatsApp
           </a>
         </div>
       </section>
 
       {/* Introduction */}
-      <section className="py-20 bg-white">
+      <section className="py-16 md:py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
+            Premium Escorts & Call Girls in Gulshan-e-Iqbal
+          </h2>
+          <p className="text-gray-300 leading-relaxed font-light mb-6">
+            Looking for reliable <strong>escorts in Gulshan-e-Iqbal Karachi</strong>? Pakistan Models Hub offers
+            verified and discreet <strong>call girls in Gulshan Iqbal</strong> for private companionship.
+            Whether you need a short visit or full night arrangement, our companions are available
+            across Gulshan blocks.
+          </p>
+          <p className="text-gray-400 leading-relaxed font-light">
+            Gulshan-e-Iqbal is a well-known residential and commercial area. We specialize in providing high-class escorts
+            who understand the importance of privacy and punctuality.
+          </p>
+        </div>
+      </section>
+
+      {/* Why Choose */}
+      <section className="py-16 bg-zinc-900/40 border-y border-zinc-800">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-8">Escorts in Gulshan-e-Iqbal Karachi</h2>
-          <div className="prose prose-lg max-w-4xl mx-auto text-black/80 leading-relaxed space-y-6">
-            <p>
-              Looking for Escorts in Gulshan-e-Iqbal Karachi? You are at the right place. 
-              At Pakistan Models Hub, we provide premium, professional, and discreet escort services 
-              across Gulshan-e-Iqbal and nearby areas.
-            </p>
-            <p>
-              Gulshan-e-Iqbal is a well-known residential and commercial area in Karachi. 
-              Our Gulshan-e-Iqbal Escorts offer elegance, privacy, and top-notch service in every booking.
-            </p>
+          <h2 className="text-3xl font-extrabold text-center text-white mb-12">
+            Why Choose Escorts in Gulshan-e-Iqbal Karachi?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Verified Gulshan Call Girls",
+                desc: "Every profile is personally verified. Real photos and available companions only.",
+              },
+              {
+                title: "Complete Discretion",
+                desc: "All bookings for escorts in Gulshan-e-Iqbal are handled with absolute confidentiality.",
+              },
+              {
+                title: "24/7 Outcall Service",
+                desc: "Available day and night for home visits and nearby hotel bookings.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 hover:border-yellow-500/30 transition-all">
+                <h3 className="text-yellow-400 font-bold text-lg mb-3">{item.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed font-light">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-zinc-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Why Choose Escorts in Gulshan-e-Iqbal Karachi?</h2>
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="space-y-8">
-              <div>
-                <h3 className="font-semibold text-xl mb-2">Professional & Experienced Girls</h3>
-                <p className="text-black/70">Our escorts are trained, elegant, and skilled in providing unforgettable experiences.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-xl mb-2">VIP & Affordable Options</h3>
-                <p className="text-black/70">From luxurious VIP escorts to budget-friendly call girls.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-xl mb-2">Discreet & Safe Services</h3>
-                <p className="text-black/70">All bookings and meetings are fully confidential.</p>
-              </div>
-            </div>
-            <div className="space-y-8">
-              <div>
-                <h3 className="font-semibold text-xl mb-2">Flexible & Customizable Services</h3>
-                <p className="text-black/70">Hotel visits, home visits, or private companionship tailored to your needs.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-xl mb-2">24/7 Availability</h3>
-                <p className="text-black/70">Call or WhatsApp 0310-444-1188 anytime to book your preferred escort.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Types of Escorts */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-12 gap-12 items-center">
-            <div className="md:col-span-7">
-              <h2 className="text-4xl font-bold mb-10">Types of Escorts in Gulshan-e-Iqbal Karachi</h2>
-              <div className="space-y-8">
-                <div>
-                  <h3 className="font-semibold text-xl mb-3">VIP Escorts</h3>
-                  <p className="text-black/70">High-class, elegant companions for luxurious experiences.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-xl mb-3">Hotel Escorts</h3>
-                  <p className="text-black/70">Discreet and professional escorts available for hotel meetings.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-xl mb-3">House Visit Escorts</h3>
-                  <p className="text-black/70">Private home-based bookings for maximum discretion.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-xl mb-3">Celebrity Look-Alike Escorts</h3>
-                  <p className="text-black/70">Girls resembling famous models, TV actresses, or influencers.</p>
+      {/* Models Grid */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center mb-3">
+            Featured Escorts in Gulshan-e-Iqbal
+          </h2>
+          <p className="text-center text-gray-400 text-sm mb-10 font-light">
+            Verified call girls available for Gulshan Iqbal bookings
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {models.map((model, index) => (
+              <div key={index} className="group relative rounded-2xl overflow-hidden border border-zinc-800 hover:border-yellow-500/40 transition-all">
+                <div className="relative aspect-[3/4]">
+                  <Image
+                    src={model.src}
+                    alt={`${model.name} - Escorts in Gulshan-e-Iqbal Karachi | Call Girls in Gulshan Iqbal`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 50vw, 16vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <p className="text-white font-semibold text-sm">{model.name}</p>
+                    <p className="text-yellow-400/90 text-xs">{model.area}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="md:col-span-5">
-              <Image src="/Call girl service in PC hotel Karachi.jpg" alt="VIP Escorts Gulshan-e-Iqbal Karachi" width={600} height={800} className="rounded-3xl shadow-2xl" />
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Areas */}
-      <section className="py-20 bg-zinc-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Areas We Cover in Gulshan-e-Iqbal</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
-            {["Block 1 to 8", "University Road", "North Karachi", "Clifton", "DHA", "Saddar"].map((area) => (
-              <div key={area} className="bg-white py-5 rounded-2xl shadow-sm font-medium">{area}</div>
+      <section className="py-14 bg-zinc-900/30">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-2xl font-extrabold text-white mb-8">Areas We Cover in Gulshan-e-Iqbal</h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {["Block 1 to 8", "University Road", "Nearby Hotels", "North Karachi"].map((area) => (
+              <span key={area} className="px-5 py-2.5 rounded-full bg-zinc-800 border border-zinc-700 text-gray-300 text-sm">
+                {area}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
       {/* Pricing */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Pricing for Escorts in Gulshan-e-Iqbal Karachi</h2>
-          <div className="max-w-4xl mx-auto overflow-x-auto">
-            <table className="w-full border border-gray-200 text-left">
-              <thead className="bg-zinc-100">
+      <section className="py-16">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl font-extrabold text-center text-white mb-10">
+            Escorts in Gulshan-e-Iqbal – Rates
+          </h2>
+          <div className="bg-zinc-900/60 border border-yellow-500/20 rounded-2xl overflow-hidden">
+            <table className="w-full text-sm">
+              <thead className="bg-zinc-900 text-yellow-400">
                 <tr>
-                  <th className="p-5 border-b font-semibold">Service Type</th>
-                  <th className="p-5 border-b font-semibold">Duration</th>
-                  <th className="p-5 border-b font-semibold text-center">Price Range (PKR)</th>
+                  <th className="p-4 text-left font-bold">Service</th>
+                  <th className="p-4 text-left font-bold">Duration</th>
+                  <th className="p-4 text-center font-bold">Rates (PKR)</th>
                 </tr>
               </thead>
-              <tbody className="text-sm">
-                <tr className="border-b">
-                  <td className="p-5">Short Time Session</td>
-                  <td className="p-5">1 Hour</td>
-                  <td className="p-5 text-center font-medium">35,000 – 65,000</td>
+              <tbody className="text-gray-300">
+                <tr className="border-t border-zinc-800">
+                  <td className="p-4">Short Visit</td>
+                  <td className="p-4">1–2 Hours</td>
+                  <td className="p-4 text-center font-medium text-white">40,000 – 60,000</td>
                 </tr>
-                <tr className="border-b">
-                  <td className="p-5">Extended Session</td>
-                  <td className="p-5">2–3 Hours</td>
-                  <td className="p-5 text-center font-medium">60,000 – 90,000</td>
+                <tr className="border-t border-zinc-800">
+                  <td className="p-4">Extended</td>
+                  <td className="p-4">3–4 Hours</td>
+                  <td className="p-4 text-center font-medium text-white">70,000 – 90,000</td>
                 </tr>
-                <tr className="border-b">
-                  <td className="p-5">Full Night Experience</td>
-                  <td className="p-5">8–10 Hours</td>
-                  <td className="p-5 text-center font-medium">80,000 – 120,000</td>
+                <tr className="border-t border-zinc-800">
+                  <td className="p-4">Full Night</td>
+                  <td className="p-4">6–8 Hours</td>
+                  <td className="p-4 text-center font-medium text-white">80,000 – 120,000</td>
                 </tr>
-                <tr>
-                  <td className="p-5">VIP / Celebrity Level</td>
-                  <td className="p-5">Custom</td>
-                  <td className="p-5 text-center font-medium">120,000 – 150,000+</td>
+                <tr className="border-t border-zinc-800">
+                  <td className="p-4">VIP Elite</td>
+                  <td className="p-4">Overnight</td>
+                  <td className="p-4 text-center font-medium text-yellow-400">120,000+</td>
                 </tr>
               </tbody>
             </table>
@@ -178,47 +240,60 @@ export default function GulshanEIqbalEscortsPage() {
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Our Beautiful Companions</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {/* FAQ */}
+      <section className="py-16 bg-zinc-900/40 border-y border-zinc-800">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl font-extrabold text-center text-white mb-10">
+            Escorts in Gulshan-e-Iqbal Karachi – FAQ
+          </h2>
+          <div className="space-y-4">
+            {faqs.map((item, i) => (
+              <details key={i} className="group rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 open:border-yellow-500/30">
+                <summary className="cursor-pointer list-none font-semibold text-white flex justify-between gap-4">
+                  <span>{item.q}</span>
+                  <span className="text-yellow-400 group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p className="mt-3 text-sm text-gray-400 font-light leading-relaxed">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* More Like This */}
+      <section className="py-14">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-2xl font-extrabold text-white mb-2">More Like This</h2>
+          <p className="text-gray-400 text-sm mb-6 font-light">Other popular areas</p>
+          <div className="flex flex-wrap gap-3">
             {[
-              "/Private party girls in karachi.jpg",
-              "/Call girl service in movenpick Karachi.jpg",
-              "/Call girl in Hilton Karachi.jpg",
-              "/Call girls service in marriott hotel Karachi.jpg",
-              "/Girl booking in Ramada by Wyndham Karachi.jpg",
-              "/Party girls booking in karachi.jpg",
-              "/DHA Karachi girls.jpg",
-              "/Call girl in Avari Towers Karachi.jpg"
-            ].map((imgSrc, index) => (
-              <div key={index} className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
-                <Image 
-                  src={imgSrc} 
-                  alt="Gulshan-e-Iqbal Escorts Karachi" 
-                  fill 
-                  className="object-cover hover:scale-105 transition-transform duration-700" 
-                />
-              </div>
+              { name: "Gulistan-e-Johar Escorts", href: "/escorts-in-gulistan-e-jouhar-karachi" },
+              { name: "Nazimabad Escorts", href: "/escorts-in-nazimabad-karachi" },
+              { name: "North Nazimabad Escorts", href: "/escorts-in-north-nazimabad-karachi" },
+              { name: "Escorts in DHA", href: "/karachi-escorts-in-dha" },
+              { name: "PECHS Escorts", href: "/escorts-in-pechs-karachi" },
+              { name: "All Models", href: "/models" },
+            ].map((item) => (
+              <Link key={item.name} href={item.href} className="px-5 py-2.5 rounded-full bg-zinc-800 border border-zinc-700 text-gray-300 hover:border-yellow-500/50 hover:text-yellow-400 text-sm transition-all">
+                {item.name}
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-black text-white text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-5xl font-bold tracking-tighter mb-6">Ready to Book Escorts in Gulshan-e-Iqbal Karachi?</h2>
-          <p className="text-xl text-white/80 mb-12">Fast • Discreet • Professional • 24/7</p>
-          <a 
-            href="tel:03104441188"
-            className="inline-block bg-yellow-400 text-black font-bold text-2xl px-16 py-6 rounded-full hover:bg-white transition-all"
-          >
-            Call 0310-444-1188
+      <section className="py-16 bg-zinc-900/50 border-t border-zinc-800 text-center">
+        <div className="max-w-2xl mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-4">
+            Book Escorts in Gulshan-e-Iqbal Now
+          </h2>
+          <p className="text-gray-400 mb-8 font-light">Fast response • Verified profiles • Complete discretion</p>
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-400 text-black font-bold px-10 py-4 rounded-full tracking-wider uppercase hover:scale-105 transition-all">
+            WhatsApp 0310-444-1188
           </a>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
