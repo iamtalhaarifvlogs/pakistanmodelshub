@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -36,17 +35,18 @@ export default function Header() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800">
+      {/* NAV BAR */}
+      <nav className="fixed top-0 left-0 right-0 z-[100] bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - NO h1 here (SEO: only 1 H1 on page) */}
           <Link href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-2xl shadow-inner">
               P
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight text-white leading-tight">
+              <p className="text-xl font-bold tracking-tight text-white leading-tight">
                 Pakistan Models Hub
-              </h1>
+              </p>
               <p className="text-[10px] text-yellow-400/90 font-medium">Premium Escorts Karachi</p>
             </div>
           </Link>
@@ -116,7 +116,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden z-50 p-2 text-white focus:outline-none"
+            className="md:hidden relative z-[101] p-2 text-white focus:outline-none"
             aria-label="Toggle menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
@@ -126,73 +126,120 @@ export default function Header() {
             </div>
           </button>
         </div>
+      </nav>
 
-        {/* Mobile Overlay */}
-        {isMenuOpen && (
-          <div onClick={closeMenu} className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] md:hidden" />
-        )}
+      {/* Mobile Overlay - OUTSIDE nav, very high z-index */}
+      {isMenuOpen && (
+        <div
+          onClick={closeMenu}
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[9998] md:hidden"
+        />
+      )}
 
-        {/* Mobile Drawer */}
-        <div className={`fixed top-0 right-0 h-full w-80 bg-zinc-950 shadow-2xl transform transition-transform duration-300 ease-in-out z-[60] flex flex-col border-l border-zinc-800 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="p-6 flex flex-col h-full overflow-y-auto">
-            <div className="flex items-center justify-between border-b border-zinc-800 pb-4 mb-6">
-              <span className="font-bold text-white text-lg">Menu</span>
-              <button onClick={closeMenu} className="text-2xl text-gray-400 hover:text-white p-1">✕</button>
-            </div>
+      {/* Mobile Drawer - OUTSIDE nav, highest z-index */}
+      <div
+        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-zinc-950 shadow-2xl transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col border-l border-zinc-800 md:hidden ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="p-6 flex flex-col h-full overflow-y-auto">
+          <div className="flex items-center justify-between border-b border-zinc-800 pb-4 mb-6">
+            <span className="font-bold text-white text-lg">Menu</span>
+            <button onClick={closeMenu} className="text-2xl text-gray-400 hover:text-white p-1">
+              ✕
+            </button>
+          </div>
 
-            <div className="flex flex-col gap-4 text-lg font-medium text-gray-200">
-              <Link href="/" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">Home</Link>
-              <Link href="/models" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">Models</Link>
+          <div className="flex flex-col gap-4 text-lg font-medium text-gray-200">
+            <Link href="/" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">
+              Home
+            </Link>
+            <Link href="/models" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">
+              Models
+            </Link>
 
-              <div>
-                <button
-                  onClick={() => setServicesOpen(!servicesOpen)}
-                  className="flex items-center justify-between w-full text-left py-2 hover:text-yellow-400 transition-colors"
-                >
-                  Services
-                  <span className={`text-xs transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}>▼</span>
-                </button>
-
-                {servicesOpen && (
-                  <div className="pl-4 pt-3 pb-2 flex flex-col gap-3 text-base border-l-2 border-yellow-400 mt-2 ml-1 text-gray-300">
-                    <Link href="/celebrity-escorts-karachi" onClick={closeMenu} className="hover:text-yellow-400 font-semibold text-yellow-400">
-                      Celebrity Escorts
-                    </Link>
-
-                    <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mt-2">Areas</div>
-                    <Link href="/karachi-escorts-in-dha" onClick={closeMenu} className="hover:text-yellow-400">DHA Karachi</Link>
-                    <Link href="/karachi-escorts-in-clifton" onClick={closeMenu} className="hover:text-yellow-400">Clifton Karachi</Link>
-                    <Link href="/escorts-in-bahria-town-karachi" onClick={closeMenu} className="hover:text-yellow-400">Bahria Town</Link>
-                    <Link href="/escorts-in-pechs-karachi" onClick={closeMenu} className="hover:text-yellow-400">PECHS</Link>
-                    <Link href="/escorts-in-saddar-karachi" onClick={closeMenu} className="hover:text-yellow-400">Saddar</Link>
-                    <Link href="/escorts-in-bahadurabad-karachi" onClick={closeMenu} className="hover:text-yellow-400">Bahadurabad</Link>
-
-                    <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mt-2">Hotels</div>
-                    <Link href="/escorts-in-pc-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-400">PC Hotel</Link>
-                    <Link href="/escorts-in-marriott-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-400">Marriott</Link>
-                    <Link href="/escorts-in-movenpick-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-400">Mövenpick</Link>
-                    <Link href="/escorts-in-avari-towers-hotel" onClick={closeMenu} className="hover:text-yellow-400">Avari Towers</Link>
-                  </div>
-                )}
-              </div>
-
-              <Link href="/about" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">About</Link>
-              <Link href="/contact" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">Contact</Link>
-            </div>
-
-            <div className="mt-auto pt-8 border-t border-zinc-800">
-              <a
-                href="https://wa.me/923104441188"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-400 text-black text-center py-3.5 rounded-full font-bold hover:from-yellow-300 transition-all text-sm tracking-wider"
+            <div>
+              <button
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className="flex items-center justify-between w-full text-left py-2 hover:text-yellow-400 transition-colors"
               >
-                WhatsApp 0310-444-1188
-              </a>
+                Services
+                <span className={`text-xs transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}>
+                  ▼
+                </span>
+              </button>
+
+              {servicesOpen && (
+                <div className="pl-4 pt-3 pb-2 flex flex-col gap-3 text-base border-l-2 border-yellow-400 mt-2 ml-1 text-gray-300">
+                  <Link
+                    href="/celebrity-escorts-karachi"
+                    onClick={closeMenu}
+                    className="hover:text-yellow-400 font-semibold text-yellow-400"
+                  >
+                    Celebrity Escorts
+                  </Link>
+
+                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mt-2">
+                    Areas
+                  </div>
+                  <Link href="/karachi-escorts-in-dha" onClick={closeMenu} className="hover:text-yellow-400">
+                    DHA Karachi
+                  </Link>
+                  <Link href="/karachi-escorts-in-clifton" onClick={closeMenu} className="hover:text-yellow-400">
+                    Clifton Karachi
+                  </Link>
+                  <Link href="/escorts-in-bahria-town-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                    Bahria Town
+                  </Link>
+                  <Link href="/escorts-in-pechs-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                    PECHS
+                  </Link>
+                  <Link href="/escorts-in-saddar-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                    Saddar
+                  </Link>
+                  <Link href="/escorts-in-bahadurabad-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                    Bahadurabad
+                  </Link>
+
+                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mt-2">
+                    Hotels
+                  </div>
+                  <Link href="/escorts-in-pc-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                    PC Hotel
+                  </Link>
+                  <Link href="/escorts-in-marriott-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                    Marriott
+                  </Link>
+                  <Link href="/escorts-in-movenpick-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                    Mövenpick
+                  </Link>
+                  <Link href="/escorts-in-avari-towers-hotel" onClick={closeMenu} className="hover:text-yellow-400">
+                    Avari Towers
+                  </Link>
+                </div>
+              )}
             </div>
+
+            <Link href="/about" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">
+              About
+            </Link>
+            <Link href="/contact" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">
+              Contact
+            </Link>
+          </div>
+
+          <div className="mt-auto pt-8 border-t border-zinc-800">
+            <a
+              href="https://wa.me/923104441188"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-400 text-black text-center py-3.5 rounded-full font-bold hover:from-yellow-300 transition-all text-sm tracking-wider"
+            >
+              WhatsApp 0310-444-1188
+            </a>
           </div>
         </div>
-      </nav>
+      </div>
 
       {/* Floating Social Buttons */}
       <div className="fixed bottom-6 left-6 z-40 flex flex-col gap-3">

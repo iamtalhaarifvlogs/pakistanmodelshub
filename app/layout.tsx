@@ -1,5 +1,3 @@
-
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -23,11 +21,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://pakistanmodelshub.com"),
   title: {
-    default: "Karachi Escorts | Call Girls in Karachi | Premium Escorts DHA Clifton | Pakistan Models Hub",
+    default: "Karachi Call Girls & Escorts | DHA Clifton | Pakistan Models Hub",
     template: "%s | Pakistan Models Hub",
   },
   description:
-    "Book verified Karachi call girls and premium escorts in DHA, Clifton & Bahria Town. Discreet 24/7 outcall service to PC Hotel, Marriott, Avari Towers and 17 luxury hotels. High-class call girls Karachi available now.",
+    "Verified Karachi call girls & escorts in DHA, Clifton & Bahria Town. Discreet 24/7 outcall to PC Hotel, Marriott & Avari. Book on WhatsApp.",
   keywords: [
     "karachi call girls",
     "call girls in karachi",
@@ -42,7 +40,6 @@ export const metadata: Metadata = {
     "bahria town escorts",
     "karachi girls number",
     "online karachi girl booking",
-    "sex workers in karachi",
     "Pakistan Models Hub",
   ],
   authors: [{ name: "Pakistan Models Hub" }],
@@ -63,7 +60,7 @@ export const metadata: Metadata = {
     locale: "en_PK",
     url: "https://pakistanmodelshub.com",
     siteName: "Pakistan Models Hub",
-    title: "Karachi Call Girls & Escorts | DHA, Clifton, Bahria Town | Pakistan Models Hub",
+    title: "Karachi Call Girls & Escorts | DHA Clifton | Pakistan Models Hub",
     description:
       "Verified Karachi call girls and premium escorts available 24/7. Book discreet outcall to DHA, Clifton, Bahria Town and top luxury hotels.",
     images: [

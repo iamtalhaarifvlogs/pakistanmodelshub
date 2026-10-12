@@ -1,16 +1,14 @@
-
-// app/page.tsx
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 const WA_LINK = "https://wa.me/923104441188";
 const WA_DISPLAY = "+92 310 4441188";
 
 export const metadata: Metadata = {
-  title:
-    "Karachi Escorts | Call Girls in Karachi | Premium Escorts DHA Clifton Bahria Town 2026",
+  title: "Karachi Call Girls & Escorts | DHA Clifton | Pakistan Models Hub",
   description:
-    "Book verified Karachi call girls and premium escorts in DHA, Clifton & Bahria Town. High-class call girls Karachi available 24/7 for outcall to PC Hotel, Marriott, Avari Towers and 17 luxury hotels. Discreet VIP service.",
+    "Verified Karachi call girls & escorts in DHA, Clifton & Bahria Town. Discreet 24/7 outcall to PC Hotel, Marriott & Avari. Book on WhatsApp.",
   keywords: [
     "karachi call girls",
     "call girls in karachi",
@@ -25,9 +23,6 @@ export const metadata: Metadata = {
     "bahria town escorts",
     "karachi girls number",
     "online karachi girl booking",
-    "sex workers in karachi",
-    "book girl for night in karachi",
-    "call girl contact number karachi",
     "Pakistan Models Hub",
   ],
   robots: {
@@ -42,9 +37,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_PK",
-    title: "Karachi Call Girls & Escorts | DHA, Clifton, Bahria Town | Pakistan Models Hub",
+    title: "Karachi Call Girls & Escorts | DHA Clifton | Pakistan Models Hub",
     description:
-      "Verified Karachi call girls and premium escorts. Luxury outcall to PC Hotel, Marriott, Avari Towers and 17 elite hotels. Discreet 24/7 service.",
+      "Verified Karachi call girls and premium escorts. Luxury outcall to PC Hotel, Marriott, Avari Towers. Discreet 24/7 service.",
     images: [
       {
         url: "/Premium escorts in Karachi.jpg",
@@ -125,87 +120,104 @@ const hotels = [
   {
     img: "/call girls in karachi.jpg",
     title: "Regent Plaza Hotel",
-    desc: "Book premium call girls in Karachi at Regent Plaza Hotel. Pakistan Models Hub offers verified Karachi escorts and high-class call girls for short visits, overnight stays and VIP arrangements with complete discretion.",
+    desc: "Book premium call girls in Karachi at Regent Plaza Hotel. Verified escorts for short visits, overnight stays and VIP arrangements with complete discretion.",
+    href: "/escorts-in-regent-plaza-hotel-karachi",
   },
   {
     img: "/sex service in karachi.jpg",
     title: "Nishat Hotel Karachi",
-    desc: "Luxury escort service in Karachi at Nishat Hotel. Enjoy elegant and verified call girls in Karachi for discreet meetings and full-night companionship. Perfect for gentlemen seeking privacy and professional service.",
+    desc: "Luxury escort service at Nishat Hotel. Elegant and verified call girls for discreet meetings and full-night companionship.",
+    href: "/contact",
   },
   {
     img: "/escorts in karachi.jpg",
     title: "Ramada Creek DHA",
-    desc: "High-end escorts in DHA available at Ramada Creek. Book verified Karachi call girls for executive outcall, short visits and overnight packages inside Defence Housing Authority with full confidentiality.",
+    desc: "High-end escorts in DHA at Ramada Creek. Verified call girls for executive outcall and overnight packages with full confidentiality.",
+    href: "/escorts-in-ramada-plaza-hotel-karachi",
   },
   {
     img: "/sex workers in karachi.jpg",
     title: "Beach View Hotel",
-    desc: "Exclusive beachside call girls in Karachi at Beach View Hotel. Pakistan Models Hub provides premium verified companions for private evenings near the coast with absolute discretion.",
+    desc: "Exclusive beachside call girls at Beach View Hotel. Premium verified companions for private evenings near the coast.",
+    href: "/escorts-in-beach-luxury-hotel-karachi",
   },
   {
     img: "/VIP Escorts in Karachi.jpg",
     title: "Sea View Karachi",
-    desc: "VIP escorts and call girls near Sea View Karachi. Book high-class companions for private residences and hotel suites along the Sea View strip. Available 24/7 with verified profiles.",
+    desc: "VIP escorts and call girls near Sea View. High-class companions for private residences and hotel suites. Available 24/7.",
+    href: "/escorts-in-sea-view-karachi",
   },
   {
     img: "/independent escorts.jpg",
     title: "Private Airbnb & Residences",
-    desc: "Independent escorts and call girls in Karachi for private Airbnb and luxury residences across DHA, Clifton, Bahria Town and PECHS. Complete discretion guaranteed for non-hotel bookings.",
+    desc: "Independent escorts for private Airbnb and luxury residences across DHA, Clifton, Bahria Town and PECHS.",
+    href: "/contact",
   },
   {
     img: "/hot females.jpg",
     title: "Seashell Hotel",
-    desc: "Elegant call girls in Karachi at Seashell Hotel. Verified high-profile escorts available for short visits and overnight stays. Ideal for clients who prefer a quieter luxury experience.",
+    desc: "Elegant call girls at Seashell Hotel. Verified high-profile escorts for short visits and overnight stays.",
+    href: "/escorts-in-sea-shell-inn-hotel-karachi",
   },
   {
     img: "/prostitution near me.jpg",
     title: "Mehran Hotel",
-    desc: "Reliable escorts and call girls in Karachi at Mehran Hotel. Professional companions for corporate travelers and private clients with prompt outcall and full confidentiality.",
+    desc: "Reliable escorts at Mehran Hotel. Professional companions for corporate travelers with prompt outcall.",
+    href: "/escorts-in-mehran-hotel-karachi",
   },
   {
     img: "/sex places near me.jpg",
     title: "Holiday Inn Karachi",
-    desc: "Premium call girls and escorts at Holiday Inn Karachi. Discreet high-class companions for business meetings and overnight stays. Verified profiles and absolute privacy.",
+    desc: "Premium call girls at Holiday Inn Karachi. Discreet high-class companions for business meetings and overnight stays.",
+    href: "/contact",
   },
   {
     img: "/Karachi dating girls.jpg",
     title: "Farhan Hotel",
-    desc: "Comfortable and confidential call girls in Karachi at Farhan Hotel. Book verified companions for short visits and extended stays with maximum privacy and professional service.",
+    desc: "Comfortable and confidential call girls at Farhan Hotel. Verified companions for short visits and extended stays.",
+    href: "/contact",
   },
   {
     img: "/night girls number.jpg",
     title: "Marriott Hotel Karachi",
-    desc: "High-class call girls and escorts at Marriott Hotel Karachi. Refined professional partners for high-profile gentlemen and VIP clients seeking discreet luxury companionship.",
+    desc: "High-class call girls and escorts at Marriott Hotel. Refined partners for high-profile gentlemen seeking discreet luxury.",
+    href: "/escorts-in-marriott-hotel-karachi",
   },
   {
     img: "/karachi girls number.jpg",
     title: "PC Hotel Karachi",
-    desc: "Premium call girls in Karachi at PC Hotel. Verified companions available for short tours, overnight corporate stays and exclusive VIP arrangements with complete discretion.",
+    desc: "Premium call girls at PC Hotel. Verified companions for short tours, overnight stays and exclusive VIP arrangements.",
+    href: "/escorts-in-pc-hotel-karachi",
   },
   {
     img: "/girls for sex in karachi.jpg",
     title: "Ramada Plaza Hotel",
-    desc: "Luxury escort service in Karachi at Ramada Plaza. Exceptional quality partners for secure locations and refined overnight company. Available 24/7 with immediate dispatch.",
+    desc: "Luxury escort service at Ramada Plaza. Exceptional quality partners for secure locations and refined overnight company.",
+    href: "/escorts-in-ramada-plaza-hotel-karachi",
   },
   {
     img: "/escorts service pakistan.jpg",
     title: "Avari Towers Karachi",
-    desc: "Elite call girls and escorts at Avari Towers Karachi. Professional hosts guaranteeing total personal security, privacy and world-class companionship for high-profile clients.",
+    desc: "Elite call girls and escorts at Avari Towers. Professional hosts guaranteeing total privacy and world-class companionship.",
+    href: "/escorts-in-avari-towers-hotel",
   },
   {
     img: "/Escorts in dha Karachi.jpg",
     title: "Beach Luxury Hotel",
-    desc: "Exclusive call girls in Karachi at Beach Luxury Hotel. Thoughtfully designed experiences for elite individuals seeking premier evening companions by the waterfront.",
+    desc: "Exclusive call girls at Beach Luxury Hotel. Premier evening companions by the waterfront with complete discretion.",
+    href: "/escorts-in-beach-luxury-hotel-karachi",
   },
   {
     img: "/Escorts in Clifton Karachi.jpg",
     title: "Sunset Hotel DHA",
-    desc: "Premium escorts in DHA at Sunset Hotel. Top-tier local hosting inside Defence Housing Authority with verified call girls available 24/7 for short and overnight bookings.",
+    desc: "Premium escorts in DHA at Sunset Hotel. Top-tier local hosting with verified call girls available 24/7.",
+    href: "/escorts-in-dha-karachi",
   },
   {
     img: "/Karachi Escorts.jpg",
     title: "Galaxy Hotel Karachi",
-    desc: "Reliable call girls and escorts at Galaxy Hotel Karachi. Comfortable private bookings for brief calls and extended overnight stays with full discretion and verified profiles.",
+    desc: "Reliable call girls at Galaxy Hotel. Comfortable private bookings for brief calls and extended overnight stays.",
+    href: "/contact",
   },
 ];
 
@@ -369,16 +381,14 @@ export default function Home() {
                   Pakistan Models Hub
                 </p>
 
-                <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-[4.6rem] font-extrabold tracking-tight mb-4 uppercase text-white leading-[0.92]">
-                  Karachi
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-yellow-400">
-                    Escorts
-                  </span>
+                {/* ONLY ONE H1 ON THE PAGE */}
+                <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] font-extrabold tracking-tight mb-4 text-white leading-[1.05]">
+                  Karachi Call Girls & Escorts in DHA, Clifton & Bahria Town
                 </h1>
 
-                <h2 className="hero-title text-sm sm:text-base md:text-lg font-medium text-yellow-300/95 tracking-wide mb-6">
-                  Call Girls in Karachi • Escorts in DHA • Clifton • Bahria Town | VIP Service
-                </h2>
+                <p className="hero-title text-sm sm:text-base md:text-lg font-medium text-yellow-300/95 tracking-wide mb-6">
+                  Verified Profiles • VIP Service • 24/7 Discreet Outcall
+                </p>
 
                 <p className="hero-title text-sm md:text-base text-gray-200/90 max-w-xl mb-8 font-light leading-relaxed">
                   Verified Karachi call girls and high-class escorts available 24/7 across DHA,
@@ -542,21 +552,22 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center gap-3 text-sm">
               {[
-                "Call Girls in DHA",
-                "Escorts in Clifton",
-                "Escorts in Bahria Town",
-                "PECHS",
-                "Sea View",
-                "Gulshan",
-                "Defence Phase",
-                "KDA Scheme",
+                { name: "Call Girls in DHA", href: "/karachi-escorts-in-dha" },
+                { name: "Escorts in Clifton", href: "/karachi-escorts-in-clifton" },
+                { name: "Escorts in Bahria Town", href: "/escorts-in-bahria-town-karachi" },
+                { name: "PECHS", href: "/escorts-in-pechs-karachi" },
+                { name: "Sea View", href: "/escorts-in-sea-view-karachi" },
+                { name: "Gulshan", href: "/escorts-in-gulshan-e-iqbal-karachi" },
+                { name: "Saddar", href: "/escorts-in-saddar-karachi" },
+                { name: "Nazimabad", href: "/escorts-in-nazimabad-karachi" },
               ].map((area) => (
-                <span
-                  key={area}
+                <Link
+                  key={area.name}
+                  href={area.href}
                   className="px-5 py-2.5 rounded-full bg-zinc-800/80 border border-zinc-700 text-gray-300 hover:border-yellow-500/50 hover:text-yellow-400 transition-all duration-300"
                 >
-                  {area}
-                </span>
+                  {area.name}
+                </Link>
               ))}
             </div>
           </div>
@@ -571,8 +582,7 @@ export default function Home() {
               </h2>
               <p className="text-base md:text-lg text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
                 Book verified Karachi call girls and high-class escorts for immediate outcall to
-                PC Hotel, Marriott, Mövenpick, Avari Towers, Regent Plaza, Nishat, Ramada Creek DHA
-                and more. Available 24/7 in DHA, Clifton and Bahria Town.
+                PC Hotel, Marriott, Mövenpick, Avari Towers, Regent Plaza and more. Available 24/7.
               </p>
             </div>
 
@@ -597,14 +607,12 @@ export default function Home() {
                   </div>
                   <div className="p-6">
                     <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">{hotel.desc}</p>
-                    <a
-                      href={WA_LINK}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      href={hotel.href}
                       className="block w-full bg-zinc-800/90 hover:bg-red-600 text-white text-center py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border border-zinc-700/80 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]"
                     >
-                      Request Booking
-                    </a>
+                      View Details
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -704,25 +712,17 @@ export default function Home() {
                 { term: "Escorts in Marriott", href: "/escorts-in-marriott-hotel-karachi" },
                 { term: "Celebrity escorts Karachi", href: "/celebrity-escorts-karachi" },
                 { term: "VIP call girls Karachi", href: "/" },
-                { term: "Cheap call girls in Karachi", href: "/" },
-                { term: "Karachi girls number", href: "/" },
-                { term: "Online Karachi girl booking", href: "/" },
                 { term: "Avari Towers escorts", href: "/escorts-in-avari-towers-hotel" },
-                { term: "Overnight escorts Karachi", href: "/" },
                 { term: "Private companions PECHS", href: "/escorts-in-pechs-karachi" },
-                { term: "Sex workers in Karachi", href: "/" },
-                { term: "Book girl for night in Karachi", href: "/" },
-                { term: "Call girl contact number Karachi", href: "/" },
-                { term: "Escorts service in Karachi", href: "/" },
                 { term: "Beach Luxury Hotel companions", href: "/escorts-in-beach-luxury-hotel-karachi" },
               ].map((item) => (
-                <a
+                <Link
                   key={item.term}
                   href={item.href}
                   className="hover:text-yellow-400 transition-colors"
                 >
                   {item.term}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
