@@ -1,7 +1,92 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+
+function DraggableSocials({
+  socialLinks,
+}: {
+  socialLinks: { name: string; href: string; icon: React.ReactNode }[];
+}) {
+  const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
+  const dragging = useRef(false);
+  const offset = useRef({ x: 0, y: 0 });
+  const boxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('pmh-float-social');
+      if (saved) setPos(JSON.parse(saved));
+    } catch {}
+  }, []);
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (!boxRef.current) return;
+    dragging.current = true;
+    boxRef.current.setPointerCapture(e.pointerId);
+    const rect = boxRef.current.getBoundingClientRect();
+    offset.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+  };
+
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!dragging.current) return;
+    const x = e.clientX - offset.current.x;
+    const y = e.clientY - offset.current.y;
+    const maxX = window.innerWidth - (boxRef.current?.offsetWidth || 50);
+    const maxY = window.innerHeight - (boxRef.current?.offsetHeight || 100);
+    setPos({
+      x: Math.max(0, Math.min(x, maxX)),
+      y: Math.max(0, Math.min(y, maxY)),
+    });
+  };
+
+  const onPointerUp = (e: React.PointerEvent) => {
+    if (!dragging.current) return;
+    dragging.current = false;
+    boxRef.current?.releasePointerCapture(e.pointerId);
+    setPos((current) => {
+      if (current) {
+        try {
+          localStorage.setItem('pmh-float-social', JSON.stringify(current));
+        } catch {}
+      }
+      return current;
+    });
+  };
+
+  const style: React.CSSProperties = pos
+    ? { left: pos.x, top: pos.y, right: 'auto', bottom: 'auto' }
+    : { left: 24, bottom: 24 };
+
+  return (
+    <div
+      ref={boxRef}
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerUp}
+      onPointerCancel={onPointerUp}
+      style={style}
+      className="fixed z-40 flex flex-col gap-3 touch-none cursor-grab active:cursor-grabbing select-none"
+    >
+      {socialLinks.map((social) => (
+        <a
+          key={social.name}
+          href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={social.name}
+          aria-label={social.name}
+          onClick={(e) => {
+            if (dragging.current) e.preventDefault();
+          }}
+          className="w-11 h-11 flex items-center justify-center rounded-full bg-zinc-900 text-yellow-400 border border-yellow-500/50 shadow-lg hover:bg-yellow-400 hover:text-black hover:scale-110 active:scale-95 transition-all duration-300"
+        >
+          {social.icon}
+        </a>
+      ))}
+    </div>
+  );
+}
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,8 +99,8 @@ export default function Header() {
 
   const socialLinks = [
     {
-      name: "Instagram",
-      href: "https://www.instagram.com/pakistanmodelshub?igsh=cjBrNW8yNG02Y2c5",
+      name: 'Instagram',
+      href: 'https://www.instagram.com/pakistanmodelshub?igsh=cjBrNW8yNG02Y2c5',
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
           <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5C18.55 4 20 5.45 20 7.75v8.5c0 2.3-1.45 3.75-3.75 3.75h-8.5C5.45 20 4 18.55 4 16.25v-8.5C4 5.45 5.45 4 7.75 4zm8.75 2a1 1 0 100 2 1 1 0 000-2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z" />
@@ -23,8 +108,8 @@ export default function Header() {
       ),
     },
     {
-      name: "Facebook",
-      href: "https://www.facebook.com/share/1MMYc4FNWY/",
+      name: 'Facebook',
+      href: 'https://www.facebook.com/share/1MMYc4FNWY/',
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
           <path d="M22 12a10 10 0 10-11.63 9.87v-6.99H7.9V12h2.47V9.8c0-2.44 1.45-3.8 3.67-3.8 1.06 0 2.17.19 2.17.19v2.39h-1.22c-1.21 0-1.58.75-1.58 1.52V12h2.69l-.43 2.88h-2.26v6.99A10 10 0 0022 12z" />
@@ -35,10 +120,8 @@ export default function Header() {
 
   return (
     <>
-      {/* NAV BAR */}
       <nav className="fixed top-0 left-0 right-0 z-[100] bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Logo - NO h1 here (SEO: only 1 H1 on page) */}
           <Link href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-2xl shadow-inner">
               P
@@ -51,57 +134,99 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-200">
-            <Link href="/" className="hover:text-yellow-400 transition-colors">Home</Link>
-            <Link href="/models" className="hover:text-yellow-400 transition-colors">Models</Link>
+            <Link href="/" className="hover:text-yellow-400 transition-colors">
+              Home
+            </Link>
+            <Link href="/models" className="hover:text-yellow-400 transition-colors">
+              Models
+            </Link>
 
-            {/* Services Dropdown */}
             <div className="relative group">
               <button className="hover:text-yellow-400 transition-colors flex items-center gap-1 py-2">
                 Services
-                <span className="text-[10px] transition-transform duration-200 group-hover:rotate-180">▼</span>
+                <span className="text-[10px] transition-transform duration-200 group-hover:rotate-180">
+                  ▼
+                </span>
               </button>
 
               <div className="absolute hidden group-hover:block pt-2 w-80 z-50 left-0">
                 <div className="bg-zinc-900 shadow-2xl border border-zinc-700 rounded-2xl py-6 px-6 text-sm max-h-[75vh] overflow-y-auto">
                   <div className="font-semibold text-yellow-400 mb-3">Celebrity & Premium</div>
-                  <Link href="/celebrity-escorts-karachi" className="block hover:text-yellow-400 mb-5 text-gray-300">
+                  <Link
+                    href="/celebrity-escorts-karachi"
+                    className="block hover:text-yellow-400 mb-5 text-gray-300"
+                  >
                     Celebrity Escorts Karachi
                   </Link>
 
                   <div className="font-semibold text-yellow-400 mb-3">Popular Areas</div>
                   <div className="grid grid-cols-1 gap-y-2.5 mb-6 text-[15px] text-gray-300">
-                    <Link href="/karachi-escorts-in-dha" className="hover:text-yellow-400">DHA Karachi</Link>
-                    <Link href="/escorts-in-dha-karachi" className="hover:text-yellow-400">Escorts in DHA</Link>
-                    <Link href="/karachi-escorts-in-clifton" className="hover:text-yellow-400">Clifton Karachi</Link>
-                    <Link href="/escorts-in-bahria-town-karachi" className="hover:text-yellow-400">Bahria Town</Link>
-                    <Link href="/escorts-in-pechs-karachi" className="hover:text-yellow-400">PECHS Karachi</Link>
-                    <Link href="/escorts-in-saddar-karachi" className="hover:text-yellow-400">Saddar Karachi</Link>
-                    <Link href="/escorts-in-gulshan-e-iqbal-karachi" className="hover:text-yellow-400">Gulshan-e-Iqbal</Link>
-                    <Link href="/escorts-in-sea-view-karachi" className="hover:text-yellow-400">Sea View</Link>
-                    <Link href="/escorts-in-nazimabad-karachi" className="hover:text-yellow-400">Nazimabad</Link>
-                    <Link href="/escorts-in-bahadurabad-karachi" className="hover:text-yellow-400">Bahadurabad</Link>
+                    <Link href="/karachi-escorts-in-dha" className="hover:text-yellow-400">
+                      DHA Karachi
+                    </Link>
+                    <Link href="/escorts-in-dha-karachi" className="hover:text-yellow-400">
+                      Escorts in DHA
+                    </Link>
+                    <Link href="/karachi-escorts-in-clifton" className="hover:text-yellow-400">
+                      Clifton Karachi
+                    </Link>
+                    <Link href="/escorts-in-bahria-town-karachi" className="hover:text-yellow-400">
+                      Bahria Town
+                    </Link>
+                    <Link href="/escorts-in-pechs-karachi" className="hover:text-yellow-400">
+                      PECHS Karachi
+                    </Link>
+                    <Link href="/escorts-in-saddar-karachi" className="hover:text-yellow-400">
+                      Saddar Karachi
+                    </Link>
+                    <Link href="/escorts-in-gulshan-e-iqbal-karachi" className="hover:text-yellow-400">
+                      Gulshan-e-Iqbal
+                    </Link>
+                    <Link href="/escorts-in-sea-view-karachi" className="hover:text-yellow-400">
+                      Sea View
+                    </Link>
+                    <Link href="/escorts-in-nazimabad-karachi" className="hover:text-yellow-400">
+                      Nazimabad
+                    </Link>
+                    <Link href="/escorts-in-bahadurabad-karachi" className="hover:text-yellow-400">
+                      Bahadurabad
+                    </Link>
                   </div>
 
                   <div className="font-semibold text-yellow-400 mb-3">Hotels</div>
                   <div className="grid grid-cols-1 gap-y-2.5 text-[15px] text-gray-300">
-                    <Link href="/escorts-in-pc-hotel-karachi" className="hover:text-yellow-400">PC Hotel</Link>
-                    <Link href="/escorts-in-marriott-hotel-karachi" className="hover:text-yellow-400">Marriott Hotel</Link>
-                    <Link href="/escorts-in-movenpick-hotel-karachi" className="hover:text-yellow-400">Mövenpick Hotel</Link>
-                    <Link href="/escorts-in-avari-towers-hotel" className="hover:text-yellow-400">Avari Towers</Link>
-                    <Link href="/escorts-in-ramada-plaza-hotel-karachi" className="hover:text-yellow-400">Ramada Plaza</Link>
-                    <Link href="/escorts-in-regent-plaza-hotel-karachi" className="hover:text-yellow-400">Regent Plaza</Link>
+                    <Link href="/escorts-in-pc-hotel-karachi" className="hover:text-yellow-400">
+                      PC Hotel
+                    </Link>
+                    <Link href="/escorts-in-marriott-hotel-karachi" className="hover:text-yellow-400">
+                      Marriott Hotel
+                    </Link>
+                    <Link href="/escorts-in-movenpick-hotel-karachi" className="hover:text-yellow-400">
+                      Mövenpick Hotel
+                    </Link>
+                    <Link href="/escorts-in-avari-towers-hotel" className="hover:text-yellow-400">
+                      Avari Towers
+                    </Link>
+                    <Link href="/escorts-in-ramada-plaza-hotel-karachi" className="hover:text-yellow-400">
+                      Ramada Plaza
+                    </Link>
+                    <Link href="/escorts-in-regent-plaza-hotel-karachi" className="hover:text-yellow-400">
+                      Regent Plaza
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
 
-            <Link href="/about" className="hover:text-yellow-400 transition-colors">About</Link>
-            <Link href="/contact" className="hover:text-yellow-400 transition-colors">Contact</Link>
+            <Link href="/about" className="hover:text-yellow-400 transition-colors">
+              About
+            </Link>
+            <Link href="/contact" className="hover:text-yellow-400 transition-colors">
+              Contact
+            </Link>
           </div>
 
-          {/* Desktop WhatsApp CTA */}
           <div className="hidden md:block">
             <a
               href="https://wa.me/923104441188"
@@ -113,22 +238,32 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden relative z-[101] p-2 text-white focus:outline-none"
             aria-label="Toggle menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`block w-full h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`block w-full h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
-              <span className={`block w-full h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
+              <span
+                className={`block w-full h-0.5 bg-white transition-all duration-300 ${
+                  isMenuOpen ? 'rotate-45 translate-y-2' : ''
+                }`}
+              />
+              <span
+                className={`block w-full h-0.5 bg-white transition-all duration-300 ${
+                  isMenuOpen ? 'opacity-0' : ''
+                }`}
+              />
+              <span
+                className={`block w-full h-0.5 bg-white transition-all duration-300 ${
+                  isMenuOpen ? '-rotate-45 -translate-y-2.5' : ''
+                }`}
+              />
             </div>
           </button>
         </div>
       </nav>
 
-      {/* Mobile Overlay - OUTSIDE nav, very high z-index */}
       {isMenuOpen && (
         <div
           onClick={closeMenu}
@@ -136,7 +271,6 @@ export default function Header() {
         />
       )}
 
-      {/* Mobile Drawer - OUTSIDE nav, highest z-index */}
       <div
         className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-zinc-950 shadow-2xl transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col border-l border-zinc-800 md:hidden ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -154,7 +288,11 @@ export default function Header() {
             <Link href="/" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">
               Home
             </Link>
-            <Link href="/models" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">
+            <Link
+              href="/models"
+              onClick={closeMenu}
+              className="hover:text-yellow-400 transition-colors"
+            >
               Models
             </Link>
 
@@ -164,7 +302,11 @@ export default function Header() {
                 className="flex items-center justify-between w-full text-left py-2 hover:text-yellow-400 transition-colors"
               >
                 Services
-                <span className={`text-xs transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}>
+                <span
+                  className={`text-xs transition-transform duration-200 ${
+                    servicesOpen ? 'rotate-180' : ''
+                  }`}
+                >
                   ▼
                 </span>
               </button>
@@ -182,48 +324,96 @@ export default function Header() {
                   <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mt-2">
                     Areas
                   </div>
-                  <Link href="/karachi-escorts-in-dha" onClick={closeMenu} className="hover:text-yellow-400">
+                  <Link
+                    href="/karachi-escorts-in-dha"
+                    onClick={closeMenu}
+                    className="hover:text-yellow-400"
+                  >
                     DHA Karachi
                   </Link>
-                  <Link href="/karachi-escorts-in-clifton" onClick={closeMenu} className="hover:text-yellow-400">
+                  <Link
+                    href="/karachi-escorts-in-clifton"
+                    onClick={closeMenu}
+                    className="hover:text-yellow-400"
+                  >
                     Clifton Karachi
                   </Link>
-                  <Link href="/escorts-in-bahria-town-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                  <Link
+                    href="/escorts-in-bahria-town-karachi"
+                    onClick={closeMenu}
+                    className="hover:text-yellow-400"
+                  >
                     Bahria Town
                   </Link>
-                  <Link href="/escorts-in-pechs-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                  <Link
+                    href="/escorts-in-pechs-karachi"
+                    onClick={closeMenu}
+                    className="hover:text-yellow-400"
+                  >
                     PECHS
                   </Link>
-                  <Link href="/escorts-in-saddar-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                  <Link
+                    href="/escorts-in-saddar-karachi"
+                    onClick={closeMenu}
+                    className="hover:text-yellow-400"
+                  >
                     Saddar
                   </Link>
-                  <Link href="/escorts-in-bahadurabad-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                  <Link
+                    href="/escorts-in-bahadurabad-karachi"
+                    onClick={closeMenu}
+                    className="hover:text-yellow-400"
+                  >
                     Bahadurabad
                   </Link>
 
                   <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mt-2">
                     Hotels
                   </div>
-                  <Link href="/escorts-in-pc-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                  <Link
+                    href="/escorts-in-pc-hotel-karachi"
+                    onClick={closeMenu}
+                    className="hover:text-yellow-400"
+                  >
                     PC Hotel
                   </Link>
-                  <Link href="/escorts-in-marriott-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                  <Link
+                    href="/escorts-in-marriott-hotel-karachi"
+                    onClick={closeMenu}
+                    className="hover:text-yellow-400"
+                  >
                     Marriott
                   </Link>
-                  <Link href="/escorts-in-movenpick-hotel-karachi" onClick={closeMenu} className="hover:text-yellow-400">
+                  <Link
+                    href="/escorts-in-movenpick-hotel-karachi"
+                    onClick={closeMenu}
+                    className="hover:text-yellow-400"
+                  >
                     Mövenpick
                   </Link>
-                  <Link href="/escorts-in-avari-towers-hotel" onClick={closeMenu} className="hover:text-yellow-400">
+                  <Link
+                    href="/escorts-in-avari-towers-hotel"
+                    onClick={closeMenu}
+                    className="hover:text-yellow-400"
+                  >
                     Avari Towers
                   </Link>
                 </div>
               )}
             </div>
 
-            <Link href="/about" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">
+            <Link
+              href="/about"
+              onClick={closeMenu}
+              className="hover:text-yellow-400 transition-colors"
+            >
               About
             </Link>
-            <Link href="/contact" onClick={closeMenu} className="hover:text-yellow-400 transition-colors">
+            <Link
+              href="/contact"
+              onClick={closeMenu}
+              className="hover:text-yellow-400 transition-colors"
+            >
               Contact
             </Link>
           </div>
@@ -241,22 +431,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Floating Social Buttons */}
-      <div className="fixed bottom-6 left-6 z-40 flex flex-col gap-3">
-        {socialLinks.map((social) => (
-          <a
-            key={social.name}
-            href={social.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={social.name}
-            aria-label={social.name}
-            className="w-11 h-11 flex items-center justify-center rounded-full bg-zinc-900 text-yellow-400 border border-yellow-500/50 shadow-lg hover:bg-yellow-400 hover:text-black hover:scale-110 active:scale-95 transition-all duration-300"
-          >
-            {social.icon}
-          </a>
-        ))}
-      </div>
+      <DraggableSocials socialLinks={socialLinks} />
     </>
   );
 }

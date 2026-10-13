@@ -344,17 +344,6 @@ export default function Home() {
       <style dangerouslySetInnerHTML={{ __html: premiumStyles }} />
 
       <div className="bg-zinc-950 text-gray-100 font-sans overflow-x-hidden">
-        {/* FLOATING WHATSAPP */}
-        <a
-          href={WA_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fixed bottom-6 right-6 z-50 animate-liquid-glow flex items-center justify-center w-16 h-16 bg-yellow-400 hover:bg-yellow-300 text-black rounded-full shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:scale-110 transition-all duration-300"
-          aria-label="Book Karachi call girls and escorts on WhatsApp"
-        >
-          <WhatsAppIcon className="w-8 h-8 fill-current" />
-        </a>
-
         {/* HERO */}
         <section className="relative min-h-[100svh] flex items-end overflow-hidden">
           <div className="absolute inset-0 z-0">
@@ -381,7 +370,6 @@ export default function Home() {
                   Pakistan Models Hub
                 </p>
 
-                {/* ONLY ONE H1 ON THE PAGE */}
                 <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] font-extrabold tracking-tight mb-4 text-white leading-[1.05]">
                   Karachi Call Girls & Escorts in DHA, Clifton & Bahria Town
                 </h1>

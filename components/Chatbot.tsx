@@ -1,5 +1,3 @@
-
-// components/Chatbot.tsx
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
@@ -20,7 +18,21 @@ const Chatbot: React.FC = () => {
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
 
+  // Drag state
+  const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
+  const dragging = useRef(false);
+  const moved = useRef(false);
+  const offset = useRef({ x: 0, y: 0 });
+  const btnRef = useRef<HTMLButtonElement>(null);
+
   const chatContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("pmh-float-chat");
+      if (saved) setPos(JSON.parse(saved));
+    } catch {}
+  }, []);
 
   const scrollToBottom = () => {
     chatContainerRef.current?.scrollTo({
@@ -33,10 +45,45 @@ const Chatbot: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (!btnRef.current) return;
+    dragging.current = true;
+    moved.current = false;
+    btnRef.current.setPointerCapture(e.pointerId);
+    const rect = btnRef.current.getBoundingClientRect();
+    offset.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+  };
+
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!dragging.current) return;
+    moved.current = true;
+    const x = e.clientX - offset.current.x;
+    const y = e.clientY - offset.current.y;
+    const maxX = window.innerWidth - 56;
+    const maxY = window.innerHeight - 56;
+    setPos({
+      x: Math.max(0, Math.min(x, maxX)),
+      y: Math.max(0, Math.min(y, maxY)),
+    });
+  };
+
+  const onPointerUp = (e: React.PointerEvent) => {
+    if (!dragging.current) return;
+    dragging.current = false;
+    btnRef.current?.releasePointerCapture(e.pointerId);
+    setPos((current) => {
+      if (current) {
+        try {
+          localStorage.setItem("pmh-float-chat", JSON.stringify(current));
+        } catch {}
+      }
+      return current;
+    });
+  };
+
   const typeMessage = async (text: string, messageId: number) => {
     setIsTyping(true);
     let displayedText = '';
-
     for (let i = 0; i <= text.length; i++) {
       displayedText = text.slice(0, i);
       setMessages((prev) =>
@@ -53,30 +100,23 @@ const Chatbot: React.FC = () => {
     const lowerMsg = userMessage.toLowerCase().trim();
     let bestReply = "";
     let highestScore = 0;
-
     knowledge.forEach((entry: any) => {
       if (!entry?.keywords || !entry?.reply) return;
-
       let score = 0;
       entry.keywords.forEach((keyword: string) => {
-        if (lowerMsg.includes(keyword.toLowerCase())) {
-          score += 1;
-        }
+        if (lowerMsg.includes(keyword.toLowerCase())) score += 1;
       });
-
       if (score > highestScore) {
         highestScore = score;
         bestReply = entry.reply;
       }
     });
-
-    return bestReply || 
+    return bestReply ||
       "I'm not sure about that. Could you rephrase or ask something about our models, services, or bookings?";
   };
 
   const sendMessage = () => {
     if (!input.trim() || isTyping) return;
-
     const userText = input.trim();
     const userMsg: Message = {
       id: Date.now(),
@@ -84,22 +124,15 @@ const Chatbot: React.FC = () => {
       isUser: true,
       timestamp: new Date(),
     };
-
     setMessages((prev) => [...prev, userMsg]);
     setInput('');
-
     setTimeout(() => {
       const botText = getBotResponse(userText);
       const botMsgId = Date.now() + 1;
-
-      const botMsg: Message = {
-        id: botMsgId,
-        text: '',
-        isUser: false,
-        timestamp: new Date(),
-      };
-
-      setMessages((prev) => [...prev, botMsg]);
+      setMessages((prev) => [
+        ...prev,
+        { id: botMsgId, text: '', isUser: false, timestamp: new Date() },
+      ]);
       typeMessage(botText, botMsgId);
     }, 700);
   };
@@ -109,39 +142,43 @@ const Chatbot: React.FC = () => {
   };
 
   const openChat = () => {
+    if (moved.current) return; // drag hua ho to open mat karo
     setIsOpen(true);
-
     if (messages.length === 0) {
       setTimeout(() => {
         const greetingId = Date.now();
-        setMessages([
-          { id: greetingId, text: '', isUser: false, timestamp: new Date() },
-        ]);
-        typeMessage(
-          "Hey handsome! looking for some fun tonight?",
-          greetingId
-        );
+        setMessages([{ id: greetingId, text: '', isUser: false, timestamp: new Date() }]);
+        typeMessage("Hey handsome! looking for some fun tonight?", greetingId);
       }, 400);
     }
   };
 
   const closeChat = () => setIsOpen(false);
 
+  const btnStyle: React.CSSProperties = pos
+    ? { left: pos.x, top: pos.y, right: "auto", bottom: "auto" }
+    : { left: 24, bottom: 96 };
+
   return (
     <>
-      {/* Floating Button */}
       <button
-        onClick={openChat}
-        className="fixed bottom-6 left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-yellow-400 text-black shadow-2xl hover:bg-yellow-300 hover:scale-110 active:scale-95 transition-all"
+        ref={btnRef}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={(e) => {
+          onPointerUp(e);
+          openChat();
+        }}
+        onPointerCancel={onPointerUp}
+        style={btnStyle}
+        className="fixed z-50 flex h-14 w-14 items-center justify-center rounded-full bg-yellow-400 text-black shadow-2xl hover:bg-yellow-300 hover:scale-110 active:scale-95 transition-transform touch-none cursor-grab active:cursor-grabbing select-none"
         aria-label="Open Chatbot"
       >
         💬
       </button>
 
-      {/* Fullscreen Chat Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-[100] bg-black/90 flex flex-col overflow-hidden">
-          {/* Header */}
           <div className="bg-white px-6 py-4 flex items-center justify-between border-b border-yellow-400 flex-shrink-0">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-2xl">
@@ -160,7 +197,6 @@ const Chatbot: React.FC = () => {
             </button>
           </div>
 
-          {/* Messages Area */}
           <div
             ref={chatContainerRef}
             className="flex-1 overflow-y-auto bg-white p-6 space-y-4 pb-28"
@@ -181,7 +217,6 @@ const Chatbot: React.FC = () => {
                 </div>
               </div>
             ))}
-
             {isTyping && (
               <div className="flex justify-start">
                 <div className="bg-yellow-400 text-black px-5 py-3.5 rounded-3xl rounded-bl-none font-semibold">
@@ -191,7 +226,6 @@ const Chatbot: React.FC = () => {
             )}
           </div>
 
-          {/* Input Area - Final Fix */}
           <div className="bg-white border-t border-gray-200 p-4 flex-shrink-0">
             <div className="max-w-4xl mx-auto w-full">
               <div className="flex gap-3 w-full">
