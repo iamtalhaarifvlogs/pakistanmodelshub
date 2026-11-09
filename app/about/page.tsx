@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -204,6 +203,45 @@ export default function AboutPage() {
             If you are tired of fake profiles and unreliable services, you have finally reached 
             the right place. This is the end-level professional standard for 
             <strong> call girls in Karachi</strong> and <strong>escorts in Karachi</strong>.
+          </p>
+        </div>
+      </section>
+
+      {/* ========== SCENARIO A - Contextual Block ========== */}
+      <section className="py-14 bg-zinc-950 border-t border-zinc-800/60">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">
+            More Options to Explore
+          </h3>
+          <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed">
+            You can also check{" "}
+            <a 
+              href="https://elitekarachimodels.online/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-yellow-400/90 hover:text-yellow-300 underline underline-offset-2 transition-colors"
+            >
+              Elite Karachi Models
+            </a>
+            ,{" "}
+            <a 
+              href="https://justkarachigirls.online/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-yellow-400/90 hover:text-yellow-300 underline underline-offset-2 transition-colors"
+            >
+              Just Karachi Girls
+            </a>
+            {" "}and{" "}
+            <a 
+              href="https://modelsinkarachi.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-yellow-400/90 hover:text-yellow-300 underline underline-offset-2 transition-colors"
+            >
+              Models in Karachi
+            </a>
+            {" "}for additional verified profiles and premium services across the city.
           </p>
         </div>
       </section>

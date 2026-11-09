@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -305,6 +304,44 @@ export default function CelebrityEscortsPage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ========== SCENARIO A - Contextual Block ========== */}
+      <section className="py-14 bg-zinc-950 border-t border-zinc-800/60">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">
+            Explore More Options
+          </h3>
+          <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed">
+            For additional verified profiles and premium services, you can also visit{" "}
+            <a 
+              href="https://elitekarachimodels.online/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-yellow-400/90 hover:text-yellow-300 underline underline-offset-2 transition-colors"
+            >
+              Elite Karachi Models
+            </a>
+            ,{" "}
+            <a 
+              href="https://justkarachigirls.online/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-yellow-400/90 hover:text-yellow-300 underline underline-offset-2 transition-colors"
+            >
+              Just Karachi Girls
+            </a>
+            {" "}and{" "}
+            <a 
+              href="https://modelsinkarachi.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-yellow-400/90 hover:text-yellow-300 underline underline-offset-2 transition-colors"
+            >
+              Models in Karachi
+            </a>.
+          </p>
         </div>
       </section>
 

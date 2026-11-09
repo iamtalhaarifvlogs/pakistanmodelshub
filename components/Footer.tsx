@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 
 export default function Footer() {
@@ -58,7 +57,30 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="text-center text-xs text-gray-500 mt-16 pt-8 border-t border-zinc-800">
+      {/* Clean Spiderweb Footer Links - Scenario B */}
+      <div className="max-w-6xl mx-auto px-6 mt-10 pt-6 border-t border-zinc-800/60">
+        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-gray-500">
+          <a 
+            href="https://elitekarachimodels.online/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-yellow-400/80 transition-colors"
+          >
+            Elite Karachi Models
+          </a>
+          <span className="text-zinc-700">•</span>
+          <a 
+            href="https://rockykarachi1.vercel.app/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-yellow-400/80 transition-colors"
+          >
+            Rocky Karachi
+          </a>
+        </div>
+      </div>
+
+      <div className="text-center text-xs text-gray-500 mt-8 pt-6 border-t border-zinc-800">
         © 2026 Pakistan Models Hub. All Rights Reserved. • Premium Escorts & Call Girls in Karachi
       </div>
     </footer>
