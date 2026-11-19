@@ -166,6 +166,9 @@ export default function Header() {
                     <Link href="/karachi-escorts-in-dha" className="hover:text-yellow-400">
                       DHA Karachi
                     </Link>
+<Link href="/blogs" className="hover:text-yellow-400">
+                      Must read blogs 
+                    </Link>
                     <Link href="/escorts-in-dha-karachi" className="hover:text-yellow-400">
                       Escorts in DHA
                     </Link>
@@ -409,6 +412,13 @@ export default function Header() {
               className="hover:text-yellow-400 transition-colors"
             >
               About
+            </Link>
+  <Link
+              href="/blogs"
+              onClick={closeMenu}
+              className="hover:text-yellow-400 transition-colors"
+            >
+              Must read blogs
             </Link>
             <Link
               href="/contact"
